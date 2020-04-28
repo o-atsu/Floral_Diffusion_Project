@@ -1,0 +1,2 @@
+# Danmaku_MoriNaoki
+ Random_marathon弾幕シューティングチーム
