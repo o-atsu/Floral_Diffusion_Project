@@ -7,7 +7,7 @@ public abstract class Attack : MonoBehaviour
 	[SerializeField]
 	protected float interval = 1f;
 	[SerializeField]
-	protected Barrage_generator[] gen;
+	protected Barrage_generator[] generators;
 
 	/**** 弾幕パターンを派生クラスで実装してください ****/
 	protected abstract IEnumerator shot();

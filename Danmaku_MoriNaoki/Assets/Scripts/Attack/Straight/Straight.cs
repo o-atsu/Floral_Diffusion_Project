@@ -11,11 +11,9 @@ public class Straight : Bullet
 	}
 
 	public override void Set_property(Vector2 pos, float dir, float spd){
-		Quaternion rot = Quaternion.AngleAxis(dir - 90f, Vector3.forward);
-
 		transform.localPosition = new Vector3(pos.x, pos.y, 0f);
-		transform.rotation = rot;
-		rb.velocity = transform.eulerAngles * spd;
+		transform.rotation = Quaternion.AngleAxis(dir - 90f, Vector3.forward);
+		rb.velocity = transform.up * spd;
 	}
 
 }

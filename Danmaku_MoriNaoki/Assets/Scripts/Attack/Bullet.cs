@@ -17,8 +17,4 @@ public class Bullet : MonoBehaviour
 		transform.parent.GetComponent<Barrage_generator>().Ret_pool(this.gameObject);
 	}
 
-	void OnColliderEnter2D(Collider2D other){
-		Debug.Log("MIRIA");
-		this.gameObject.SetActive(false);
-	}
 }

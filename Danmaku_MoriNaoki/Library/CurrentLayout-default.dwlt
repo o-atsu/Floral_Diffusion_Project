@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 492}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -114,10 +114,10 @@ MonoBehaviour:
     y: 30
     width: 1504
     height: 910
-  m_MinSize: {x: 909, y: 442}
-  m_MaxSize: {x: 22004, y: 10021}
+  m_MinSize: {x: 908, y: 442}
+  m_MaxSize: {x: 22003, y: 10021}
   vertical: 0
-  controlID: 4558
+  controlID: 34
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 442}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 4520
+  controlID: 35
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,8 +162,8 @@ MonoBehaviour:
     y: 0
     width: 607
     height: 467
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -214,8 +214,8 @@ MonoBehaviour:
     y: 0
     width: 216
     height: 910
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -266,8 +266,8 @@ MonoBehaviour:
     y: 0
     width: 449
     height: 910
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -400,9 +400,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.6737706, y: -0.2032015, z: -1.7574052}
+    m_Target: {x: -0.7204304, y: 2.0574265, z: -3.6396563}
     speed: 2
-    m_Value: {x: -0.6737706, y: -0.2032015, z: -1.7574052}
+    m_Value: {x: -0.7204304, y: 2.0574265, z: -3.6396563}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -452,9 +452,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2.9322643
+    m_Target: 7.844574
     speed: 2
-    m_Value: 2.9322643
+    m_Value: 7.844574
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -508,23 +508,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a2380000
-      m_LastClickedID: 14498
-      m_ExpandedIDs: 6afbffffa2380000
+      m_SelectedIDs: e22b0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 6afbffffb2380000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Straight_test
-        m_OriginalName: Straight_test
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 14498
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 9}
       m_SearchString: 
@@ -573,20 +573,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Attack
+    - Assets/Scripts/Attack/Straight
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Attack
+  - Assets/Scripts/Attack/Straight
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\atsug\Documents\GitHub\Danmaku_MoriNaoki\Danmaku_MoriNaoki
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 7c3b0000
-    m_LastClickedID: 15228
-    m_ExpandedIDs: 00000000de380000e4380000e83800007c3b000000ca9a3b
+    m_SelectedIDs: 0a390000
+    m_LastClickedID: 14602
+    m_ExpandedIDs: 00000000fa380000fc380000fe3800000839000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -614,7 +614,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000de38000000ca9a3b
+    m_ExpandedIDs: 00000000fa380000fc380000fe380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -645,18 +645,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Barrage_generator
-      m_OriginalName: Barrage_generator
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 13870
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:

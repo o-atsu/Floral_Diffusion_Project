@@ -15,6 +15,9 @@ public abstract class Barrage_generator : MonoBehaviour
 	[SerializeField]
 	private int POOL_SIZE = 50;//初期生成するオブジェクト数
 
+	/**** Bulletの初期化 ****/
+	protected abstract void Bullet_init(ref GameObject obj);
+
 
 	private Queue<GameObject> pool = new Queue<GameObject>();
 	
@@ -26,7 +29,6 @@ public abstract class Barrage_generator : MonoBehaviour
 	private void Create_pool(){//プールの生成
 		for(int i = 0;i < POOL_SIZE;i++){
 			GameObject tmp = Instantiate(bullet, new Vector2(0f, 0f), Quaternion.identity, transform);
-			pool.Enqueue(tmp);
 			tmp.SetActive(false);
 		}
 	} 
@@ -51,8 +53,4 @@ public abstract class Barrage_generator : MonoBehaviour
 	public void Ret_pool(GameObject obj){
 		pool.Enqueue(obj);
 	}
-
-
-	/**** Bulletの初期化 ****/
-	protected abstract void Bullet_init(ref GameObject obj);
 }
