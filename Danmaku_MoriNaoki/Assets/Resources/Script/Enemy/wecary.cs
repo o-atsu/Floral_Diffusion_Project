@@ -10,7 +10,7 @@ public class wecary : Enemy
 		rb = GetComponent<Rigidbody2D>();
 	}
 
-	protected override void Defeated(){
+	public override void Defeated(){
 		Debug.Log("wecary:Defeated!");
 	}
 

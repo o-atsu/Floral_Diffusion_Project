@@ -354,8 +354,6 @@ GameObject:
   - component: {fileID: 495186619}
   - component: {fileID: 495186626}
   - component: {fileID: 495186625}
-  - component: {fileID: 495186624}
-  - component: {fileID: 495186621}
   m_Layer: 8
   m_Name: Aiming
   m_TagString: Untagged
@@ -375,14 +373,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0bc6f798a4eb654e9c2e42d37497e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 0.3
+  interval: 0.6
   generators:
   - {fileID: 495186623}
   - {fileID: 495186622}
   - {fileID: 495186626}
   - {fileID: 495186625}
-  - {fileID: 495186624}
-  - {fileID: 495186621}
 --- !u!4 &495186620
 Transform:
   m_ObjectHideFlags: 0
@@ -397,24 +393,6 @@ Transform:
   m_Father: {fileID: 111550118}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &495186621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 495186618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 456522f6d0bd3094eb82d4e9ba29c712, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 1129927177020635325, guid: dd1a54a1f9bcf9a42b4591ce37ef0762, type: 3}
-  position: {x: 3, y: 0}
-  direction: 0
-  speed: 3
-  POOL_SIZE: 8
-  target: {fileID: 348997078}
 --- !u!114 &495186622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,7 +408,7 @@ MonoBehaviour:
   bullet: {fileID: 1129927177020635325, guid: dd1a54a1f9bcf9a42b4591ce37ef0762, type: 3}
   position: {x: -1, y: 0}
   direction: 0
-  speed: 3
+  speed: 5
   POOL_SIZE: 8
   target: {fileID: 348997078}
 --- !u!114 &495186623
@@ -448,25 +426,7 @@ MonoBehaviour:
   bullet: {fileID: 1129927177020635325, guid: dd1a54a1f9bcf9a42b4591ce37ef0762, type: 3}
   position: {x: 1, y: 0}
   direction: 0
-  speed: 3
-  POOL_SIZE: 8
-  target: {fileID: 348997078}
---- !u!114 &495186624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 495186618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 456522f6d0bd3094eb82d4e9ba29c712, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 1129927177020635325, guid: dd1a54a1f9bcf9a42b4591ce37ef0762, type: 3}
-  position: {x: -3, y: 0}
-  direction: 0
-  speed: 3
+  speed: 5
   POOL_SIZE: 8
   target: {fileID: 348997078}
 --- !u!114 &495186625
@@ -484,7 +444,7 @@ MonoBehaviour:
   bullet: {fileID: 1129927177020635325, guid: dd1a54a1f9bcf9a42b4591ce37ef0762, type: 3}
   position: {x: 2, y: 0}
   direction: 0
-  speed: 3
+  speed: 5
   POOL_SIZE: 8
   target: {fileID: 348997078}
 --- !u!114 &495186626
@@ -502,7 +462,7 @@ MonoBehaviour:
   bullet: {fileID: 1129927177020635325, guid: dd1a54a1f9bcf9a42b4591ce37ef0762, type: 3}
   position: {x: -2, y: 0}
   direction: 0
-  speed: 3
+  speed: 5
   POOL_SIZE: 8
   target: {fileID: 348997078}
 --- !u!1 &834869285
