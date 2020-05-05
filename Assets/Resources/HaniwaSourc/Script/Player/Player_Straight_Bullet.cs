@@ -11,11 +11,6 @@ public class Player_Straight_Bullet : Bullet
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Start()
-    {
-        StartCoroutine("check_in_screen");
-    }
-
     public override void Set_property(Vector2 pos, float dir, float spd)
     {
         transform.localPosition = new Vector3(pos.x, pos.y, 0f);
