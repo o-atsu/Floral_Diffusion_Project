@@ -5,7 +5,7 @@ using UnityEngine;
 public class Fuka : Enemy
 {
 	private Rigidbody2D rb;
-	private SpriteRenderer sr;
+	private Animator anim;
 	[SerializeField]
 	private Sprite left;
 	[SerializeField]
@@ -13,7 +13,7 @@ public class Fuka : Enemy
 
 	void Awake(){
 		rb = GetComponent<Rigidbody2D>();
-		sr = GetComponent<SpriteRenderer>();
+		anim = GetComponent<Animator>();
 	}
 
 	public override void Defeated(){
@@ -30,4 +30,7 @@ public class Fuka : Enemy
 		}
 	}
 
+	void Update(){
+		anim.SetFloat("velocity_x", rb.velocity.x);
+	}
 }
