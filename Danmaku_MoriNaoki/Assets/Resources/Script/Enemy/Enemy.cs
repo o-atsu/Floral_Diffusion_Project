@@ -6,12 +6,10 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
 	public int hp;
-	[SerializeField]
-	private Attack[] attacks;
 
 	/**** 倒されるときの処理 ****/
 	public virtual void Defeated(){
-		Destroy(gameObject);
+		gameObject.SetActive(false);
 	} 
 
 	/**** 動きのコルーチン ****/

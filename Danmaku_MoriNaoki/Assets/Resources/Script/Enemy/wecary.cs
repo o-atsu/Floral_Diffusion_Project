@@ -11,6 +11,7 @@ public class wecary : Enemy
 	}
 
 	public override void Defeated(){
+		gameObject.SetActive(false);
 		Debug.Log("wecary:Defeated!");
 	}
 
