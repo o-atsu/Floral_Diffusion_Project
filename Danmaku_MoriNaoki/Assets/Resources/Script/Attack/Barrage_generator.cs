@@ -26,7 +26,7 @@ public abstract class Barrage_generator : MonoBehaviour
 	}
 	
 
-	private void Create_pool(){//プールの生成
+	protected void Create_pool(){//プールの生成
 		for(int i = 0;i < POOL_SIZE;i++){
 			GameObject tmp = Instantiate(bullet, new Vector2(0f, 0f), Quaternion.identity, transform);
 			tmp.SetActive(false);
