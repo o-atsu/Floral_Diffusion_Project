@@ -5,31 +5,16 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
-	[SerializeField]
-	private int hp;
-	[SerializeField]
-	private Attack[] attacks;
+	public int hp;
 
 	/**** 倒されるときの処理 ****/
-	protected abstract void Defeated(); 
+	public virtual void Defeated(){
+		gameObject.SetActive(false);
+	} 
 
 	/**** 動きのコルーチン ****/
-	protected abstract IEnumerator move();
+	protected virtual IEnumerator move(){yield return null;}
 	
-	//弾が当たった時にHPを減らす、HPが0以下なら倒される
-	private void Hit(){
-		Debug.Log("Hit");
-
-		hp--;
-		if(hp <= 0){
-			Defeated();
-		}
-	}
-	
-	void OnTriggerEnter2D(Collider2D other){
-		Hit();
-	}
-
 	void OnEnable(){
 		StartCoroutine("move");
 	}
