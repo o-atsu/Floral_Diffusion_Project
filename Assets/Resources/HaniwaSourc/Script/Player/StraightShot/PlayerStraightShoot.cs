@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShoot : Attack
+public class PlayerStraightShoot : Attack
 {
     public Player_Straight_Barrage_generator[] player_generators;
     // Start is called before the first frame update
