@@ -13,7 +13,7 @@ public abstract class Enemy : MonoBehaviour
 	} 
 
 	/**** 動きのコルーチン ****/
-	protected abstract IEnumerator move();
+	protected virtual IEnumerator move(){yield return null;}
 	
 	void OnEnable(){
 		StartCoroutine("move");
