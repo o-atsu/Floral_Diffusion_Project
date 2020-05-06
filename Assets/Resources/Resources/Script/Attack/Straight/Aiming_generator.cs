@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Aiming_generator : Barrage_generator
 {
-	[SerializeField]
 	private GameObject target;
+
+	void Start(){
+		target = GameObject.FindWithTag("Player");
+	}
 
 	protected override void Bullet_init(ref GameObject obj){
 		Vector2 tmp = new Vector2(target.transform.position.x - transform.position.x - position.x, target.transform.position.y - transform.position.y - position.y);
