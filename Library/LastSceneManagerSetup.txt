@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< Updated upstream
 - path: Assets/Resources/ZZHaniwaSource/Scenes/GameScene.unity
-=======
-- path: Assets/Resources/Scenes/Zone_A.unity
->>>>>>> Stashed changes
   isLoaded: 1
   isActive: 1
   isSubScene: 0
