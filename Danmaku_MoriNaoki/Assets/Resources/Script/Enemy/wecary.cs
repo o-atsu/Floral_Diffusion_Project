@@ -10,7 +10,7 @@ public class wecary : Enemy
 		rb = GetComponent<Rigidbody2D>();
 	}
 
-	public override void Defeated(){
+	protected override void Defeated(){
 		gameObject.SetActive(false);
 		Debug.Log("wecary:Defeated!");
 	}

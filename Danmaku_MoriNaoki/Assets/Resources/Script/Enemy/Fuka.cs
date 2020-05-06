@@ -16,7 +16,7 @@ public class Fuka : Enemy
 		anim = GetComponent<Animator>();
 	}
 
-	public override void Defeated(){
+	protected override void Defeated(){
 		gameObject.SetActive(false);
 		Debug.Log("Fuka:Defeated!");
 	}
