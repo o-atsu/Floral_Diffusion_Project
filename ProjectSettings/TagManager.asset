@@ -3,14 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< Updated upstream
   tags:
   - Enemy
   - Enemy_Bullet
   - Player_Bullet
-=======
-  tags: []
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -20,13 +16,8 @@ TagManager:
   - UI
   - 
   - 
-<<<<<<< Updated upstream
   - Enemy
   - Player
-=======
-  - 
-  - 
->>>>>>> Stashed changes
   - 
   - 
   - 
