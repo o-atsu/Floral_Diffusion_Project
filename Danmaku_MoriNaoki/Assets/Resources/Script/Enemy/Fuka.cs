@@ -6,10 +6,6 @@ public class Fuka : Enemy
 {
 	private Rigidbody2D rb;
 	private Animator anim;
-	[SerializeField]
-	private Sprite left;
-	[SerializeField]
-	private Sprite right;
 
 	void Awake(){
 		rb = GetComponent<Rigidbody2D>();
@@ -17,8 +13,13 @@ public class Fuka : Enemy
 	}
 
 	protected override void Defeated(){
-		gameObject.SetActive(false);
-		Debug.Log("Fuka:Defeated!");
+		phase--;
+		if(phase == 0){
+			gameObject.SetActive(false);
+			Debug.Log("Fuka:Defeated!");
+			return;
+		}
+		hp = MAX_HP;
 	}
 
 	protected override IEnumerator move(){
