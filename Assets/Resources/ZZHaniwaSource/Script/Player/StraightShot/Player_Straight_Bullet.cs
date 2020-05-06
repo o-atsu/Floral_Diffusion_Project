@@ -6,6 +6,8 @@ public class Player_Straight_Bullet : Bullet
 {
     private Rigidbody2D rb;
     float conv_direct = Mathf.PI / 180f;
+    public int power;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -14,6 +16,16 @@ public class Player_Straight_Bullet : Bullet
     private void Start()
     {
         StartCoroutine("check_in_screen");
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Enemy enemy_script = collision.gameObject.GetComponent<Enemy>();
+            enemy_script.hp -= power;
+            
+        }
     }
 
     public override void Set_property(Vector2 pos, float dir, float spd)
