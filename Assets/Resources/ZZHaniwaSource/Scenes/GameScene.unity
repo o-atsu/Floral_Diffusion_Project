@@ -316,6 +316,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2720890100548595957, guid: ef685aff5674cbf459a63220b2a40650,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3264402696913701246, guid: ef685aff5674cbf459a63220b2a40650,
         type: 3}
       propertyPath: POOL_SIZE
@@ -385,6 +390,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5825751393154092379, guid: ef685aff5674cbf459a63220b2a40650,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef685aff5674cbf459a63220b2a40650, type: 3}

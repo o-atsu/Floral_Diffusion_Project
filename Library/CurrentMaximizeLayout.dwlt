@@ -23,10 +23,10 @@ MonoBehaviour:
     y: 30
     width: 1280
     height: 588
-  m_MinSize: {x: 906, y: 421}
-  m_MaxSize: {x: 22001, y: 10000}
+  m_MinSize: {x: 911, y: 421}
+  m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
-  controlID: 179
+  controlID: 808
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 421}
   m_MaxSize: {x: 4001, y: 8021}
   vertical: 1
-  controlID: 142
+  controlID: 705
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -402,10 +402,10 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: ac6c901338408a84f8678db47e5a9d2c,
+  m_AnimatorController: {fileID: 9100000, guid: 9d7e441e889e46b4da180fc9a9af32fe,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 7153992433298397498, guid: ac6c901338408a84f8678db47e5a9d2c,
+  - m_Target: {fileID: -5001675377224197715, guid: 9d7e441e889e46b4da180fc9a9af32fe,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -476,7 +476,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: c6faffff
+      m_ExpandedIDs: a0faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -565,20 +565,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Prefabs
+    - Assets/Resources/Resources/Images/Bullets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Resources/Prefabs
+  - Assets/Resources/Resources/Images/Bullets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "C:\\2D\u30B2\u30FC\u30E0\\Danmaku_MoriNaoki\\Danmaku_MoriNaoki"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 5e3a0000
-    m_LastClickedID: 14942
-    m_ExpandedIDs: 00000000303a0000323a0000343a0000383a00003a3a00003c3a00003e3a0000403a0000423a0000443a0000623a0000
+    m_SelectedIDs: 883a0000
+    m_LastClickedID: 14984
+    m_ExpandedIDs: 00000000583a00005a3a00005c3a00005e3a0000603a0000623a0000643a0000663a0000683a00006a3a0000903a0000983a0000aa3a0000b23a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -606,7 +606,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000303a0000323a0000343a0000363a0000383a00003a3a00003c3a00003e3a0000403a0000423a0000443a0000
+    m_ExpandedIDs: 00000000583a00005a3a00005c3a00005e3a0000603a0000623a0000643a0000683a00006a3a0000903a0000983a0000aa3a0000b23a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -631,9 +631,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 78390000
-    m_LastClickedInstanceID: 14712
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 9efaffff
+    m_LastClickedInstanceID: -1378
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 1a3c000000000000543d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -726,7 +726,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: 14712
+  m_LastInspectedObjectInstanceID: -1378
   m_LastVerticalScrollValue: 0
 --- !u!114 &15
 MonoBehaviour:

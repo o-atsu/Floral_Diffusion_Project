@@ -23,7 +23,6 @@ public class Player_Straight_Bullet : Bullet
         if (collision.gameObject.tag == "Enemy")
         {
             Enemy enemy_script = collision.gameObject.GetComponent<Enemy>();
-            enemy_script.hp -= power;
             
         }
     }
