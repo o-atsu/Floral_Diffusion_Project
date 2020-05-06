@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Constant_nway : Attack
+public class Straight_1way : Attack
 {
 	protected override IEnumerator shot(){
 		while(true){

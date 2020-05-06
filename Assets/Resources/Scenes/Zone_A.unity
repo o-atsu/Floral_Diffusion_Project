@@ -753,14 +753,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8492495990929723023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 456522f6d0bd3094eb82d4e9ba29c712, type: 3}
+  m_Script: {fileID: 11500000, guid: a69d9c832f0839d4d9b03c2425b047d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7295935899875476016, guid: 9f46236dc0d27fb49b97d396924d7da8, type: 3}
-  position: {x: -1.6, y: 0}
+  bullet: {fileID: 1129927177020635325, guid: fcfacc940ee397a469cdd6e5fc0ca8e4, type: 3}
+  position: {x: 0, y: 0}
   direction: 0
-  speed: 4
-  POOL_SIZE: 10
+  speed: 1
+  POOL_SIZE: 50
   target: {fileID: 592613945}
 --- !u!114 &8492495990929723025
 MonoBehaviour:
@@ -771,14 +771,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8492495990929723023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 456522f6d0bd3094eb82d4e9ba29c712, type: 3}
+  m_Script: {fileID: 11500000, guid: a69d9c832f0839d4d9b03c2425b047d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7295935899875476016, guid: 9f46236dc0d27fb49b97d396924d7da8, type: 3}
-  position: {x: 1.6, y: 0}
+  bullet: {fileID: 1129927177020635325, guid: fcfacc940ee397a469cdd6e5fc0ca8e4, type: 3}
+  position: {x: 0, y: 0}
   direction: 0
-  speed: 4
-  POOL_SIZE: 10
+  speed: 1
+  POOL_SIZE: 50
   target: {fileID: 592613945}
 --- !u!114 &8492495990929723026
 MonoBehaviour:
@@ -794,8 +794,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interval: 1
   generators:
-  - {fileID: 8492495990929723025}
   - {fileID: 8492495990929723024}
+  - {fileID: 8492495990929723025}
 --- !u!95 &8492495990929723027
 Animator:
   serializedVersion: 3
