@@ -10,7 +10,7 @@ public class All_range_generator : Barrage_generator
 		default_dir = direction;
 	}
 
-	protected override void Bullet_init(ref GameObject obj){
+	protected override void Bullet_init(GameObject obj){
 		obj.GetComponent<Bullet>().Set_property(position, direction, speed);
 	}
 

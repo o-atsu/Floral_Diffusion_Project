@@ -27,9 +27,6 @@ public abstract class Enemy : MonoBehaviour
 	
 	void OnEnable(){
 		StartCoroutine("move");
-	}
-
-	void Awake(){
 		hp = MAX_HP;
 	}
 
@@ -42,6 +39,8 @@ public abstract class Enemy : MonoBehaviour
 		if(hp <= 0){
 			Defeated();
 		}
+
+		//Debug.Log(hp);
 	}
 
 }
