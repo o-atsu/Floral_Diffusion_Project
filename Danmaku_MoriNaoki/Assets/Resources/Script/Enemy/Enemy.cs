@@ -6,15 +6,20 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
 	[SerializeField]
-	private int MAX_HP;
+	protected int MAX_HP;
 	[SerializeField]
-	private int phase;
+	protected int phase;
 
-	private int hp;
+	protected int hp;
 
 	/**** 倒されるときの処理 ****/
 	protected virtual void Defeated(){
-		gameObject.SetActive(false);
+		phase--;
+		if(phase == 0){
+			gameObject.SetActive(false);
+			return;
+		}
+		hp = MAX_HP;
 	} 
 
 	/**** 動きのコルーチン ****/
@@ -22,9 +27,6 @@ public abstract class Enemy : MonoBehaviour
 	
 	void OnEnable(){
 		StartCoroutine("move");
-	}
-
-	void Awake(){
 		hp = MAX_HP;
 	}
 
@@ -37,6 +39,8 @@ public abstract class Enemy : MonoBehaviour
 		if(hp <= 0){
 			Defeated();
 		}
+
+		//Debug.Log(hp);
 	}
 
 }
