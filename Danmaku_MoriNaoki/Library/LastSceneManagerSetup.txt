@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Resources/Scenes/enemy_test.unity
+- path: Assets/Resources/HaniwaSource/Scenes/ZoneB.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
