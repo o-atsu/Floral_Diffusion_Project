@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Front
+  m_Name: Fuka_Front
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -43,9 +43,6 @@ AnimationClip:
     - time: 1
       value: {fileID: 1068259055147799942, guid: b72fff8abd3f31943ab17a2ba50b28a4,
         type: 3}
-    - time: 1.1
-      value: {fileID: 1068259055147799942, guid: b72fff8abd3f31943ab17a2ba50b28a4,
-        type: 3}
     - time: 1.9833333
       value: {fileID: 1068259055147799942, guid: b72fff8abd3f31943ab17a2ba50b28a4,
         type: 3}
@@ -75,7 +72,6 @@ AnimationClip:
     - {fileID: 2985905844989740717, guid: b72fff8abd3f31943ab17a2ba50b28a4, type: 3}
     - {fileID: 6506383582863146453, guid: b72fff8abd3f31943ab17a2ba50b28a4, type: 3}
     - {fileID: -3607426555666882490, guid: b72fff8abd3f31943ab17a2ba50b28a4, type: 3}
-    - {fileID: 1068259055147799942, guid: b72fff8abd3f31943ab17a2ba50b28a4, type: 3}
     - {fileID: 1068259055147799942, guid: b72fff8abd3f31943ab17a2ba50b28a4, type: 3}
     - {fileID: 1068259055147799942, guid: b72fff8abd3f31943ab17a2ba50b28a4, type: 3}
   m_AnimationClipSettings:

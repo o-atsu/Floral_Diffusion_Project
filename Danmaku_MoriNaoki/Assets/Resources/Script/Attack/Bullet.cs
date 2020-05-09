@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
 	}
 
 	void OnDisable(){
-		transform.parent.GetComponent<Barrage_generator>().Ret_pool(this.gameObject);
+		transform.parent.GetComponent<Object_pool>().Ret_pool(this.gameObject);
 	}
 
 	//画面外かどうか判定
