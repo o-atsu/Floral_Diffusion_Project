@@ -15,6 +15,8 @@ public class Fuka : Enemy
 	}
 
 	protected override void Defeated(){
+		if(phase == 0) return;
+
 		attack_each_phase[attack_each_phase.Length - phase].SetActive(false);
 		phase--;
 		if(phase == 0){
@@ -25,6 +27,7 @@ public class Fuka : Enemy
 		hp = MAX_HP;
 		attack_each_phase[attack_each_phase.Length - phase].SetActive(true);
 		StopCoroutine("move");
+		rb.velocity = new Vector3(0f, 0f, 0f);
 		transform.position = new Vector3(-2.01f, 2.62f, 0f);
 	}
 
@@ -39,5 +42,7 @@ public class Fuka : Enemy
 
 	void FixedUpdate(){
 		anim.SetFloat("velocity_x", rb.velocity.x);
+
+		Hit(1);
 	}
 }
