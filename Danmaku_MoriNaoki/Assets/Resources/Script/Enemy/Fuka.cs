@@ -25,10 +25,8 @@ public class Fuka : Enemy
 			return;
 		}
 		hp = MAX_HP;
-		attack_each_phase[attack_each_phase.Length - phase].SetActive(true);
 		StopCoroutine("move");
-		rb.velocity = new Vector3(0f, 0f, 0f);
-		transform.position = new Vector3(-2.01f, 2.62f, 0f);
+		StartCoroutine("phase_change");
 	}
 
 	protected override IEnumerator move(){
@@ -39,10 +37,20 @@ public class Fuka : Enemy
 			yield return new WaitForSeconds(3f);
 		}
 	}
+	private IEnumerator phase_change(){
+		rb.velocity = new Vector3(0f, 0f, 0f);
+		float tmp = 0;
+		while(tmp < 1){
+			transform.position = Vector3.Slerp(transform.position, new Vector3(-2.01f, 2.62f, 0f), tmp);
+			tmp += 0.4f * Time.deltaTime;
+			yield return null;
+		}
+		attack_each_phase[attack_each_phase.Length - phase].SetActive(true);
+	}
 
 	void FixedUpdate(){
 		anim.SetFloat("velocity_x", rb.velocity.x);
 
-		Hit(1);
+		//Hit(1);
 	}
 }
