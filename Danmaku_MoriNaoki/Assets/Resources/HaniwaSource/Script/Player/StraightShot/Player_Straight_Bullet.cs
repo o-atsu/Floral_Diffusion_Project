@@ -18,14 +18,16 @@ public class Player_Straight_Bullet : Bullet
         StartCoroutine("check_in_screen");
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
             Enemy enemy_script = collision.gameObject.GetComponent<Enemy>();
-            
+            enemy_script.Hit(power);
+            this.gameObject.SetActive(false);
         }
     }
+
 
     public override void Set_property(Vector2 pos, float dir, float spd)
     {

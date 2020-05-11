@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player_Straight_Barrage_generator : Barrage_generator
 {
 
-    protected override void Bullet_init(ref GameObject obj)
+    protected override void Bullet_init( GameObject obj)
     {
         obj.GetComponent<Player_Straight_Bullet>().Set_property(position, direction, speed);
     }

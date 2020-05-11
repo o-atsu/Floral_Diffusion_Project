@@ -38,7 +38,12 @@ public class Bullet : MonoBehaviour
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		gameObject.SetActive(false);
+        if (this.gameObject.tag == "Enemy_Bullet")
+        {
+            if (other.gameObject.tag == "Player")
+            {
+                gameObject.SetActive(false);
+            }
+        }
 	}
-
 }

@@ -9,6 +9,7 @@ public class Player_Chase_Bullet : Bullet
     float conv_dierect = 180f / Mathf.PI;
     public float max_angle_speed;
     private float speed;
+    public int power;
 
     private GameObject targetOb;
 
@@ -25,17 +26,18 @@ public class Player_Chase_Bullet : Bullet
     private void FixedUpdate()
     {
         targetOb = SerchEnemy();
-        if (targetOb.activeInHierarchy == true) Chase();
+        if(targetOb!=null)if (targetOb.activeInHierarchy == true) Chase();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
-           
+            Enemy enemy_script = collision.gameObject.GetComponent<Enemy>();
+            enemy_script.Hit(power);
+            this.gameObject.SetActive(false);
         }
     }
-
     protected void Chase()
     {
         Vector2 target_position = new Vector2(targetOb.transform.position.x, targetOb.transform.position.y);

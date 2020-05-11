@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player_ChaseBullet_Generator : Barrage_generator
 {
-    protected override void Bullet_init(ref GameObject obj)
+    protected override void Bullet_init(GameObject obj)
     {
         obj.GetComponent<Player_Chase_Bullet>().Set_property(position, direction, speed);
     }

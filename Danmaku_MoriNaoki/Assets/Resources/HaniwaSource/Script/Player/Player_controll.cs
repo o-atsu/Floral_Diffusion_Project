@@ -5,6 +5,9 @@ using UnityEngine;
 public class Player_controll : MonoBehaviour
 {
 
+    public int hp;
+    private int bomb;
+
     float speed;
     float slow_speed;
     float actual_speed;
@@ -16,17 +19,23 @@ public class Player_controll : MonoBehaviour
     float min_y = -5f;
     float max_y = 5f;
 
+    private int invincible_frame=200;//定数
+    private int  invincible_count=0;
+
+
     // Start is called before the first frame update
     void Start()
     {
         Init(0.0f, 0.0f, 5.0f, 2.5f);
         rb = this.gameObject.GetComponent<Rigidbody2D>();
+        hp = 4;
+        bomb = 2;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        invincible_count--;
     }
 
     private void FixedUpdate()
@@ -35,13 +44,19 @@ public class Player_controll : MonoBehaviour
         PlayerMove();
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        
-    }
+        if (invincible_count <= 0)
+        {
+            if (collision.gameObject.tag == "Enemy_Bullet")
+            {
+                hp--;
+                invincible_count = invincible_frame;
+            }
+        }
 
-  
+    }
 
     void PlayerMove()
     {

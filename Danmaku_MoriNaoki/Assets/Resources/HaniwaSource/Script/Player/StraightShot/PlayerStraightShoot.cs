@@ -8,8 +8,7 @@ public class PlayerStraightShoot : Attack
     // Start is called before the first frame update
     void Start()
     {
-        player_generators[0].SetStatus(this.transform.position.x - 0.2f, this.transform.position.y, 90f, 10.0f);
-        player_generators[1].SetStatus(this.transform.position.x + 0.2f, this.transform.position.y, 90f, 10.0f);
+        //player_generators[0].SetStatus(this.transform.position.x , this.transform.position.y, 90f, 10.0f);
     }
 
     // Update is called once per frame
@@ -23,7 +22,6 @@ public class PlayerStraightShoot : Attack
         while (Input.GetKey(KeyCode.Z))
         {
             player_generators[0].Generate();
-            player_generators[1].Generate();
             yield return new WaitForSeconds(interval);
         }
         yield break;
