@@ -213,11 +213,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 180373201}
-  - component: {fileID: 180373200}
   - component: {fileID: 180373199}
   - component: {fileID: 180373202}
+  - component: {fileID: 180373200}
   m_Layer: 0
-  m_Name: Laser
+  m_Name: Constant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -248,14 +248,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 180373198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 374962ad07ebf574d8c672202c842fe6, type: 3}
+  m_Script: {fileID: 11500000, guid: 1177a8666a8acc44bb149ed5a6c7ba83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 1.4
+  interval: 1
   generator: {fileID: 180373199}
-  angle_gap: 30
-  shot_time: 12
-  length: 1
+  angle_gap: 45
+  shot_time: 5
 --- !u!4 &180373201
 Transform:
   m_ObjectHideFlags: 0
