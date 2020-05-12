@@ -13,8 +13,6 @@ public abstract class Barrage_generator : MonoBehaviour
 	[SerializeField]
 	protected float speed = 1f;
 
-	protected AudioSource audiosource;
-
 	private Object_pool pool;
 
 	/**** Bulletの初期化 ****/
@@ -22,17 +20,11 @@ public abstract class Barrage_generator : MonoBehaviour
 
 	void Awake(){
 		pool = GetComponent<Object_pool>();
-		if(GetComponent<AudioSource>()){
-			audiosource = GetComponent<AudioSource>();
-		}
 	}
 
 	public void Generate(){//弾の生成
 		GameObject tmp = pool.Get_obj();
 		tmp.SetActive(true);
 		Bullet_init(tmp);
-		if(audiosource != null){
-			audiosource.Play();
-		}
 	}
 }
