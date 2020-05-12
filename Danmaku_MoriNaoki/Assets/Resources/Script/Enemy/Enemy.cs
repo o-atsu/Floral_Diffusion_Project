@@ -30,11 +30,8 @@ public abstract class Enemy : MonoBehaviour
 		hp = MAX_HP;
 	}
 
-	public float Get_percent(){
-		return 100f * (float)hp / (float)MAX_HP;
-	}
-	public int Get_phase(){
-		return phase;
+	public int Get_MAX_HP(){
+		return MAX_HP;
 	}
 
 	public void Hit(int damage){
@@ -42,6 +39,13 @@ public abstract class Enemy : MonoBehaviour
 		if(hp <= 0){
 			Defeated();
 		}
+	}
+
+	public float Get_percent(){
+		return 100f * hp / MAX_HP;
+	}
+	public int Get_phase(){
+		return phase;
 	}
 
 }
