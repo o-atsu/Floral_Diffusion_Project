@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d0a370f320dfd478be5e74993cdafb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1086534090319574827, guid: 9381dcb6377d2ec4dbccf25cde2788a8, type: 3}
+  bullet: {fileID: 0}
   position: {x: 0, y: 0}
   direction: 90
   speed: 10
