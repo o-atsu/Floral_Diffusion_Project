@@ -171,10 +171,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f670ad906801345b4409269aaef634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7295935899875476016, guid: 9f46236dc0d27fb49b97d396924d7da8, type: 3}
+  bullet: {fileID: 7549293382046273857, guid: 6dbef9c8f1e838d4582e5275a9a4e79d, type: 3}
   position: {x: 0, y: 0}
   direction: -90
   speed: 4
+  POOL_SIZE: 10
 --- !u!114 &178671881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,10 +188,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1177a8666a8acc44bb149ed5a6c7ba83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 0.16
+  interval: 1
+  generators: []
   generator: {fileID: 178671880}
-  angle_gap: 90
-  shot_time: 2
+  angle_gap: 45
+  shot_time: 7
 --- !u!1 &180136180
 GameObject:
   m_ObjectHideFlags: 0
