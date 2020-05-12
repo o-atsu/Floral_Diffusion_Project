@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class PlayerStraightShoot : Attack
 {
+    bool shot_flag;
     public Player_Straight_Barrage_generator[] player_generators;
     // Start is called before the first frame update
     void Start()
     {
         //player_generators[0].SetStatus(this.transform.position.x , this.transform.position.y, 90f, 10.0f);
+        shot_flag = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))StartCoroutine("shot");
+        if (Input.GetKeyDown(KeyCode.Z) && shot_flag==false)
+        {
+            shot_flag = true;
+            StartCoroutine("shot");
+        }
     }
 
     protected override IEnumerator shot()
@@ -24,6 +30,7 @@ public class PlayerStraightShoot : Attack
             player_generators[0].Generate();
             yield return new WaitForSeconds(interval);
         }
+        shot_flag = false;
         yield break;
     }
 
