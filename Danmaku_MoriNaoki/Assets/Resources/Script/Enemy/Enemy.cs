@@ -39,8 +39,13 @@ public abstract class Enemy : MonoBehaviour
 		if(hp <= 0){
 			Defeated();
 		}
+	}
 
-		//Debug.Log(hp);
+	public float Get_percent(){
+		return 100f * hp / MAX_HP;
+	}
+	public int Get_phase(){
+		return phase;
 	}
 
 }
