@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":-1.9472519159317017,"y":0.5969494581222534,"z":-1.7557190656661988},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":7.376034736633301,"orthographic":true}
 =======
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":1.9208816289901734,"y":0.0027939225547015669,"z":-29.526519775390626},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":13.002345085144043,"orthographic":true}
 >>>>>>> parent of 19669c8... Merge branch 'master' into Kirby1717
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":-1.9472519159317017,"y":0.5969494581222534,"z":-1.7557190656661988},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":7.376034736633301,"orthographic":true}
+>>>>>>> parent of a1edcf9... Broken
