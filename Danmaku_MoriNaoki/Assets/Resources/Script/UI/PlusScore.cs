@@ -27,7 +27,8 @@ public class PlusScore : MonoBehaviour
     public static void PlusScoreRewrite(){
 
         // プラススコアを表示する
-        plusScoreText.text = "+ " + plusScore.ToString();
+        PlusScore nps = new PlusScore();
+        nps.plusScoreText.text = "+ " + plusScore.ToString();
 
     }
 

@@ -7,7 +7,7 @@ public class PlusTime : MonoBehaviour
 {
 
     // プラスタイムを表示するText
-    public Text plusTimeText;
+    private Text plusTimeText;
 
     // プラスタイム
     public static int plusTime;
@@ -52,7 +52,8 @@ public class PlusTime : MonoBehaviour
         show += csecond.ToString();
 
         // プラスタイムを表示する
-        plusTimeText.text = show;
+        PlusTime npt = new PlusTime();
+        npt.plusTimeText.text = show;
 
     }
 
