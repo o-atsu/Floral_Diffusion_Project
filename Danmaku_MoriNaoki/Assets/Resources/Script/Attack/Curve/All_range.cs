@@ -5,11 +5,11 @@ using UnityEngine;
 public class All_range : Attack
 {
 	[SerializeField]
-	protected All_range_generator generator;
+	private All_range_generator generator;
 	[SerializeField]
-	protected float angle_gap = 0f;
+	private float angle_gap = 0f;
 	[SerializeField]
-	protected int shot_time = 2;
+	private int shot_time = 2;
 
 	protected override IEnumerator shot(){
 		while(true){
