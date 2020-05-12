@@ -9,6 +9,9 @@ public class SceneChange : MonoBehaviour
 
 	public IEnumerator Load_scene(){
 		AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(next_scene);
+
+		asyncLoad.allowSceneActivation = true;//trueで読み込み完了時に強制遷移
+
 		while(!asyncLoad.isDone){
 			yield return null;
 		}
