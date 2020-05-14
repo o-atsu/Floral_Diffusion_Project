@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Player_controll : MonoBehaviour
 {
-
-    public int hp;
+    private int init_hp;
+    private int init_bomb;
+    private int hp;
     private int bomb;
 
     float speed;
@@ -26,10 +27,13 @@ public class Player_controll : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Init(0.0f, 0.0f, 5.0f, 2.5f);
+        Init(this.transform.position.x, this.transform.position.y, 5.0f, 2.5f);
         rb = this.gameObject.GetComponent<Rigidbody2D>();
-        hp = 4;
-        bomb = 2;
+
+        init_hp = 4;
+        init_bomb = 2;
+        hp = init_hp;
+        bomb = init_bomb;
     }
 
     // Update is called once per frame
@@ -52,6 +56,7 @@ public class Player_controll : MonoBehaviour
             if (collision.gameObject.tag == "Enemy_Bullet")
             {
                 hp--;
+                bomb = init_bomb;
                 invincible_count = invincible_frame;
             }
         }
