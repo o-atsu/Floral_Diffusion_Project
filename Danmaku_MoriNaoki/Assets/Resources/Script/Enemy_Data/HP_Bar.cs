@@ -25,4 +25,10 @@ public class HP_Bar : MonoBehaviour
 			hp_bar.value = 0;
 		}
 	}
+
+
+	/**** FPS固定、ゲーム開始時どっかから呼び出して ****/
+	void Start(){
+		Application.targetFrameRate = 60;
+	}
 }
