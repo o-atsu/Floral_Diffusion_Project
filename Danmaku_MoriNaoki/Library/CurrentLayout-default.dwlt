@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 471}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -114,10 +114,10 @@ MonoBehaviour:
     y: 30
     width: 1504
     height: 910
-  m_MinSize: {x: 810, y: 421}
-  m_MaxSize: {x: 22005, y: 10021}
+  m_MinSize: {x: 808, y: 421}
+  m_MaxSize: {x: 22003, y: 10021}
   vertical: 0
-  controlID: 30946
+  controlID: 58
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 421}
   m_MaxSize: {x: 4001, y: 8021}
   vertical: 1
-  controlID: 30872
+  controlID: 59
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -214,8 +214,8 @@ MonoBehaviour:
     y: 0
     width: 274
     height: 910
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -508,9 +508,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 5ca70000
-      m_LastClickedID: 42844
-      m_ExpandedIDs: 6057f8ffd058f8ffce75f8ffdc76f8ff4a93f8ff7094f8ff5ce4f8ff8ee5f8ffe4e6f8ff04e8f8ffc8e8f8ff387bfafff87bfaff087dfaff4a35fdffac36fdff10edfeff7ac8fffff4ffffff
+      m_SelectedIDs: 7c540000
+      m_LastClickedID: 21628
+      m_ExpandedIDs: ecc7ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -573,20 +573,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Images/Title
+    - Assets/Resources/Images/Effects
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Resources/Images/Title
+  - Assets/Resources/Images/Effects
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\atsug\Documents\GitHub\Danmaku_MoriNaoki\Danmaku_MoriNaoki
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 22560000
-    m_LastClickedID: 22050
-    m_ExpandedIDs: 00000000dc550000de550000e0550000e2550000e4550000e6550000e8550000ea550000ee55000000ca9a3b
+    m_SelectedIDs: 66560000
+    m_LastClickedID: 22118
+    m_ExpandedIDs: 000000002a5600002c5600002e56000030560000325600003456000036560000385600003a5600004256000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -614,7 +614,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000dc550000de550000e0550000e2550000e4550000e8550000ea550000ee550000f055000000ca9a3b
+    m_ExpandedIDs: 000000002a5600002c5600002e56000030560000325600003456000036560000385600003a560000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -641,7 +641,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 1c3c00002a39000024efffff883c000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
