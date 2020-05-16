@@ -34,6 +34,8 @@ public class Player_controll : MonoBehaviour
         init_bomb = 2;
         hp = init_hp;
         bomb = init_bomb;
+
+        Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame
@@ -93,6 +95,16 @@ public class Player_controll : MonoBehaviour
         this.gameObject.transform.position = new Vector3(x, y, 0.0f);
         speed = init_speed;
         slow_speed = init_slow_speed;
+    }
+
+    public int GetBombCount()
+    {
+        return bomb;
+    }
+
+    public void DecreaseBomb()
+    {
+        bomb--;
     }
 
 }
