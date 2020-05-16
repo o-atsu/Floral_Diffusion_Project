@@ -15,6 +15,13 @@ public class Show_phase : MonoBehaviour
 	private GameObject[] objects;
 
 	private void Init(){
+		string[] destroys = new string[]{"Title", "Result"};
+		string sname = SceneManager.GetActiveScene().name;
+		foreach(string i in destroys){
+			if(sname.Equals(i)){
+				DestroyImmediate(gameObject);
+			}
+		}
 		enemy = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
 		int phase = enemy.Get_phase();
 		objects = new GameObject[phase];
@@ -26,6 +33,7 @@ public class Show_phase : MonoBehaviour
 
 	void Awake(){
 		Init();
+		DontDestroyOnLoad(gameObject);
 	}
 
 	void SceneLoaded(){
