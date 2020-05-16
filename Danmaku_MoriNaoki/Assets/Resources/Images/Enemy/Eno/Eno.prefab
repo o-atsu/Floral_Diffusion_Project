@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 3760074552923765790}
   - component: {fileID: 429199399556407345}
   - component: {fileID: -738057038494201435}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Eno
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,3 +166,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MAX_HP: 0
   phase: 0
+  on_defeated: {fileID: 0}

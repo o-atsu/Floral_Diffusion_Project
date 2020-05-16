@@ -9,6 +9,8 @@ public abstract class Enemy : MonoBehaviour
 	protected int MAX_HP;
 	[SerializeField]
 	protected int phase;
+	[SerializeField]
+	protected GameObject on_defeated = null;
 
 	protected int hp;
 
@@ -28,6 +30,11 @@ public abstract class Enemy : MonoBehaviour
 	void OnEnable(){
 		StartCoroutine("move");
 		hp = MAX_HP;
+	}
+	void OnDisable(){
+		if(on_defeated != null){
+			Instantiate(on_defeated, transform.position, Quaternion.identity);
+		}
 	}
 
 	public int Get_MAX_HP(){
