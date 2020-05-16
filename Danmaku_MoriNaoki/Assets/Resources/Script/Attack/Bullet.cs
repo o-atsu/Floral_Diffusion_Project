@@ -5,10 +5,10 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 	//画面のそれぞれの端、この外に出ると自身を消す
-	private const float LEFT = -6.44f;
-	private const float RIGHT = 2.87f;
-	private const float TOP = 5.12f;
-	private const float BOTTOM = -5.12f;
+	protected float LEFT = -6.44f;
+	protected float RIGHT = 2.87f;
+	protected float TOP = 5.12f;
+	protected float BOTTOM = -5.12f;
 
 	/**** 弾生成時の初期化 ****/
 	public virtual void Set_property(Vector2 position,float direction,float speed){
