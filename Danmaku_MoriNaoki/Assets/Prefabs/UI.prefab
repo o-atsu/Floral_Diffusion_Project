@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 2716009072528162972}
   - component: {fileID: 2716009072528162975}
   - component: {fileID: 2716009072528162973}
+  - component: {fileID: 5892030695083777661}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -249,6 +250,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45880cf941ec0e34486897ea1cf21c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5892030695083777661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716009072528162969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579f2eb5f2ffcb6489af73211d176cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  day: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  night: {r: 0.9411765, g: 0.9411765, b: 0.9411765, a: 1}
 --- !u!1 &2716009072536257680
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,6 +275,7 @@ GameObject:
   - component: {fileID: 2716009072536257681}
   - component: {fileID: 2716009072536257687}
   - component: {fileID: 2716009072536257686}
+  - component: {fileID: 5297322370926749799}
   m_Layer: 5
   m_Name: Difficulty
   m_TagString: Untagged
@@ -327,6 +343,20 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: NORMAL
+--- !u!114 &5297322370926749799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716009072536257680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579f2eb5f2ffcb6489af73211d176cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  day: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  night: {r: 0.9411765, g: 0.9411765, b: 0.9411765, a: 1}
 --- !u!1 &2716009072571125373
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,6 +1033,7 @@ GameObject:
   - component: {fileID: 2716009074159632240}
   - component: {fileID: 2716009074159632243}
   - component: {fileID: 2716009074159632241}
+  - component: {fileID: 6004422461912359890}
   m_Layer: 5
   m_Name: Time
   m_TagString: Untagged
@@ -1082,6 +1113,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c6490e9dbd63144b666a6307c01440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6004422461912359890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716009074159632253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579f2eb5f2ffcb6489af73211d176cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  day: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  night: {r: 0.9411765, g: 0.9411765, b: 0.9411765, a: 1}
 --- !u!1 &2716009074186919447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,6 +1138,7 @@ GameObject:
   - component: {fileID: 2716009074186919444}
   - component: {fileID: 2716009074186919466}
   - component: {fileID: 2716009074186919445}
+  - component: {fileID: 3169361732470481012}
   m_Layer: 5
   m_Name: Zone
   m_TagString: Untagged
@@ -1160,6 +1206,20 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: A
+--- !u!114 &3169361732470481012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716009074186919447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579f2eb5f2ffcb6489af73211d176cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  day: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  night: {r: 0.9411765, g: 0.9411765, b: 0.9411765, a: 1}
 --- !u!1 &2716009074222485602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,6 +1231,7 @@ GameObject:
   - component: {fileID: 2716009074222485603}
   - component: {fileID: 2716009074222485601}
   - component: {fileID: 2716009074222485600}
+  - component: {fileID: 1797216393382631001}
   m_Layer: 5
   m_Name: Bomb
   m_TagString: Untagged
@@ -1238,6 +1299,20 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\u2605\u2605\u2605"
+--- !u!114 &1797216393382631001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716009074222485602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579f2eb5f2ffcb6489af73211d176cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  day: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  night: {r: 0.9411765, g: 0.9411765, b: 0.9411765, a: 1}
 --- !u!1 &2716009074500995879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,6 +1324,7 @@ GameObject:
   - component: {fileID: 2716009074500995876}
   - component: {fileID: 2716009074500995898}
   - component: {fileID: 2716009074500995877}
+  - component: {fileID: 5025378380482798058}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -1312,6 +1388,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5025378380482798058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716009074500995879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579f2eb5f2ffcb6489af73211d176cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  day: {r: 1, g: 1, b: 1, a: 1}
+  night: {r: 0, g: 0.1254902, b: 0.49019608, a: 1}
 --- !u!1 &2716009074557603083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,6 +1413,7 @@ GameObject:
   - component: {fileID: 2716009074557603080}
   - component: {fileID: 2716009074557603086}
   - component: {fileID: 2716009074557603081}
+  - component: {fileID: 8186023897724971578}
   m_Layer: 5
   m_Name: Life
   m_TagString: Untagged
@@ -1390,6 +1481,20 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\u2605\u2605\u2605"
+--- !u!114 &8186023897724971578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716009074557603083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579f2eb5f2ffcb6489af73211d176cf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  day: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  night: {r: 0.9411765, g: 0.9411765, b: 0.9411765, a: 1}
 --- !u!1 &2716009074559502217
 GameObject:
   m_ObjectHideFlags: 0

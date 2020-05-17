@@ -13,6 +13,7 @@ public abstract class Enemy : MonoBehaviour
 	protected GameObject on_defeated = null;
 
 	protected int hp;
+	private static bool onquit = false;
 
 	/**** 倒されるときの処理 ****/
 	protected virtual void Defeated(){
@@ -27,14 +28,18 @@ public abstract class Enemy : MonoBehaviour
 	/**** 動きのコルーチン ****/
 	protected virtual IEnumerator move(){yield return null;}
 	
+
 	void OnEnable(){
 		StartCoroutine("move");
 		hp = MAX_HP;
 	}
 	void OnDisable(){
-		if(on_defeated != null){
+		if(on_defeated != null && !onquit){
 			Instantiate(on_defeated, transform.position, Quaternion.identity);
 		}
+	}
+	void OnApplicationQuit(){
+		onquit = true;
 	}
 
 	public int Get_MAX_HP(){
