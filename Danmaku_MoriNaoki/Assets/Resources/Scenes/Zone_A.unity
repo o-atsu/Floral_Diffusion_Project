@@ -485,6 +485,11 @@ PrefabInstance:
       propertyPath: MAX_HP
       value: 4000
       objectReference: {fileID: 0}
+    - target: {fileID: 1652556811694786834, guid: 16e061e8251caba41b64377da67cce41,
+        type: 3}
+      propertyPath: scorePerPhase
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4236800159062655068, guid: 16e061e8251caba41b64377da67cce41,
         type: 3}
       propertyPath: m_IsActive
@@ -614,11 +619,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1316869466953165321, guid: 84878ab799cfb9c42baf59f1eca42567,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 2716009074559502217, guid: 84878ab799cfb9c42baf59f1eca42567,
         type: 3}
       propertyPath: m_Name
@@ -728,11 +728,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7915016044982279965, guid: 84878ab799cfb9c42baf59f1eca42567,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7915016045209073080, guid: 84878ab799cfb9c42baf59f1eca42567,
         type: 3}

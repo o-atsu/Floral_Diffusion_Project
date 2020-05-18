@@ -8,6 +8,8 @@ public abstract class Enemy : MonoBehaviour
 	[SerializeField]
 	protected int MAX_HP;
 	[SerializeField]
+	protected int scorePerPhase;
+	[SerializeField]
 	protected int phase;
 	[SerializeField]
 	protected GameObject on_defeated = null;
@@ -16,6 +18,7 @@ public abstract class Enemy : MonoBehaviour
 
 	/**** 倒されるときの処理 ****/
 	protected virtual void Defeated(){
+		EndPhase.WriteGrade(scorePerPhase);
 		phase--;
 		if(phase == 0){
 			gameObject.SetActive(false);

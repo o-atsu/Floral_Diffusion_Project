@@ -63,7 +63,7 @@ public class Timer : MonoBehaviour
         }
         show += csecond.ToString();
 
-        // プラスタイムを表示する
+        // タイムを表示する
         timeText.text = show;
 
     }
