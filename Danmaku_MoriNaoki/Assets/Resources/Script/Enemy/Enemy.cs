@@ -20,11 +20,11 @@ public abstract class Enemy : MonoBehaviour
 			return;
 		}
 		hp = MAX_HP;
-	} 
+	}
 
 	/**** 動きのコルーチン ****/
 	protected virtual IEnumerator move(){yield return null;}
-	
+
 	void OnEnable(){
 		StartCoroutine("move");
 		hp = MAX_HP;
@@ -35,8 +35,10 @@ public abstract class Enemy : MonoBehaviour
 	}
 
 	public void Hit(int damage){
+		Score.AddScore(damage); // 与えたダメージ分スコアを増加させる
 		hp -= damage;
 		if(hp <= 0){
+			Score.AddScore(hp); // オーバーキルしたときの過剰なスコア増加分を削る
 			Defeated();
 		}
 	}
