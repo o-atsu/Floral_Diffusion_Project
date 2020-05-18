@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7886715009305626667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7886715009305626662}
+  - component: {fileID: 7886715009305626665}
+  - component: {fileID: 7886715009305626658}
+  - component: {fileID: 7886715009305626661}
+  - component: {fileID: 7886715009305626660}
+  - component: {fileID: 7886715009305626664}
+  - component: {fileID: 7886715009305626663}
+  m_Layer: 9
+  m_Name: BombObject
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7886715009305626662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7886715009305626667}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5367393, y: -0.05183959, z: -19.045967}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7886715009305626665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7886715009305626667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1a6b542a4258b4ea5c214572d1966d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 8926816397168692418, guid: 7379898b625a23b428edf334f93f8949, type: 3}
+  position: {x: 0, y: 0}
+  direction: 0
+  speed: 0
+  direct_speed: 500
+--- !u!114 &7886715009305626658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7886715009305626667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1a6b542a4258b4ea5c214572d1966d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 8926816397168692418, guid: 7379898b625a23b428edf334f93f8949, type: 3}
+  position: {x: 0, y: 0}
+  direction: 0
+  speed: 0
+  direct_speed: -500
+--- !u!114 &7886715009305626661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7886715009305626667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1a6b542a4258b4ea5c214572d1966d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 8926816397168692418, guid: 7379898b625a23b428edf334f93f8949, type: 3}
+  position: {x: 0, y: 0}
+  direction: 180
+  speed: 1
+  direct_speed: 500
+--- !u!114 &7886715009305626660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7886715009305626667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1a6b542a4258b4ea5c214572d1966d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 8926816397168692418, guid: 7379898b625a23b428edf334f93f8949, type: 3}
+  position: {x: 0, y: 0}
+  direction: 180
+  speed: 0
+  direct_speed: -500
+--- !u!114 &7886715009305626664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7886715009305626667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d645b0dcf0b122943862b0e4ec896486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interval: 0.1
+  shot_time_count: 0
+  bomb_generators:
+  - {fileID: 7886715009305626665}
+  - {fileID: 7886715009305626658}
+  - {fileID: 7886715009305626661}
+  - {fileID: 7886715009305626660}
+--- !u!114 &7886715009305626663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7886715009305626667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97349e4740604bb42b9cced079c1ef43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  POOL_SIZE: 200
+  bullet: {fileID: 8926816397168692418, guid: 7379898b625a23b428edf334f93f8949, type: 3}
