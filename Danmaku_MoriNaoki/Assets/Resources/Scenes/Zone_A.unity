@@ -614,7 +614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb5e4ed5a162c0347b913931ca4b1718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  next_scene: Zone_E
+  next_scene: Zone_B
   next: {fileID: 2716009072867028555}
 --- !u!4 &2032417845
 Transform:
