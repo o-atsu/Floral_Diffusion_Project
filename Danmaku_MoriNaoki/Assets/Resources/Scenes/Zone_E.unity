@@ -297,6 +297,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2784122015679437219, guid: 0c7a1cf985544c24a841bd7e533bbd43,
+        type: 3}
+      propertyPath: POOL_SIZE
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 3176950165136099287, guid: 0c7a1cf985544c24a841bd7e533bbd43,
         type: 3}
       propertyPath: m_Name
@@ -305,12 +310,17 @@ PrefabInstance:
     - target: {fileID: 4637371046861414941, guid: 0c7a1cf985544c24a841bd7e533bbd43,
         type: 3}
       propertyPath: interval
-      value: 1
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 4637371046861414941, guid: 0c7a1cf985544c24a841bd7e533bbd43,
         type: 3}
       propertyPath: num
-      value: 5
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637371046861414941, guid: 0c7a1cf985544c24a841bd7e533bbd43,
+        type: 3}
+      propertyPath: radius
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 5766679918360451154, guid: 0c7a1cf985544c24a841bd7e533bbd43,
         type: 3}
@@ -385,6 +395,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182864847659741358, guid: 26d0c0f098d1d5b49afd200e759f6bdc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7957303470957371622, guid: 26d0c0f098d1d5b49afd200e759f6bdc,
         type: 3}
@@ -525,7 +540,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f8e13fdf6273f6f40b4061290577d00d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6bd2a144ff0f12f488d915ece9494329, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -808,6 +823,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 2716009074559502217, guid: 84878ab799cfb9c42baf59f1eca42567,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2716009074559502221, guid: 84878ab799cfb9c42baf59f1eca42567,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -921,12 +941,12 @@ PrefabInstance:
     - target: {fileID: 7915016045209073080, guid: 84878ab799cfb9c42baf59f1eca42567,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7915016045209073080, guid: 84878ab799cfb9c42baf59f1eca42567,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84878ab799cfb9c42baf59f1eca42567, type: 3}

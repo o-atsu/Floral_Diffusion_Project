@@ -14,8 +14,8 @@ public class UI_color : MonoBehaviour
 	static string[] A_B_C = new string[]{"Zone_A", "Zone_B", "Zone_C"};
 	static string[] D_E = new string[]{"Zone_D", "Zone_E"};
 
-	void SceneLoaded(){
-		string sname = SceneManager.GetActiveScene().name;
+	void SceneChanged(Scene thisScene, Scene nextScene){
+		string sname = nextScene.name;
 
 		foreach(string i in A_B_C){
 			if(sname.Equals(i)){
@@ -30,5 +30,9 @@ public class UI_color : MonoBehaviour
 				else if(GetComponent<Text>()) GetComponent<Text>().color = night;
 			}
 		}
+	}
+
+	void Awake(){
+		SceneManager.activeSceneChanged += SceneChanged;
 	}
 }

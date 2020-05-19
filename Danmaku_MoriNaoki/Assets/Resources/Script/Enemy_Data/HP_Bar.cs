@@ -12,17 +12,10 @@ public class HP_Bar : MonoBehaviour
 	void Awake(){
 		hp_bar = GetComponent<Slider>();
 		enemy = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
-		DontDestroyOnLoad(gameObject);
+		SceneManager.activeSceneChanged += SceneChanged;
 	}
 
-	void SceneLoaded(){
-		string[] destroys = new string[]{"Title", "Result"};
-		string sname = SceneManager.GetActiveScene().name;
-		foreach(string i in destroys){
-			if(sname.Equals(i)){
-				DestroyImmediate(gameObject);
-			}
-		}
+	void SceneChanged(Scene thisScene, Scene nextScene){
 		enemy = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
 	}
 
