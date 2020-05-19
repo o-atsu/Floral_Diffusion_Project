@@ -488,7 +488,7 @@ PrefabInstance:
     - target: {fileID: 1652556811694786834, guid: 16e061e8251caba41b64377da67cce41,
         type: 3}
       propertyPath: scorePerPhase
-      value: 20
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 4236800159062655068, guid: 16e061e8251caba41b64377da67cce41,
         type: 3}

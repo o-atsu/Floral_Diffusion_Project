@@ -10,7 +10,7 @@ public class EndPhase : MonoBehaviour
     private Text gradeText;
 
     // 評価文
-    private static string show;
+    private string show;
 
     // ミス数のカウンター
     private static int missCounter;
@@ -43,10 +43,12 @@ public class EndPhase : MonoBehaviour
     }
 
     // 評価文を表示する
-    public static void WriteGrade(int add){
+    public void WriteGrade(int add){
 
         // 評価文の初期化
         show = "";
+
+        Debug.Log(missCounter+"/"+bombCounter);
 
         // スコア増加量の計算と評価文の作成
         if(missCounter<=0&&bombCounter<=0){
@@ -66,33 +68,32 @@ public class EndPhase : MonoBehaviour
 
         // スコアの増加と評価文の表示
         Score.AddScore(add);
-        EndPhase nep = new EndPhase();
-        nep.gradeText.text = show;
+        gradeText.text = show;
 
         // カウンターの初期化
         missCounter = 0;
         bombCounter = 0;
 
         // 評価文を表示する演出の開始
-        nep.StartCoroutine("ShakeGrade");
+        StartCoroutine("ShakeGrade");
 
     }
 
     // 評価文を表示する演出
     private IEnumerator ShakeGrade(){
 
-        for(int i=1; i<=5; i++){
-            this.gameObject.transform.position += new Vector3(5f, 0f, 0f);
+        for(int i=1; i<=2; i++){
+            this.gameObject.transform.position += new Vector3(80f, 0f, 0f);
             yield return new WaitForEndOfFrame();
-            this.gameObject.transform.position += new Vector3(-5f, 0f, 0f);
+            this.gameObject.transform.position += new Vector3(-80f, 0f, 0f);
             yield return new WaitForEndOfFrame();
-            this.gameObject.transform.position += new Vector3(-5f, 0f, 0f);
+            this.gameObject.transform.position += new Vector3(-80f, 0f, 0f);
             yield return new WaitForEndOfFrame();
-            this.gameObject.transform.position += new Vector3(5f, 0f, 0f);
+            this.gameObject.transform.position += new Vector3(80f, 0f, 0f);
             yield return new WaitForEndOfFrame();
         }
 
-        for(int i=1; i<=60; i++){
+        for(int i=1; i<=300; i++){
             yield return new WaitForEndOfFrame();
         }
 

@@ -21,11 +21,17 @@ public class Score : MonoBehaviour
     // 1F毎に増加させる表示スコア
     private static int addPerFrame;
 
+    // PlusScoreコンポーネント
+    private PlusScore ps;
+
     // Start is called before the first frame update
     void Start(){
 
         // スコアを表示するText
         this.scoreText = this.GetComponent<Text>();
+
+        // PlusScoreコンポーネントを取得
+        ps = GameObject.Find("PlusScore").GetComponent<PlusScore>();
 
         // スコアを0に戻す
         score = 0;
@@ -48,8 +54,8 @@ public class Score : MonoBehaviour
 
     // ZONE終了時に取得スコアをPlusScoreに移す
     public void Archive(){
-        PlusScore.plusScore += score;
-        PlusScore.PlusScoreRewrite();
+        ps.plusScore += score;
+        ps.PlusScoreRewrite();
         score = 0;
     }
 
