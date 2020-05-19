@@ -5,7 +5,7 @@ using UnityEngine;
 public class Straight : Bullet
 {
 
-	private Rigidbody2D rb;
+	protected Rigidbody2D rb;
 	void Awake(){
 		rb = GetComponent<Rigidbody2D>();
 	}

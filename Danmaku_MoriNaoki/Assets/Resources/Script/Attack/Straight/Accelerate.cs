@@ -2,17 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Accelerate : MonoBehaviour
+public class Accelerate : Straight
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	[SerializeField]
+	private float accel = 1f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void Update(){
+		rb.velocity = new Vector2(rb.velocity.x + transform.up.x*accel, rb.velocity.y + transform.up.y*accel);
+	}
 }
