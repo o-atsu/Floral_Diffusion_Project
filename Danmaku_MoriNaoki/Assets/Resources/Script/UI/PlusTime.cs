@@ -10,11 +10,11 @@ public class PlusTime : MonoBehaviour
     private Text plusTimeText;
 
     // プラスタイム
-    public static int plusTime;
-    private static int minute;
-    private static int second;
-    private static int csecond;
-    private static string show;
+    public int plusTime;
+    private int minute;
+    private int second;
+    private int csecond;
+    private string show;
 
     // Start is called before the first frame update
     void Start(){
@@ -28,7 +28,7 @@ public class PlusTime : MonoBehaviour
     }
 
     // 表示更新
-    public static void PlusTimeRewrite(){
+    public void PlusTimeRewrite(){
 
         // 表示文字列を作成
         show = "+ ";
@@ -52,8 +52,7 @@ public class PlusTime : MonoBehaviour
         show += csecond.ToString();
 
         // プラスタイムを表示する
-        PlusTime npt = new PlusTime();
-        npt.plusTimeText.text = show;
+        plusTimeText.text = show;
 
     }
 

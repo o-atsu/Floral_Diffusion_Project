@@ -38,6 +38,8 @@ public class Fps : MonoBehaviour
         minusProcessingTime = 0f;
         nextShow = 1f;
 
+        // 目標FPSを定める
+        Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame
@@ -63,7 +65,7 @@ public class Fps : MonoBehaviour
 
     // 最後にプレイ全体の処理落ち率を返す関数
     public static int GetProcessingReport(){
-        return 100-(int)((float)((frame-minusFrame)*5)/((processingTime-minusProcessingTime)*3));
+        return 100-(int)((float)((frame-minusFrame)*5)/((processingTime-minusProcessingTime)*3f));
     }
 
 }

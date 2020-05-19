@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
     private Text timeText;
 
     // タイム
-    private static int time;
+    private int time;
     private int minute;
     private int second;
     private int csecond;
@@ -19,11 +19,17 @@ public class Timer : MonoBehaviour
     // 計測フラグ（外部から変更する）
     public static bool timeFlag = false;
 
+    // PlusTimeコンポーネント
+    private PlusTime pt;
+
     // Start is called before the first frame update
     void Start(){
 
         // タイムを表示するText
         this.timeText = this.GetComponent<Text>();
+
+        // PlusTimeコンポーネントを取得
+        pt = GameObject.Find("PlusTime").GetComponent<PlusTime>();
 
         // タイムを0に戻す
         time = 0;
@@ -63,14 +69,15 @@ public class Timer : MonoBehaviour
         }
         show += csecond.ToString();
 
-        // プラスタイムを表示する
+        // タイムを表示する
         timeText.text = show;
 
     }
 
     // ZONE終了時に経過タイムをPlusTimeに移す
     public void Archive(){
-        PlusTime.plusTime += time;
+        pt.plusTime += time;
+        pt.PlusTimeRewrite();
         time = 0;
     }
 

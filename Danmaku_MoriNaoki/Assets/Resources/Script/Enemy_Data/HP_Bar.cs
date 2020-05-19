@@ -28,7 +28,11 @@ public class HP_Bar : MonoBehaviour
 
 	void FixedUpdate(){
 		if(enemy != null){
-			hp_bar.value = enemy.Get_percent();
+			if(hp_bar.value<enemy.Get_percent()){
+				hp_bar.value += 1;
+			} else {
+				hp_bar.value = enemy.Get_percent();
+			}
 		}else{
 			hp_bar.value = 0;
 		}
@@ -36,7 +40,9 @@ public class HP_Bar : MonoBehaviour
 
 
 	/**** FPS固定、ゲーム開始時どっかから呼び出して ****/
+	/*
 	void Start(){
 		Application.targetFrameRate = 60;
 	}
+	*/
 }

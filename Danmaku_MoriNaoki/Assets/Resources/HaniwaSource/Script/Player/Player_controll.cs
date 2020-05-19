@@ -35,7 +35,7 @@ public class Player_controll : MonoBehaviour
         hp = init_hp;
         bomb = init_bomb;
 
-        Application.targetFrameRate = 60;
+        // Application.targetFrameRate = 60;
     }
 
     // Update is called once per frame
@@ -57,6 +57,7 @@ public class Player_controll : MonoBehaviour
         {
             if (collision.gameObject.tag == "Enemy_Bullet")
             {
+                EndPhase.CountMiss(); // フェイズ毎の評価用にミス数をカウントする
                 hp--;
                 bomb = init_bomb;
                 invincible_count = invincible_frame;
@@ -97,6 +98,11 @@ public class Player_controll : MonoBehaviour
         slow_speed = init_slow_speed;
     }
 
+    public int GetLifeCount()
+    {
+        return hp;
+    }
+
     public int GetBombCount()
     {
         return bomb;
@@ -104,6 +110,7 @@ public class Player_controll : MonoBehaviour
 
     public void DecreaseBomb()
     {
+        EndPhase.CountBomb(); // フェイズ毎の評価用にボム数をカウントする
         bomb--;
     }
 

@@ -10,7 +10,7 @@ public class PlusScore : MonoBehaviour
     public Text plusScoreText;
 
     // プラススコア
-    public static int plusScore;
+    public int plusScore;
 
     // Start is called before the first frame update
     void Start(){
@@ -24,11 +24,10 @@ public class PlusScore : MonoBehaviour
     }
 
     // 表示更新
-    public static void PlusScoreRewrite(){
+    public void PlusScoreRewrite(){
 
         // プラススコアを表示する
-        PlusScore nps = new PlusScore();
-        nps.plusScoreText.text = "+ " + plusScore.ToString();
+        plusScoreText.text = "+ " + plusScore.ToString();
 
     }
 
