@@ -8,11 +8,24 @@ public abstract class Enemy : MonoBehaviour
 	[SerializeField]
 	protected int MAX_HP;
 	[SerializeField]
+	protected int scorePerPhase;
+	[SerializeField]
 	protected int phase;
 	[SerializeField]
 	protected GameObject on_defeated = null;
 
 	protected int hp;
+
+	// EndPhaseコンポーネント
+	private EndPhase endPhase;
+
+	// Start is called before the first frame update
+    void Start(){
+
+        // EndPhaseコンポーネントを取得
+		endPhase = GameObject.Find("EndPhase").GetComponent<EndPhase>();
+
+    }
 
 	/**** 倒されるときの処理 ****/
 	protected virtual void Defeated(){
@@ -22,11 +35,11 @@ public abstract class Enemy : MonoBehaviour
 			return;
 		}
 		hp = MAX_HP;
-	} 
+	}
 
 	/**** 動きのコルーチン ****/
 	protected virtual IEnumerator move(){yield return null;}
-	
+
 	void OnEnable(){
 		StartCoroutine("move");
 		hp = MAX_HP;
@@ -42,8 +55,11 @@ public abstract class Enemy : MonoBehaviour
 	}
 
 	public void Hit(int damage){
+		Score.AddScore(damage); // 与えたダメージ分スコアを増加させる
 		hp -= damage;
-		if(hp <= 0){
+		if(hp<=0&&phase>=1){
+			Score.AddScore(hp); // オーバーキルしたときの過剰なスコア増加分を削る
+			endPhase.WriteGrade(scorePerPhase); // フェイズ終了時の評価とスコアの増加
 			Defeated();
 		}
 	}
