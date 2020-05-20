@@ -25,8 +25,22 @@ public class Mimo : Enemy
 			return;
 		}
 		hp = MAX_HP;
+		attack_each_phase[attack_each_phase.Length - phase].SetActive(true);
+		if(phase == 2) StartCoroutine("phase_change");
+		else attack_each_phase[attack_each_phase.Length - phase].SetActive(true);
 	}
 
+	private IEnumerator phase_change(){
+		StopCoroutine("move");
+		rb.velocity = new Vector3(0f, 0f, 0f);
+		float tmp = 0;
+		while(tmp < 1){
+			transform.position = Vector3.Slerp(transform.position, new Vector3(-2.01f, 2.62f, 0f), tmp);
+			tmp += 0.3f * Time.deltaTime;
+			yield return null;
+		}
+		attack_each_phase[attack_each_phase.Length - phase].SetActive(true);
+	}
 
 	protected override IEnumerator move(){
 		while(true){
@@ -41,15 +55,10 @@ public class Mimo : Enemy
 			rb.velocity = new Vector3(rev * 1.5f, -1.0f, 0f);
 		}
 	}
-	private IEnumerator phase_change(){
+
+	private IEnumerator kabedon(Vector2 pos){
 		rb.velocity = new Vector3(0f, 0f, 0f);
-		float tmp = 0;
-		while(tmp < 1){
-			transform.position = Vector3.Slerp(transform.position, new Vector3(-2.01f, 2.62f, 0f), tmp);
-			tmp += 0.4f * Time.deltaTime;
-			yield return null;
-		}
-		attack_each_phase[attack_each_phase.Length - phase].SetActive(true);
+////
 	}
 
 	void FixedUpdate(){
