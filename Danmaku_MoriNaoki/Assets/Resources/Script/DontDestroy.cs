@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DontDestroy : MonoBehaviour
 {
@@ -8,11 +9,17 @@ public class DontDestroy : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this);
+		SceneManager.activeSceneChanged += SceneChanged;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	void SceneChanged(Scene thisScene, Scene nextScene){
+		string[] destroys = new string[]{"Title", "Result"};
+
+		string sname = nextScene.name;
+		foreach(string i in destroys){
+			if(sname.Equals(i)){
+				DestroyImmediate(gameObject);
+			}
+		}
+	}
 }

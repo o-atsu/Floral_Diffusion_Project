@@ -15,6 +15,7 @@ public abstract class Enemy : MonoBehaviour
 	protected GameObject on_defeated = null;
 
 	protected int hp;
+	private static bool onquit = false;
 
 	// EndPhaseコンポーネント
 	private EndPhase endPhase;
@@ -45,9 +46,12 @@ public abstract class Enemy : MonoBehaviour
 		hp = MAX_HP;
 	}
 	void OnDisable(){
-		if(on_defeated != null){
+		if(on_defeated != null && !onquit){
 			Instantiate(on_defeated, transform.position, Quaternion.identity);
 		}
+	}
+	void OnApplicationQuit(){
+		onquit = true;
 	}
 
 	public int Get_MAX_HP(){
