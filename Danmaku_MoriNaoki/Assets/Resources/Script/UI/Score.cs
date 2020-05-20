@@ -15,6 +15,15 @@ public class Score : MonoBehaviour
     // 表示スコア
     private static int showScore;
 
+    // 100で割る前の素点
+    private static int rawScore;
+
+    // 素点にかかっているパーセント
+    private static int scoreRate;
+
+    // 実際に増加したスコア
+    private static int realAdd;
+
     // スコア増加演出のフレーム数
     private static int showFrame = 14;
 
@@ -33,11 +42,11 @@ public class Score : MonoBehaviour
         // PlusScoreコンポーネントを取得
         ps = GameObject.Find("PlusScore").GetComponent<PlusScore>();
 
-        // スコアを0に戻す
+        // 初期化
         score = 0;
-
-        // 表示スコアを0に戻す
         showScore = 0;
+        rawScore = 0;
+        scoreRate = 100;
 
     }
 
@@ -60,9 +69,12 @@ public class Score : MonoBehaviour
     }
 
     // スコアの増加
-    public static void AddScore(int add){
-        score += add;
+    public static int AddScore(int add){
+        rawScore += add * scoreRate;
+        realAdd = rawScore / 100 - score;
+        score = rawScore / 100;
         addPerFrame = System.Math.Max((score-showScore)/showFrame+1, 1);
+        return realAdd;
     }
 
 }

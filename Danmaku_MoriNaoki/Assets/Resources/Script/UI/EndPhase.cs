@@ -48,13 +48,12 @@ public class EndPhase : MonoBehaviour
         // 評価文の初期化
         show = "";
 
-        Debug.Log(missCounter+"/"+bombCounter);
-
         // スコア増加量の計算と評価文の作成
         if(missCounter<=0&&bombCounter<=0){
 
             // ノーミスノーボム
-            show += "Excellent!\n<size=45>+ " + add.ToString() + "</size>";
+            add = System.Math.Max(add, 1);
+            show += "Excellent!\n<size=45>+ " + Score.AddScore(add).ToString() + "</size>";
 
         } else {
 
@@ -62,12 +61,11 @@ public class EndPhase : MonoBehaviour
             add *= 12-(missCounter+bombCounter);
             add /= 20;
             add = System.Math.Max(add, 1);
-            show += missCounter.ToString() + "<size=45> MISS</size> " + bombCounter.ToString() + "<size=45> BOMB\n+ " + add.ToString() + "</size>";
+            show += missCounter.ToString() + "<size=45> MISS</size> " + bombCounter.ToString() + "<size=45> BOMB\n+ " + Score.AddScore(add).ToString() + "</size>";
 
         }
 
         // スコアの増加と評価文の表示
-        Score.AddScore(add);
         gradeText.text = show;
 
         // カウンターの初期化
