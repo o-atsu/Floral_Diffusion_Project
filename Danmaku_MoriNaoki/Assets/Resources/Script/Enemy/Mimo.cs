@@ -56,9 +56,9 @@ public class Mimo : Enemy
 		}
 	}
 
-	private IEnumerator kabedon(Vector2 pos){
+	private IEnumerator kabedon(){
 		rb.velocity = new Vector3(0f, 0f, 0f);
-////
+//		rb.velocity
 	}
 
 	void FixedUpdate(){
