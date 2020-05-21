@@ -35,10 +35,11 @@ public class Mimo : Enemy
 		rb.velocity = new Vector3(0f, 0f, 0f);
 		float tmp = 0;
 		while(tmp < 1){
-			transform.position = Vector3.Slerp(transform.position, new Vector3(-2.01f, 2.62f, 0f), tmp);
+			transform.position = Vector3.Slerp(transform.position, new Vector3(-1.81f, 2.62f, 0f), tmp);
 			tmp += 0.3f * Time.deltaTime;
 			yield return null;
 		}
+		StartCoroutine("kabedon");
 		attack_each_phase[attack_each_phase.Length - phase].SetActive(true);
 	}
 
@@ -58,7 +59,35 @@ public class Mimo : Enemy
 
 	private IEnumerator kabedon(){
 		rb.velocity = new Vector3(0f, 0f, 0f);
-//		rb.velocity
+		float time;
+		while(true){
+			time = 0f;
+			while(time < 1.15f){//RIGHT
+				rb.velocity = new Vector3(6.35f * time, 0f, 0f);
+				time += Time.deltaTime;
+				yield return null;
+			}
+			rb.velocity = new Vector3(-3.1f, 0f, 0f);
+			yield return new WaitForSeconds(2.45f);
+
+			time = 0f;
+			while(time < 1.15f){//LEFT
+				rb.velocity = new Vector3(-6.35f * time, 0f, 0f);
+				time += Time.deltaTime;
+				yield return null;
+			}
+			rb.velocity = new Vector3(3.1f, 0f, 0f);
+			yield return new WaitForSeconds(2.45f);
+
+			time = 0f;
+			while(time < 0.75f){//TOP
+				rb.velocity = new Vector3(0f, 6.4f * time, 0f);
+				time += Time.deltaTime;
+				yield return null;
+			}
+			rb.velocity = new Vector3(0f, -1.5f, 0f);
+			yield return new WaitForSeconds(2.2f);
+		}
 	}
 
 	void FixedUpdate(){
