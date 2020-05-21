@@ -16,7 +16,7 @@ public abstract class Barrage_generator : MonoBehaviour
 
 	protected AudioSource audiosource;
 
-	private Object_pool pool;
+	public Object_pool pool;
 
 	/**** Bulletの初期化 ****/
 	protected abstract void Bullet_init(GameObject obj);
