@@ -25,7 +25,6 @@ public class Show_phase : MonoBehaviour
 	}
 
 	void Awake(){
-		Init();
 		SceneManager.activeSceneChanged += SceneChanged;
 	}
 

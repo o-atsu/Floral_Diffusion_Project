@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class All_range_generator : Barrage_generator
 {
-	private float default_dir;
+	protected float default_dir;
 
 	void Start(){
 		default_dir = direction;
