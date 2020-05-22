@@ -26,12 +26,13 @@ public class Mimo : Enemy
 		}
 		hp = MAX_HP;
 		attack_each_phase[attack_each_phase.Length - phase].SetActive(true);
-		if(phase == 2) StartCoroutine("phase_change");
+		if(phase == 2 || phase == 1) StartCoroutine("stay");
 		else attack_each_phase[attack_each_phase.Length - phase].SetActive(true);
 	}
 
-	private IEnumerator phase_change(){
-		StopCoroutine("move");
+	private IEnumerator stay(){
+		if(phase == 2) StopCoroutine("move");
+		if(phase == 1) StopCoroutine("kabedon");
 		rb.velocity = new Vector3(0f, 0f, 0f);
 		float tmp = 0;
 		while(tmp < 1){
@@ -39,7 +40,9 @@ public class Mimo : Enemy
 			tmp += 0.3f * Time.deltaTime;
 			yield return null;
 		}
+		if(phase == 2){
 		StartCoroutine("kabedon");
+		}
 		attack_each_phase[attack_each_phase.Length - phase].SetActive(true);
 	}
 
