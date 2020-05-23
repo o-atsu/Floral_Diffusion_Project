@@ -13,6 +13,8 @@ public abstract class Enemy : MonoBehaviour
 	protected int phase;
 	[SerializeField]
 	protected GameObject on_defeated = null;
+	[SerializeField]
+	protected GameObject Cut_in = null;// 同シーン上に非アクティブ状態で置いて
 
 	protected int hp;
 	private static bool onquit = false;
@@ -75,4 +77,9 @@ public abstract class Enemy : MonoBehaviour
 		return phase;
 	}
 
+	public IEnumerator cut_in(){// カットイン
+		Cut_in.SetActive(true);
+		yield return new WaitForSeconds(2.6f);
+		Cut_in.SetActive(false);
+	}
 }

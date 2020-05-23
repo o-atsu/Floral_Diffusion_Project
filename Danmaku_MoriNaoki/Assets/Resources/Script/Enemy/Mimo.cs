@@ -12,6 +12,7 @@ public class Mimo : Enemy
 	void Awake(){
 		rb = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
+		StartCoroutine("cut_in");
 	}
 
 	protected override void Defeated(){
@@ -32,7 +33,10 @@ public class Mimo : Enemy
 
 	private IEnumerator stay(){
 		if(phase == 2) StopCoroutine("move");
-		if(phase == 1) StopCoroutine("kabedon");
+		if(phase == 1) {
+			StopCoroutine("kabedon");
+			StartCoroutine("cut_in");
+		}
 		rb.velocity = new Vector3(0f, 0f, 0f);
 		float tmp = 0;
 		while(tmp < 1){
