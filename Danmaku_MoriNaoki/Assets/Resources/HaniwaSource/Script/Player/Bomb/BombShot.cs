@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BombShot : Attack
 {
+
+    public Player_controll player_cont;
+
     private const float shot_time=4.0f;
     public float shot_time_count;
 
@@ -36,7 +39,7 @@ public class BombShot : Attack
         }
         else audioSource.Stop();
 
-        if (Input.GetKeyDown(KeyCode.X) && shot_time_count <=0f && player_controll.GetBombCount()>0)
+        if (Input.GetKeyDown(KeyCode.X) && shot_time_count <=0f && player_controll.GetBombCount()>0 && player_cont.Get_Damaging_Move_Count() >= 0.98f)
         {
             player_controll.DecreaseBomb();
             shot_time_count = shot_time;
@@ -51,7 +54,7 @@ public class BombShot : Attack
 
     protected override IEnumerator shot()
     {
-        while (shot_time_count>=0f)
+        while (shot_time_count>=0f && player_cont.Get_Damaging_Move_Count() >= 0.98f)
         {
             bomb_generators[0].Generate();
             bomb_generators[1].Generate();

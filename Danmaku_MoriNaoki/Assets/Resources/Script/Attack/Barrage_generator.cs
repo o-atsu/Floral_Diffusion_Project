@@ -16,19 +16,25 @@ public abstract class Barrage_generator : MonoBehaviour
 
 	protected AudioSource audiosource;
 
-	private Object_pool pool;
+	public Object_pool pool;
 
 	/**** Bulletの初期化 ****/
 	protected abstract void Bullet_init(GameObject obj);
 
 	void Awake(){
-		pool = GetComponent<Object_pool>();
-		if(GetComponent<AudioSource>()){
-			audiosource = GetComponent<AudioSource>();
-		}
+        
+        if (pool == null) pool = GetComponent<Object_pool>();
 	}
 
-	public void Generate(){//弾の生成
+    private void Start()
+    {
+        if (GetComponent<AudioSource>())
+        {
+            audiosource = GetComponent<AudioSource>();
+        }
+    }
+
+    public void Generate(){//弾の生成
 		GameObject tmp = pool.Get_obj();
 		tmp.SetActive(true);
 		Bullet_init(tmp);
@@ -36,4 +42,15 @@ public abstract class Barrage_generator : MonoBehaviour
 			audiosource.Play();
 		}
 	}
+
+    public void Set_Direct(float dir)
+    {
+        direction = dir;
+    }
+
+    public void SetPosition(Vector2 v2)
+    {
+        position = v2;
+    }
+
 }

@@ -485,6 +485,11 @@ PrefabInstance:
       propertyPath: MAX_HP
       value: 4000
       objectReference: {fileID: 0}
+    - target: {fileID: 2147603905746665170, guid: 16e061e8251caba41b64377da67cce41,
+        type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4236800159062655068, guid: 16e061e8251caba41b64377da67cce41,
         type: 3}
       propertyPath: m_IsActive
