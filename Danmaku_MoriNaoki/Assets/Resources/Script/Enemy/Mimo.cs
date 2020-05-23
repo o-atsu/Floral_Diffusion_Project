@@ -25,8 +25,26 @@ public class Mimo : Enemy
 			return;
 		}
 		hp = MAX_HP;
+		attack_each_phase[attack_each_phase.Length - phase].SetActive(true);
+		if(phase == 2 || phase == 1) StartCoroutine("stay");
+		else attack_each_phase[attack_each_phase.Length - phase].SetActive(true);
 	}
 
+	private IEnumerator stay(){
+		if(phase == 2) StopCoroutine("move");
+		if(phase == 1) StopCoroutine("kabedon");
+		rb.velocity = new Vector3(0f, 0f, 0f);
+		float tmp = 0;
+		while(tmp < 1){
+			transform.position = Vector3.Slerp(transform.position, new Vector3(-1.81f, 2.62f, 0f), tmp);
+			tmp += 0.3f * Time.deltaTime;
+			yield return null;
+		}
+		if(phase == 2){
+		StartCoroutine("kabedon");
+		}
+		attack_each_phase[attack_each_phase.Length - phase].SetActive(true);
+	}
 
 	protected override IEnumerator move(){
 		while(true){
@@ -41,15 +59,38 @@ public class Mimo : Enemy
 			rb.velocity = new Vector3(rev * 1.5f, -1.0f, 0f);
 		}
 	}
-	private IEnumerator phase_change(){
+
+	private IEnumerator kabedon(){
 		rb.velocity = new Vector3(0f, 0f, 0f);
-		float tmp = 0;
-		while(tmp < 1){
-			transform.position = Vector3.Slerp(transform.position, new Vector3(-2.01f, 2.62f, 0f), tmp);
-			tmp += 0.4f * Time.deltaTime;
-			yield return null;
+		float time;
+		while(true){
+			time = 0f;
+			while(time < 1.15f){//RIGHT
+				rb.velocity = new Vector3(6.35f * time, 0f, 0f);
+				time += Time.deltaTime;
+				yield return null;
+			}
+			rb.velocity = new Vector3(-3.1f, 0f, 0f);
+			yield return new WaitForSeconds(2.45f);
+
+			time = 0f;
+			while(time < 1.15f){//LEFT
+				rb.velocity = new Vector3(-6.35f * time, 0f, 0f);
+				time += Time.deltaTime;
+				yield return null;
+			}
+			rb.velocity = new Vector3(3.1f, 0f, 0f);
+			yield return new WaitForSeconds(2.45f);
+
+			time = 0f;
+			while(time < 0.75f){//TOP
+				rb.velocity = new Vector3(0f, 6.4f * time, 0f);
+				time += Time.deltaTime;
+				yield return null;
+			}
+			rb.velocity = new Vector3(0f, -1.5f, 0f);
+			yield return new WaitForSeconds(2.2f);
 		}
-		attack_each_phase[attack_each_phase.Length - phase].SetActive(true);
 	}
 
 	void FixedUpdate(){

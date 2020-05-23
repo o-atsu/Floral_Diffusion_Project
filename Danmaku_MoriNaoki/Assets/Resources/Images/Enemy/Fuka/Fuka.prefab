@@ -65,6 +65,7 @@ MonoBehaviour:
   position: {x: 0.6, y: 0}
   direction: 0
   speed: 3
+  pool: {fileID: 2924627566803659209}
 --- !u!114 &4377041523370834686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +82,7 @@ MonoBehaviour:
   position: {x: -0.6, y: 0}
   direction: 0
   speed: 3
+  pool: {fileID: 0}
 --- !u!114 &8497964726301063526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +240,7 @@ GameObject:
   - component: {fileID: 1839751579707112865}
   - component: {fileID: 1652556811694786834}
   - component: {fileID: 2676243089229167507}
+  - component: {fileID: 1237120837}
   m_Layer: 8
   m_Name: Fuka
   m_TagString: Enemy
@@ -346,8 +349,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MAX_HP: 4000
+  scorePerPhase: 10000
   phase: 2
-  on_defeated: {fileID: 0}
+  on_defeated: {fileID: 3439995885527165571, guid: a266f91e53224074eb2922901135cd2a,
+    type: 3}
   attack_each_phase:
   - {fileID: 8133016714852522130}
   - {fileID: 4236800159062655068}
@@ -377,6 +382,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
+--- !u!95 &1237120837
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5106436353599545305}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d7e441e889e46b4da180fc9a9af32fe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8133016714852522130
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +451,7 @@ MonoBehaviour:
   position: {x: 0, y: 0}
   direction: 0
   speed: 2
+  pool: {fileID: 8984631584448886613}
 --- !u!114 &4447496735022256563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,7 +626,8 @@ MonoBehaviour:
   bullet: {fileID: 2760278645434565998, guid: f1a58d32d3711de41955099ce3e906c0, type: 3}
   position: {x: 0, y: 0}
   direction: 0
-  speed: 0.4
+  speed: 1
+  pool: {fileID: 9030621343597903095}
 --- !u!114 &9030621343597903095
 MonoBehaviour:
   m_ObjectHideFlags: 0
