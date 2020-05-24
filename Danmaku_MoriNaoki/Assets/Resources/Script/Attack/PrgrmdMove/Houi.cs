@@ -20,6 +20,8 @@ public class Houi : Attack
 	}
 
 	protected override IEnumerator shot(){
+		yield return new WaitForSeconds(1f);
+
 		while(true){
 			if(player_houi){
 				for(int i = 0;i < num;i++){
