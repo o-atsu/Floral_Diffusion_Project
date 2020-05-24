@@ -12,10 +12,8 @@ public class Eno : Enemy
 		rb = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
         this.transform.position = new Vector3(-2f, 2.6f, 0f);
-    }
-    private void Start()
-    {
-        
+
+		StartCoroutine("cut_in");
     }
 
     private void OnEnable()
@@ -175,6 +173,8 @@ public class Eno : Enemy
         yield return 1.0;
         SetMove();
         SetAtack();
+
+		if(phase == 1) StartCoroutine("cut_in");
     }
 
     private void StopMove()
