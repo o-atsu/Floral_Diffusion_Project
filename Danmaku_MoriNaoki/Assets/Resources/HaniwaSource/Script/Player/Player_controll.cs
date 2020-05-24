@@ -15,13 +15,19 @@ public class Player_controll : MonoBehaviour
     int push_count;
     Rigidbody2D rb;
 
-    float min_x = -8f;
-    float max_x = 8f;
-    float min_y = -5f;
-    float max_y = 5f;
+    float min_x = -5.6f;
+    float max_x = 2.1f;
+    float min_y = -4.25f;
+    float max_y = 4.65f;
 
-    private int invincible_frame=200;//定数
-    private int  invincible_count=0;
+    private float invincible_time=12f;//定数
+    private float  invincible_count=-2f;
+
+    private float damaging_time = 3.6f;//定数
+    private float damaging_count = -2f;
+    private float damaging_move_count = 2f;
+
+    private AudioSource audiosource;
 
 
     // Start is called before the first frame update
@@ -31,36 +37,61 @@ public class Player_controll : MonoBehaviour
         rb = this.gameObject.GetComponent<Rigidbody2D>();
 
         init_hp = 4;
-        init_bomb = 2;
+        init_bomb = 3;
         hp = init_hp;
         bomb = init_bomb;
 
-        // Application.targetFrameRate = 60;
+        Application.targetFrameRate = 60;
+
+        if (GetComponent<AudioSource>())
+        {
+            audiosource = GetComponent<AudioSource>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        invincible_count--;
+        if(invincible_count>=-1)invincible_count-=Time.deltaTime;
+        if (damaging_count >= -0.05)
+        {
+            damaging_count -= Time.deltaTime;
+            float level = Mathf.Abs(Mathf.Sin(Time.time * 7));
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, level);
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        }
+
     }
 
     private void FixedUpdate()
     {
 
-        PlayerMove();
+        if(damaging_move_count>=0.98)PlayerMove();
+    }
+
+    private void SetInvincible()
+    {
+        invincible_count = invincible_time;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (invincible_count <= 0)
+        if (invincible_count <= 0 && damaging_count<=0)
         {
             if (collision.gameObject.tag == "Enemy_Bullet")
             {
                 EndPhase.CountMiss(); // フェイズ毎の評価用にミス数をカウントする
-                hp--;
-                bomb = init_bomb;
-                invincible_count = invincible_frame;
+//              invincible_count = invincible_frame;
+                PlayerDamaged();
+                collision.gameObject.SetActive(false);
+            }
+            else if (collision.gameObject.tag == "Enemy_Bullet_Not_Delete")
+            {
+                PlayerDamaged();
             }
         }
 
@@ -91,6 +122,16 @@ public class Player_controll : MonoBehaviour
         if (this.transform.position.y > max_y && rb.velocity.y>0f) rb.velocity = new Vector2(rb.velocity.x, 0.0f);
     }
 
+    private void PlayerDamaged()
+    {
+        
+        hp--;
+        bomb = init_bomb;
+        damaging_count = damaging_time;
+        audiosource.Play();
+        StartCoroutine("ReturnField");
+    }
+
     public void Init(float x,float y,float init_speed,float init_slow_speed)
     {
         this.gameObject.transform.position = new Vector3(x, y, 0.0f);
@@ -112,6 +153,27 @@ public class Player_controll : MonoBehaviour
     {
         EndPhase.CountBomb(); // フェイズ毎の評価用にボム数をカウントする
         bomb--;
+    }
+
+    private IEnumerator ReturnField()
+    {
+        min_y = -10f;
+        this.transform.position = new Vector3(-2f, -6f, 0f);
+        rb.velocity = new Vector3(0f, 0f, 0f);
+        damaging_move_count = 0;
+        while (damaging_move_count <= 1f)
+        {
+            transform.position = Vector3.Lerp(transform.position, new Vector3(-2.0f, -3f, 0f), damaging_move_count*0.2f);
+            damaging_move_count += 0.8f * Time.deltaTime;
+            yield return null;
+        }
+        min_y = -4.25f;
+        yield break;
+    }
+
+    public float Get_Damaging_Move_Count()
+    {
+        return damaging_move_count;
     }
 
 }

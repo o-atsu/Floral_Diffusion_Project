@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerStraightShoot : Attack
 {
+    public Player_controll player_cont;
     bool shot_flag;
     public Player_Straight_Barrage_generator[] player_generators;
     // Start is called before the first frame update
@@ -27,7 +28,7 @@ public class PlayerStraightShoot : Attack
     {
         while (Input.GetKey(KeyCode.Z))
         {
-            player_generators[0].Generate();
+            if(player_cont.Get_Damaging_Move_Count() >= 0.98f) player_generators[0].Generate();
             yield return new WaitForSeconds(interval);
         }
         shot_flag = false;

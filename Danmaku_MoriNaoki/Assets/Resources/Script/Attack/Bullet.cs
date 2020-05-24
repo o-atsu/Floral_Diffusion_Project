@@ -5,10 +5,10 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 	//画面のそれぞれの端、この外に出ると自身を消す
-	protected float LEFT = -6.44f;
-	protected float RIGHT = 2.87f;
-	protected float TOP = 5.12f;
-	protected float BOTTOM = -5.12f;
+	protected float LEFT = -7.44f;
+	protected float RIGHT = 3.87f;
+	protected float TOP = 6.12f;
+	protected float BOTTOM = -6.12f;
 
 	/**** 弾生成時の初期化 ****/
 	public virtual void Set_property(Vector2 position,float direction,float speed){
@@ -32,17 +32,21 @@ public class Bullet : MonoBehaviour
 			yield return null;
 			Vector2 pos = new Vector2(transform.position.x, transform.position.y);
 			if(pos.x < LEFT || RIGHT < pos.x || pos.y < BOTTOM || TOP < pos.y){
-				gameObject.SetActive(false);
-			}
+                break;
+            }
 		}
-	}
+
+
+        gameObject.SetActive(false);
+        yield break;
+    }
 
 	void OnTriggerEnter2D(Collider2D other){
         if (this.gameObject.tag == "Enemy_Bullet")
         {
             if (other.gameObject.tag == "Player")
             {
-                gameObject.SetActive(false);
+                this.gameObject.SetActive(false);
             }
         }
 	}
