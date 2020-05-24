@@ -25,5 +25,8 @@ public class Defeated_Effect : MonoBehaviour
 			time += Time.deltaTime;
 			yield return null;
 		}
+		camera.transform.position = pos;
+		yield return new WaitForSeconds(1f);
+		gameObject.SetActive(false);
 	}
 }

@@ -60,7 +60,7 @@ public abstract class Enemy : MonoBehaviour
 		return MAX_HP;
 	}
 
-	public void Hit(int damage){
+	public virtual void Hit(int damage){
 		Score.AddScore(damage); // 与えたダメージ分スコアを増加させる
 		hp -= damage;
 		if(hp<=0&&phase>=1){
