@@ -722,6 +722,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   next_scene: Zone_E
   next: {fileID: 2716009072867028555}
+  quit: {fileID: 2716009072867028556}
 --- !u!4 &2032417845
 Transform:
   m_ObjectHideFlags: 0
@@ -1018,6 +1019,12 @@ PrefabInstance:
 --- !u!1 &2716009072867028555 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 387844878606350873, guid: 84878ab799cfb9c42baf59f1eca42567,
+    type: 3}
+  m_PrefabInstance: {fileID: 2716009072867028554}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2716009072867028556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1259339713, guid: 84878ab799cfb9c42baf59f1eca42567,
     type: 3}
   m_PrefabInstance: {fileID: 2716009072867028554}
   m_PrefabAsset: {fileID: 0}

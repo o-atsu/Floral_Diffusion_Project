@@ -28,6 +28,7 @@ public class Fuka : Enemy
 		hp = MAX_HP;
 		StopCoroutine("move");
 		StartCoroutine("phase_change");
+		StartCoroutine("cut_in");
 	}
 
 	protected override IEnumerator move(){
@@ -54,6 +55,7 @@ public class Fuka : Enemy
 	}
 
 	IEnumerator start_wait(){
+		StartCoroutine("cut_in");
 		yield return new WaitForSeconds(0.8f);
 		attack_each_phase[0].SetActive(true);
 	}

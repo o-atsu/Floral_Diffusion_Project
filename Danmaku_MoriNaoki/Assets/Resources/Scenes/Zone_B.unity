@@ -389,6 +389,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 250124049}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &250124051 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1259339713, guid: 84878ab799cfb9c42baf59f1eca42567,
+    type: 3}
+  m_PrefabInstance: {fileID: 250124049}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &291775715 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7832665693134499015, guid: 26d0c0f098d1d5b49afd200e759f6bdc,
@@ -1037,6 +1043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   next_scene: Zone_D
   next: {fileID: 250124050}
+  quit: {fileID: 250124051}
 --- !u!4 &1820477269
 Transform:
   m_ObjectHideFlags: 0
