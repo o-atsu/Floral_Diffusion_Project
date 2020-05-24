@@ -10,6 +10,8 @@ public abstract class Enemy : MonoBehaviour
 	[SerializeField]
 	protected int scorePerPhase;
 	[SerializeField]
+	protected int timeBonus;
+	[SerializeField]
 	protected int phase;
 	[SerializeField]
 	protected GameObject on_defeated = null;

@@ -10,7 +10,7 @@ public class PlusTime : MonoBehaviour
     private Text plusTimeText;
 
     // プラスタイム
-    public int plusTime;
+    private int plusTime;
     private int minute;
     private int second;
     private int csecond;
@@ -28,7 +28,10 @@ public class PlusTime : MonoBehaviour
     }
 
     // 表示更新
-    public void PlusTimeRewrite(){
+    public void PlusTimeRewrite(int add){
+
+        // タイムの増加分を受け取る
+        plusTime += add;
 
         // 表示文字列を作成
         show = "+ ";

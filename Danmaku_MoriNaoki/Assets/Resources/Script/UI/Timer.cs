@@ -76,8 +76,7 @@ public class Timer : MonoBehaviour
 
     // ZONE終了時に経過タイムをPlusTimeに移す
     public void Archive(){
-        pt.plusTime += time;
-        pt.PlusTimeRewrite();
+        pt.PlusTimeRewrite(time);
         time = 0;
     }
 

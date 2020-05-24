@@ -63,8 +63,7 @@ public class Score : MonoBehaviour
 
     // ZONE終了時に取得スコアをPlusScoreに移す
     public void Archive(){
-        ps.plusScore += score;
-        ps.PlusScoreRewrite();
+        ps.PlusScoreRewrite(score);
         score = 0;
     }
 
