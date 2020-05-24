@@ -12,6 +12,7 @@ public class Fuka : Enemy
 	void Awake(){
 		rb = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
+		StartCoroutine("start_wait");
 	}
 
 	protected override void Defeated(){
@@ -50,7 +51,10 @@ public class Fuka : Enemy
 
 	void FixedUpdate(){
 		anim.SetFloat("velocity_x", rb.velocity.x);
+	}
 
-		//Hit(1);
+	IEnumerator start_wait(){
+		yield return new WaitForSeconds(0.8f);
+		attack_each_phase[0].SetActive(true);
 	}
 }

@@ -78,8 +78,10 @@ public abstract class Enemy : MonoBehaviour
 	}
 
 	public IEnumerator cut_in(){// カットイン
-		Cut_in.SetActive(true);
-		yield return new WaitForSeconds(2.6f);
-		Cut_in.SetActive(false);
+		if(Cut_in != null){
+			Cut_in.SetActive(true);
+			yield return new WaitForSeconds(2.6f);
+			Cut_in.SetActive(false);
+		}
 	}
 }
