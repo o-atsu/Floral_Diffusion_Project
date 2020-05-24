@@ -15,4 +15,5 @@ public class Aiming_generator : Barrage_generator
 		direction = Mathf.Atan2(tmp.y, tmp.x) * Mathf.Rad2Deg;
 		obj.GetComponent<Bullet>().Set_property(position, direction, speed);
 	}
+
 }
