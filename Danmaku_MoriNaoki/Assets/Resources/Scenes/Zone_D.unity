@@ -296,6 +296,31 @@ PrefabInstance:
       propertyPath: Cut_in
       value: 
       objectReference: {fileID: 1478706557}
+    - target: {fileID: 369646288, guid: 0c7a1cf985544c24a841bd7e533bbd43, type: 3}
+      propertyPath: MAX_HP
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 369646288, guid: 0c7a1cf985544c24a841bd7e533bbd43, type: 3}
+      propertyPath: phase
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 375202316, guid: 0c7a1cf985544c24a841bd7e533bbd43, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901492538, guid: 0c7a1cf985544c24a841bd7e533bbd43, type: 3}
+      propertyPath: POOL_SIZE
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 901492542, guid: 0c7a1cf985544c24a841bd7e533bbd43, type: 3}
+      propertyPath: burst_num
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879470016364413084, guid: 0c7a1cf985544c24a841bd7e533bbd43,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3176950165136099287, guid: 0c7a1cf985544c24a841bd7e533bbd43,
         type: 3}
       propertyPath: m_Name
