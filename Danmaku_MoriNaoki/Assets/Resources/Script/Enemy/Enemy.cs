@@ -18,8 +18,8 @@ public abstract class Enemy : MonoBehaviour
 
 	public GameObject[] attack_each_phase;
 
-	public const float START_LAG = 2f;
-	public const float ENTRY_SPEED = 0.5f;
+	private const float START_LAG = 2f;
+	private const float ENTRY_SPEED = 0.5f;
 
 	protected int hp;
 	private static bool onquit = false;
@@ -91,7 +91,7 @@ public abstract class Enemy : MonoBehaviour
 		}
 	}
 
-	protected IEnumerator entry(){
+	protected virtual IEnumerator entry(){
 		col = GetComponent<Collider2D>();
 		col.enabled = false;
 		Vector3 default_pos = transform.position;

@@ -264,7 +264,7 @@ PrefabInstance:
     - target: {fileID: 2716009074559502217, guid: 84878ab799cfb9c42baf59f1eca42567,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2716009074559502221, guid: 84878ab799cfb9c42baf59f1eca42567,
         type: 3}
@@ -374,12 +374,12 @@ PrefabInstance:
     - target: {fileID: 7915016045209073080, guid: 84878ab799cfb9c42baf59f1eca42567,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7915016045209073080, guid: 84878ab799cfb9c42baf59f1eca42567,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84878ab799cfb9c42baf59f1eca42567, type: 3}
@@ -516,6 +516,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7182864847659741358, guid: 26d0c0f098d1d5b49afd200e759f6bdc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7957303470957371622, guid: 26d0c0f098d1d5b49afd200e759f6bdc,
         type: 3}
@@ -994,24 +999,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1705072691 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2716009074559502217, guid: 84878ab799cfb9c42baf59f1eca42567,
-    type: 3}
-  m_PrefabInstance: {fileID: 250124049}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1705072696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1705072691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93ad9be52b6dfb3478699d200dd7f691, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1820477267
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,6 +24,7 @@ public class Zone_controller : MonoBehaviour
 		asyncLoad.allowSceneActivation = false;
 		while(true){
 			if(Input.GetKeyDown(KeyCode.Z)){
+				next.SetActive(false);
 				asyncLoad.allowSceneActivation = true;
 				break;
 			}
