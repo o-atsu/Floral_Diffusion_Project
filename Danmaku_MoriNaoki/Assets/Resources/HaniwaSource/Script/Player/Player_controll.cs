@@ -20,7 +20,7 @@ public class Player_controll : MonoBehaviour
     float min_y = -4.25f;
     float max_y = 4.65f;
 
-    private float invincible_time=12f;//定数
+    private float invincible_time=11f;//定数
     private float  invincible_count=-2f;
 
     private float damaging_time = 3.6f;//定数
