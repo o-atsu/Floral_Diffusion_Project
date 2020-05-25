@@ -7,12 +7,9 @@ public class Fuka : Enemy
 	private Rigidbody2D rb;
 	private Animator anim;
 
-	public GameObject[] attack_each_phase;
-
 	void Awake(){
 		rb = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
-		StartCoroutine("start_wait");
 	}
 
 	protected override void Defeated(){
@@ -54,9 +51,4 @@ public class Fuka : Enemy
 		anim.SetFloat("velocity_x", rb.velocity.x);
 	}
 
-	IEnumerator start_wait(){
-		StartCoroutine("cut_in");
-		yield return new WaitForSeconds(0.8f);
-		attack_each_phase[0].SetActive(true);
-	}
 }

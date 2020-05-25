@@ -391,18 +391,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &901260152 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2924627566803659209, guid: 16e061e8251caba41b64377da67cce41,
-    type: 3}
-  m_PrefabInstance: {fileID: 1710420770}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97349e4740604bb42b9cced079c1ef43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1149786441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -674,21 +662,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1277930481394743207, guid: 16e061e8251caba41b64377da67cce41,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 1652556811694786834, guid: 16e061e8251caba41b64377da67cce41,
         type: 3}
       propertyPath: Cut_in
       value: 
       objectReference: {fileID: 697859575}
-    - target: {fileID: 4377041523370834686, guid: 16e061e8251caba41b64377da67cce41,
-        type: 3}
-      propertyPath: pool
-      value: 
-      objectReference: {fileID: 901260152}
     - target: {fileID: 4452594761187486515, guid: 16e061e8251caba41b64377da67cce41,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -748,16 +726,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fuka
-      objectReference: {fileID: 0}
-    - target: {fileID: 6818863865297641441, guid: 16e061e8251caba41b64377da67cce41,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697167496296196460, guid: 16e061e8251caba41b64377da67cce41,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16e061e8251caba41b64377da67cce41, type: 3}

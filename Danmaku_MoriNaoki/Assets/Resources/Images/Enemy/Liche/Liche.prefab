@@ -969,13 +969,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1340939282}
+  - component: {fileID: 663869938}
   m_Layer: 8
   m_Name: Phase1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1340939282
 Transform:
   m_ObjectHideFlags: 0
@@ -992,6 +993,18 @@ Transform:
   m_Father: {fileID: 6299426137675794965}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &663869938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340939281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7941ed5b7173cf4e94419e42e9a7105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1366220070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2181,6 +2194,7 @@ MonoBehaviour:
   on_defeated: {fileID: 5315529122028111390, guid: 64d763da706e1b74f9dd842bc7da1740,
     type: 3}
   Cut_in: {fileID: 0}
+  attack_each_phase: []
 --- !u!1 &8905176998141520761
 GameObject:
   m_ObjectHideFlags: 0
@@ -2641,6 +2655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3490315352568778275, guid: d1d6340f3d2b2ce43b0de002557ff69f, type: 3}
+    - {fileID: 3490315352568778284, guid: d1d6340f3d2b2ce43b0de002557ff69f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d1d6340f3d2b2ce43b0de002557ff69f, type: 3}
 --- !u!4 &245217378681403605 stripped
 Transform:

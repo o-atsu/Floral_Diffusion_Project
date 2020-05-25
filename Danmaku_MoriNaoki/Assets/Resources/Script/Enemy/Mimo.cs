@@ -7,12 +7,9 @@ public class Mimo : Enemy
 	private Rigidbody2D rb;
 	private Animator anim;
 
-	public GameObject[] attack_each_phase;
-
 	void Awake(){
 		rb = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
-		StartCoroutine("cut_in");
 	}
 
 	protected override void Defeated(){

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Liche : Enemy
 {
-    public GameObject[] attack_each_phase;
-
 	protected override void Defeated(){
 		if(phase == 0) return;
 

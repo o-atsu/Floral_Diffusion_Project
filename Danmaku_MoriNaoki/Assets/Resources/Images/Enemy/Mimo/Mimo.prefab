@@ -1472,7 +1472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3188537240178569567
 Transform:
   m_ObjectHideFlags: 0
@@ -1658,7 +1658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c8c08406a65a34a8fedf9d6e0b9bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HP: 3000
+  MAX_HP: 4000
   scorePerPhase: 0
   phase: 5
   on_defeated: {fileID: 3439995885527165571, guid: a266f91e53224074eb2922901135cd2a,
