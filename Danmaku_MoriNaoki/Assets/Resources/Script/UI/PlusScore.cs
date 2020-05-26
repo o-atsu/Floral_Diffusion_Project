@@ -10,7 +10,16 @@ public class PlusScore : MonoBehaviour
     private Text plusScoreText;
 
     // プラススコア
-    private int plusScore;
+    public static int plusScore;
+
+    // 表示プラススコア
+    private static int showPlusScore;
+
+    // プラススコア増加演出のフレーム数
+    private static int showFrame = 14;
+
+    // 1F毎に増加させる表示プラススコア
+    private static int addPerFrame;
 
     // Start is called before the first frame update
     void Start(){
@@ -18,19 +27,38 @@ public class PlusScore : MonoBehaviour
         // プラススコアを表示するText
         this.plusScoreText = this.GetComponent<Text>();
 
-        // プラススコアを0に戻す
+        // 初期化
         plusScore = 0;
+        showPlusScore = 0;
 
     }
 
     // 表示更新
     public void PlusScoreRewrite(int add){
-
-        // スコアの増加分を受け取る
         plusScore += add;
+        addPerFrame = System.Math.Max((plusScore-showPlusScore)/showFrame+1, 1);
+        StartCoroutine("ShowPlusScore");
+    }
 
-        // プラススコアを表示する
-        plusScoreText.text = "+ " + plusScore.ToString();
+    // 表示更新の演出
+    private IEnumerator ShowPlusScore(){
+
+        while(true){
+
+            // 表示プラススコアを増加させる
+            showPlusScore += System.Math.Min(plusScore-showPlusScore, addPerFrame);
+
+            // プラススコアを表示する
+            plusScoreText.text = "+ " + showPlusScore.ToString();
+
+            // 更新完了判定
+            if(showPlusScore==plusScore){
+                yield break;
+            } else {
+                yield return new WaitForEndOfFrame();
+            }
+
+        }
 
     }
 

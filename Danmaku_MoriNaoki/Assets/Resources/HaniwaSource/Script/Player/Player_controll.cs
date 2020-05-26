@@ -41,7 +41,7 @@ public class Player_controll : MonoBehaviour
         hp = init_hp;
         bomb = init_bomb;
 
-        Application.targetFrameRate = 60;
+        // Application.targetFrameRate = 60;
 
         if (GetComponent<AudioSource>())
         {
@@ -124,7 +124,7 @@ public class Player_controll : MonoBehaviour
 
     private void PlayerDamaged()
     {
-        
+
         hp--;
         bomb = init_bomb;
         damaging_count = damaging_time;

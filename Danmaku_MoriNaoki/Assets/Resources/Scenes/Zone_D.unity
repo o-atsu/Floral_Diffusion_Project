@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 174191047}
   - component: {fileID: 174191046}
   m_Layer: 0
-  m_Name: Background_D
+  m_Name: ZoneBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

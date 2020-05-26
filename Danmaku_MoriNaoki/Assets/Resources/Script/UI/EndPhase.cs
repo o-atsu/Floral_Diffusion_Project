@@ -68,6 +68,10 @@ public class EndPhase : MonoBehaviour
         // スコアの増加と評価文の表示
         gradeText.text = show;
 
+        // ミス数とボム数の保存
+        EndZone.CountMiss(missCounter);
+        EndZone.CountBomb(bombCounter);
+
         // カウンターの初期化
         missCounter = 0;
         bombCounter = 0;

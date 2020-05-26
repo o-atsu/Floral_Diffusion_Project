@@ -33,6 +33,15 @@ public class Score : MonoBehaviour
     // PlusScoreコンポーネント
     private PlusScore ps;
 
+    // Resultコンポーネント
+    private Result r;
+
+    // ゾーンのText
+    private Text zoneText;
+
+    // アーカイブ中フラグ
+    private bool archiveNow;
+
     // Start is called before the first frame update
     void Start(){
 
@@ -42,29 +51,52 @@ public class Score : MonoBehaviour
         // PlusScoreコンポーネントを取得
         ps = GameObject.Find("PlusScore").GetComponent<PlusScore>();
 
+        // Resultコンポーネントを取得
+        r = GameObject.Find("Result").GetComponent<Result>();
+
         // 初期化
         score = 0;
         showScore = 0;
         rawScore = 0;
         scoreRate = 100;
+        archiveNow = false;
 
     }
 
     // Update is called once per frame
     void Update(){
 
-        // 表示スコアを増加させる
-        showScore += System.Math.Min(score-showScore, addPerFrame);
+        if(archiveNow==true){
+
+            // 表示スコアを減少させる
+            showScore += System.Math.Max(showScore*-1, addPerFrame);
+
+            // アーカイブが完了したらフラグをfalseにする
+            if(showScore<=0){
+                addPerFrame = 1;
+                archiveNow = false;
+            }
+
+        } else {
+
+            // 表示スコアを増加させる
+            showScore += System.Math.Min(score-showScore, addPerFrame);
+
+        }
 
         // スコアを表示する
         scoreText.text = showScore.ToString();
 
     }
 
-    // ZONE終了時に取得スコアをPlusScoreに移す
+    // ZONE終了時に取得スコアをResultとPlusScoreに移す
     public void Archive(){
+        archiveNow = true;
+        zoneText = GameObject.Find("Zone").GetComponent<Text>();
+        r.CountScore(zoneText.text, score);
         ps.PlusScoreRewrite(score);
         score = 0;
+        addPerFrame = System.Math.Min(showScore*-1/showFrame+1, -1);
     }
 
     // スコアの増加

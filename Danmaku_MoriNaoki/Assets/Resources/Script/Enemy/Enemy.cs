@@ -24,11 +24,17 @@ public abstract class Enemy : MonoBehaviour
 	// EndPhaseコンポーネント
 	private EndPhase endPhase;
 
+	// EndZoneコンポーネント
+    private EndZone endZone;
+
 	// Start is called before the first frame update
     void Start(){
 
         // EndPhaseコンポーネントを取得
 		endPhase = GameObject.Find("EndPhase").GetComponent<EndPhase>();
+
+		// EndZoneコンポーネントを取得
+		endZone = GameObject.Find("EndZone").GetComponent<EndZone>();
 
     }
 
@@ -68,6 +74,9 @@ public abstract class Enemy : MonoBehaviour
 		if(hp<=0&&phase>=1){
 			Score.AddScore(hp); // オーバーキルしたときの過剰なスコア増加分を削る
 			endPhase.WriteGrade(scorePerPhase); // フェイズ終了時の評価とスコアの増加
+			if(phase==1){
+				endZone.WriteGrade(timeBonus); // ゾーン終了時の評価とスコアの増加
+			}
 			Defeated();
 		}
 	}
@@ -84,4 +93,5 @@ public abstract class Enemy : MonoBehaviour
 		yield return new WaitForSeconds(2.6f);
 		Cut_in.SetActive(false);
 	}
+
 }

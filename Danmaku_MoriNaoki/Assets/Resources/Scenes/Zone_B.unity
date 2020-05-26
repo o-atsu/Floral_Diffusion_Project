@@ -256,6 +256,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2716009074186919445, guid: 84878ab799cfb9c42baf59f1eca42567,
+        type: 3}
+      propertyPath: m_Text
+      value: B
+      objectReference: {fileID: 0}
     - target: {fileID: 2716009074559502217, guid: 84878ab799cfb9c42baf59f1eca42567,
         type: 3}
       propertyPath: m_Name
@@ -646,7 +651,7 @@ GameObject:
   - component: {fileID: 865344056}
   - component: {fileID: 865344055}
   m_Layer: 0
-  m_Name: ZoneB_Back
+  m_Name: ZoneBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

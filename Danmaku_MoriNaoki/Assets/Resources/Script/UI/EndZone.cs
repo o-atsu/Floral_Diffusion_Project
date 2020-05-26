@@ -27,8 +27,23 @@ public class EndZone : MonoBehaviour
     // Resultコンポーネント
     private Result r;
 
+    // ゾーン背景のコンポーネント
+    private SpriteRenderer zbsr;
+
+    // ゾーン背景の色
+    private Color zbsrc;
+    private float defaultColorRed;
+    private float defaultColorGreen;
+    private float defaultColorBlue;
+
     // ゾーンのText
     private Text zoneText;
+
+    // Zone_controllerコンポーネント
+    private Zone_controller zc;
+
+    // next_zoneのGameObject
+    private GameObject nz;
 
     // Start is called before the first frame update
     void Start(){
@@ -41,6 +56,12 @@ public class EndZone : MonoBehaviour
 
         // Resultコンポーネントを取得
         r = GameObject.Find("Result").GetComponent<Result>();
+
+        // Zone_controllerコンポーネントを取得
+        zc = GameObject.Find("Zone_controller").GetComponent<Zone_controller>();
+
+        // next_zoneのGameObjectを取得
+        nz = zc.next;
 
         // 初期化
         gradeText.text = "";
@@ -64,29 +85,26 @@ public class EndZone : MonoBehaviour
     public void WriteGrade(int add){
 
         // ゾーンのText
-        zoneText = GameObject.Find("Zone").GetComponent<Text>().text;
+        zoneText = GameObject.Find("Zone").GetComponent<Text>();
+
+        // ゾーン背景のコンポーネントを取得
+        zbsr = GameObject.Find("ZoneBackground").GetComponent<SpriteRenderer>();
+
+        // ゾーン背景の色を取得
+        zbsrc = zbsr.material.color;
+        defaultColorRed = zbsrc.r;
+        defaultColorGreen = zbsrc.g;
+        defaultColorBlue = zbsrc.b;
+
+        // タイム計測の停止
+        Timer.timeFlag = false;
 
         // タイムボーナスの計算
-        timeBonus = add / t.time;
+        timeBonus = add / t.GetTimeCount();
         timeBonus = System.Math.Max(timeBonus, 1);
 
         // ミス数とボム数の保存
-        if(zoneText=="A"){
-            r.missCounterA = missCounter;
-            r.bombCounterA = bombCounter;
-        } else if(zoneText=="B"){
-            r.missCounterB = missCounter;
-            r.bombCounterB = bombCounter;
-        } else if(zoneText=="C"){
-            r.missCounterC = missCounter;
-            r.bombCounterC = bombCounter;
-        } else if(zoneText=="D"){
-            r.missCounterD = missCounter;
-            r.bombCounterD = bombCounter;
-        } else if(zoneText=="E"){
-            r.missCounterE = missCounter;
-            r.bombCounterE = bombCounter;
-        }
+        r.CountMissAndBomb(zoneText.text, missCounter, bombCounter);
 
         // 評価文を表示する演出の開始
         StartCoroutine("ShowGrade");
@@ -98,6 +116,16 @@ public class EndZone : MonoBehaviour
 
         // 評価文の初期化
         show = "";
+
+        // 背景の暗転とウェイト
+        for(int i=1; i<=50; i++){
+            zbsrc.r = defaultColorRed * (100f-i) / 100f;
+            zbsrc.g = defaultColorGreen * (100f-i) / 100f;
+            zbsrc.b = defaultColorBlue * (100f-i) / 100f;
+            for(int j=1; j<=6; j++){
+                yield return new WaitForEndOfFrame();
+            }
+        }
 
         // ゾーンクリア
         show += "ZONE CLEAR\n\n";
@@ -126,10 +154,13 @@ public class EndZone : MonoBehaviour
         } else {
 
             // ミス数またはボム数が1以上
-            show += missCounter.ToString() + "<size=45> MISS</size> " + bombCounter.ToString() + "<size=45> BOMB";
+            show += missCounter.ToString() + "<size=45> MISS</size> " + bombCounter.ToString() + "<size=45> BOMB</size>";
 
         }
         gradeText.text = show;
+
+        // next_zoneのGameObjectをアクティベイト
+        nz.SetActive(true);
 
         // カウンターの初期化
         missCounter = 0;
