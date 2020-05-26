@@ -14,8 +14,8 @@ public class UI_color : MonoBehaviour
 	static string[] A_B_C = new string[]{"Zone_A", "Zone_B", "Zone_C"};
 	static string[] D_E = new string[]{"Zone_D", "Zone_E"};
 
-	void SceneChanged(Scene thisScene, Scene nextScene){
-		string sname = nextScene.name;
+	void Color_change(){
+		string sname = SceneManager.GetActiveScene().name;
 
 		foreach(string i in A_B_C){
 			if(sname.Equals(i)){
@@ -32,7 +32,12 @@ public class UI_color : MonoBehaviour
 		}
 	}
 
-	void Awake(){
-		SceneManager.activeSceneChanged += SceneChanged;
+	void Start(){
+		Color_change();
+		SceneManager.sceneLoaded += SceneLoaded;
+	}
+
+	void SceneLoaded(Scene nextScene, LoadSceneMode mode){
+		Color_change();
 	}
 }

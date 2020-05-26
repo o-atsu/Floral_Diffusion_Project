@@ -24,11 +24,12 @@ public class Show_phase : MonoBehaviour
 		}
 	}
 
-	void Awake(){
-		SceneManager.activeSceneChanged += SceneChanged;
+	void Start(){
+		Init();
+		SceneManager.sceneLoaded += SceneLoaded;
 	}
 
-	void SceneChanged(Scene thisScene, Scene nextScene){
+	void SceneLoaded(Scene nextScene, LoadSceneMode mode){
 		Init();
 	}
 

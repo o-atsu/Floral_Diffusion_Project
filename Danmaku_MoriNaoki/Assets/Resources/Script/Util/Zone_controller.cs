@@ -7,24 +7,26 @@ using UnityEngine.SceneManagement;
 public class Zone_controller : MonoBehaviour
 {
 	public string next_scene;
-	public GameObject next = null;
-	public GameObject quit = null;
 	
 	private Enemy enemy;
 	private bool defeated = false;
+	private Text nextt;
+	private Text quitt;
 
-	void Awake(){
+	void Start(){
 		enemy = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
+		nextt = GameObject.Find("Next_Zone").GetComponent<Text>();
+		quitt = GameObject.Find("Quit").GetComponent<Text>();
 	}
 
 	public IEnumerator LoadScene(){
-		next.SetActive(true);
+		nextt.text = "Press Z to the Next Zone";
 		AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(next_scene);
 
 		asyncLoad.allowSceneActivation = false;
 		while(true){
 			if(Input.GetKeyDown(KeyCode.Z)){
-				next.SetActive(false);
+				nextt.text = "";
 				asyncLoad.allowSceneActivation = true;
 				break;
 			}
@@ -45,16 +47,15 @@ public class Zone_controller : MonoBehaviour
 	}
 
 	private IEnumerator to_quit(){
-		quit.SetActive(true);
 		float time = 0;
 		while(time < 3f){
 			int text_time = (int)(4 - time);
 			if(!Input.GetKey(KeyCode.Q)){
-				quit.SetActive(false);
+				quitt.text = "";
 				break;
 			}else{
 				time += Time.deltaTime;
-				quit.GetComponent<Text>().text = "Quit to Title:" + text_time.ToString();
+				quitt.text = "Quit to Title:" + text_time.ToString();
 				
 				yield return null;
 			}

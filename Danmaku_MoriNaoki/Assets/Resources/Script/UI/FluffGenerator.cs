@@ -14,7 +14,8 @@ public class FluffGenerator : MonoBehaviour
         for(int i = 0; i < generate_num; i++)
         {
             GameObject fluff = Instantiate(fluff_object);
-            fluff.transform.parent = camvas_object.transform;
+            //fluff.transform.parent = camvas_object.transform;
+			fluff.transform.SetParent(camvas_object.transform);
             fluff.transform.SetSiblingIndex(1);
         }
     }

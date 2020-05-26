@@ -5,21 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class DontDestroy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        DontDestroyOnLoad(this);
-		SceneManager.activeSceneChanged += SceneChanged;
-    }
+	void Awake(){
+		Conf_destroy();
+		DontDestroyOnLoad(gameObject);
+		SceneManager.sceneLoaded += SceneLoaded;
+	}
 
-	void SceneChanged(Scene thisScene, Scene nextScene){
+	void Conf_destroy(){
 		string[] destroys = new string[]{"Title", "Result"};
 
-		string sname = nextScene.name;
+		string sname = SceneManager.GetActiveScene().name;
+		Debug.Log(sname);
 		foreach(string i in destroys){
 			if(sname.Equals(i)){
 				DestroyImmediate(gameObject);
 			}
 		}
+	}
+
+	void SceneLoaded(Scene nextScene, LoadSceneMode mode){
+		Conf_destroy();
 	}
 }

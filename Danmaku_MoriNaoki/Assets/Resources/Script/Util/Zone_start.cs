@@ -16,14 +16,11 @@ public class Zone_start : MonoBehaviour
 		{"Zone_E", "Liche"}
 	};
 
-	void Awake(){
+	void Start(){
 		text_comp = GetComponent<Text>();
 		anim = GetComponent<Animator>();
-		SceneManager.activeSceneChanged += SceneChanged;
-	}
-
-	void SceneChanged(Scene thisScene, Scene nextScene){
 		StartCoroutine("pop");
+		SceneManager.sceneLoaded += SceneLoaded;
 	}
 
 	private IEnumerator pop(){
@@ -37,5 +34,8 @@ public class Zone_start : MonoBehaviour
 		yield return new WaitForSeconds(0.6f);
 		text_comp.text = "";
 		anim.SetBool("started", false);
+	}
+	void SceneLoaded(Scene nextScene, LoadSceneMode mode){
+		StartCoroutine("pop");
 	}
 }

@@ -14,12 +14,13 @@ public class Zone_Image : MonoBehaviour
 
 	private Image img;
 
-	void Awake(){
-		SceneManager.activeSceneChanged += SceneChanged;
+	void Start(){
 		img = GetComponent<Image>();
+		Img_change();
+		SceneManager.sceneLoaded += SceneLoaded;
 	}
 
-	void SceneChanged(Scene thisScene, Scene nextScene){
+	void Img_change(){
 		string sname = SceneManager.GetActiveScene().name;
 		switch(sname){
 			case "Zone_A":
@@ -38,5 +39,9 @@ public class Zone_Image : MonoBehaviour
 				img.sprite = Zone_E;
 				break;
 		}
+	}
+	
+	void SceneLoaded(Scene nextScene, LoadSceneMode mode){
+		Img_change();
 	}
 }

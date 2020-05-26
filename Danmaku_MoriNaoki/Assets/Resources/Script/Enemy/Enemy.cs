@@ -61,6 +61,9 @@ public abstract class Enemy : MonoBehaviour
 	void OnApplicationQuit(){
 		onquit = true;
 	}
+	void OnDestroy(){
+		onquit = true;
+	}
 
 	public int Get_MAX_HP(){
 		return MAX_HP;

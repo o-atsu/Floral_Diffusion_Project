@@ -9,14 +9,10 @@ public class HP_Bar : MonoBehaviour
 	private Slider hp_bar;
 	private Enemy enemy;
 
-	void Awake(){
+	void Start(){
 		hp_bar = GetComponent<Slider>();
 		enemy = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
-		SceneManager.activeSceneChanged += SceneChanged;
-	}
-
-	void SceneChanged(Scene thisScene, Scene nextScene){
-		enemy = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
+		SceneManager.sceneLoaded += SceneLoaded;
 	}
 
 	void FixedUpdate(){
@@ -31,6 +27,9 @@ public class HP_Bar : MonoBehaviour
 		}
 	}
 
+	void SceneLoaded(Scene nextScene, LoadSceneMode mode){
+		enemy = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
+	}
 
 	/**** FPS固定、ゲーム開始時どっかから呼び出して ****/
 	/*
