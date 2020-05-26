@@ -6,20 +6,16 @@ public class Eno : Enemy
 {
 	private Rigidbody2D rb;
 	private Animator anim;
-    public GameObject[] attack_each_phase;
 
     void Awake(){
 		rb = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
         this.transform.position = new Vector3(-2f, 2.6f, 0f);
-
-		StartCoroutine("cut_in");
     }
 
     private void OnEnable()
     {
         SetAtack();
-        StartCoroutine("move");
         hp = MAX_HP;
     }
 

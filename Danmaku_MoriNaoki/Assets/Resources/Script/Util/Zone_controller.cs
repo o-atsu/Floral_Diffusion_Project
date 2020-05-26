@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI; // 追加
 
@@ -8,6 +9,7 @@ public class Zone_controller : MonoBehaviour
 {
 	public string next_scene;
 	public GameObject next = null;
+	public GameObject quit = null;
 
 	private Enemy enemy;
 	private bool defeated = false;
@@ -54,6 +56,7 @@ public class Zone_controller : MonoBehaviour
 					nzt.color = new Color(1f, 0.5f, 0f, 1f);
 					yield return new WaitForSeconds(0.05f);
 				}
+				next.SetActive(false);
 				asyncLoad.allowSceneActivation = true;
 				break;
 			}
@@ -71,5 +74,24 @@ public class Zone_controller : MonoBehaviour
 			return;
 		}
 
+		if(Input.GetKeyDown(KeyCode.Q)) StartCoroutine("to_quit");
+	}
+
+	private IEnumerator to_quit(){
+		quit.SetActive(true);
+		float time = 0;
+		while(time < 3f){
+			int text_time = (int)(4 - time);
+			if(!Input.GetKey(KeyCode.Q)){
+				quit.SetActive(false);
+				break;
+			}else{
+				time += Time.deltaTime;
+				quit.GetComponent<Text>().text = "Quit to Title:" + text_time.ToString();
+
+				yield return null;
+			}
+		}
+		if(time >= 3f) SceneManager.LoadScene("Title");
 	}
 }

@@ -18,8 +18,14 @@ public abstract class Enemy : MonoBehaviour
 	[SerializeField]
 	protected GameObject Cut_in = null;// 同シーン上に非アクティブ状態で置いて
 
+	public GameObject[] attack_each_phase;
+
+	private const float START_LAG = 2f;
+	private const float ENTRY_SPEED = 0.5f;
+
 	protected int hp;
 	private static bool onquit = false;
+	private Collider2D col;
 
 	// EndPhaseコンポーネント
 	private EndPhase endPhase;
@@ -36,6 +42,8 @@ public abstract class Enemy : MonoBehaviour
 		// EndZoneコンポーネントを取得
 		endZone = GameObject.Find("EndZone").GetComponent<EndZone>();
 
+		StartCoroutine("entry");
+		
     }
 
 	/**** 倒されるときの処理 ****/
@@ -52,7 +60,6 @@ public abstract class Enemy : MonoBehaviour
 	protected virtual IEnumerator move(){yield return null;}
 
 	void OnEnable(){
-		StartCoroutine("move");
 		hp = MAX_HP;
 	}
 	void OnDisable(){
@@ -68,7 +75,7 @@ public abstract class Enemy : MonoBehaviour
 		return MAX_HP;
 	}
 
-	public void Hit(int damage){
+	public virtual void Hit(int damage){
 		Score.AddScore(damage); // 与えたダメージ分スコアを増加させる
 		hp -= damage;
 		if(hp<=0&&phase>=1){
@@ -89,9 +96,29 @@ public abstract class Enemy : MonoBehaviour
 	}
 
 	public IEnumerator cut_in(){// カットイン
-		Cut_in.SetActive(true);
-		yield return new WaitForSeconds(2.6f);
-		Cut_in.SetActive(false);
+		if(Cut_in != null){
+			Cut_in.SetActive(true);
+			yield return new WaitForSeconds(2.6f);
+			Cut_in.SetActive(false);
+		}
+	}
+
+	protected virtual IEnumerator entry(){
+		col = GetComponent<Collider2D>();
+		col.enabled = false;
+		Vector3 default_pos = transform.position;
+		transform.Translate(0f, 5f, 0f);
+		yield return new WaitForSeconds(START_LAG);
+		StartCoroutine("cut_in");
+		float time = 0f;
+		while(time < 1f){
+			transform.position = Vector3.Slerp(transform.position, default_pos, time);
+			time += Time.deltaTime * ENTRY_SPEED;
+			yield return null;
+		}
+		attack_each_phase[0].SetActive(true);
+		col.enabled = true;
+		StartCoroutine("move");
 	}
 
 }

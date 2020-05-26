@@ -300,6 +300,27 @@ PrefabInstance:
       propertyPath: MAX_HP
       value: 4000
       objectReference: {fileID: 0}
+    - target: {fileID: 369646288, guid: 0c7a1cf985544c24a841bd7e533bbd43, type: 3}
+      propertyPath: phase
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 375202316, guid: 0c7a1cf985544c24a841bd7e533bbd43, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 901492538, guid: 0c7a1cf985544c24a841bd7e533bbd43, type: 3}
+      propertyPath: POOL_SIZE
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 901492542, guid: 0c7a1cf985544c24a841bd7e533bbd43, type: 3}
+      propertyPath: burst_num
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879470016364413084, guid: 0c7a1cf985544c24a841bd7e533bbd43,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3176950165136099287, guid: 0c7a1cf985544c24a841bd7e533bbd43,
         type: 3}
       propertyPath: m_Name
@@ -718,6 +739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   next_scene: Zone_E
   next: {fileID: 2716009072867028555}
+  quit: {fileID: 2716009072867028556}
 --- !u!4 &2032417845
 Transform:
   m_ObjectHideFlags: 0
@@ -1014,6 +1036,12 @@ PrefabInstance:
 --- !u!1 &2716009072867028555 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 387844878606350873, guid: 84878ab799cfb9c42baf59f1eca42567,
+    type: 3}
+  m_PrefabInstance: {fileID: 2716009072867028554}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2716009072867028556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1259339713, guid: 84878ab799cfb9c42baf59f1eca42567,
     type: 3}
   m_PrefabInstance: {fileID: 2716009072867028554}
   m_PrefabAsset: {fileID: 0}

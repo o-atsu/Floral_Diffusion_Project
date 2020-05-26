@@ -5,7 +5,7 @@ using UnityEngine;
 public class Curve : Bullet
 {
 	[SerializeField]
-	private float curve_level = 0.1f;
+	protected float curve_level = 0.1f;
 
 	private Rigidbody2D rb;
 	void Awake(){

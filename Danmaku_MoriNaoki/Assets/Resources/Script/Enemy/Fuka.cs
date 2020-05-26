@@ -7,8 +7,6 @@ public class Fuka : Enemy
 	private Rigidbody2D rb;
 	private Animator anim;
 
-	public GameObject[] attack_each_phase;
-
 	void Awake(){
 		rb = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
@@ -27,6 +25,7 @@ public class Fuka : Enemy
 		hp = MAX_HP;
 		StopCoroutine("move");
 		StartCoroutine("phase_change");
+		StartCoroutine("cut_in");
 	}
 
 	protected override IEnumerator move(){
@@ -50,7 +49,6 @@ public class Fuka : Enemy
 
 	void FixedUpdate(){
 		anim.SetFloat("velocity_x", rb.velocity.x);
-
-		//Hit(1);
 	}
+
 }

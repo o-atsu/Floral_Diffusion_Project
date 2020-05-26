@@ -27,10 +27,10 @@ public class All_field_generator : Barrage_generator
 				pos = new Vector2(rand, position.y - offset - transform.position.y);
 				break;
 			case FROM.LEFT:
-				pos = new Vector2(position.x + offset - transform.position.x, rand);
+				pos = new Vector2(position.x - offset - transform.position.x, rand);
 				break;
 			case FROM.RIGHT:
-				pos = new Vector2(position.x - offset - transform.position.x, rand);
+				pos = new Vector2(position.x + offset - transform.position.x, rand);
 				break;
 		}
 		obj.GetComponent<Bullet>().Set_property(pos, direction, speed);
