@@ -10,7 +10,7 @@ public class PlusScore : MonoBehaviour
     private Text plusScoreText;
 
     // プラススコア
-    public static int plusScore;
+    public static int plusScore = 0;
 
     // 表示プラススコア
     private static int showPlusScore;
@@ -27,9 +27,8 @@ public class PlusScore : MonoBehaviour
         // プラススコアを表示するText
         this.plusScoreText = this.GetComponent<Text>();
 
-        // 初期化
-        plusScore = 0;
-        showPlusScore = 0;
+        // シーン切り替え時の表示更新処理
+        PlusScoreRewrite(0);
 
     }
 

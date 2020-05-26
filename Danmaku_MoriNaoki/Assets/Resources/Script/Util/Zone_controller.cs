@@ -21,9 +21,6 @@ public class Zone_controller : MonoBehaviour
 	// next_zoneを表示するText
     private Text nzt;
 
-    // next_zoneの色
-    private Color nztc;
-
 	void Awake(){
 		enemy = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
 	}
@@ -44,9 +41,6 @@ public class Zone_controller : MonoBehaviour
 		// next_zoneを表示するText
         nzt = next.GetComponent<Text>();
 
-        // next_zoneの色を取得
-        nztc = nzt.color;
-
 		AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(next_scene);
 
 		asyncLoad.allowSceneActivation = false;
@@ -54,13 +48,11 @@ public class Zone_controller : MonoBehaviour
 			if(Input.GetKeyDown(KeyCode.Z)){
 				s.Archive(); // スコアをResultとPlusScoreに移す
 				t.Archive(); // タイムをResultとPlusTimeに移す
-				for(int i=1; i<=15; i++){
-					nztc.a = 0f;
-					yield return new WaitForEndOfFrame();
-					yield return new WaitForEndOfFrame();
-					nztc.a = 1f;
-					yield return new WaitForEndOfFrame();
-					yield return new WaitForEndOfFrame();
+				for(int i=1; i<=10; i++){
+					nzt.color = new Color(1f, 0.5f, 0f, 0f);
+					yield return new WaitForSeconds(0.05f);
+					nzt.color = new Color(1f, 0.5f, 0f, 1f);
+					yield return new WaitForSeconds(0.05f);
 				}
 				asyncLoad.allowSceneActivation = true;
 				break;

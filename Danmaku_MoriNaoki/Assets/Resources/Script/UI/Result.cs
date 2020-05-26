@@ -22,33 +22,8 @@ public class Result : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
 
-        // GameObjectが消えないようにする
-        DontDestroyOnLoad(this);
-
         // リザルトを表示するText
         this.resultText = this.GetComponent<Text>();
-
-        // 初期化
-        score.Add("A", 0);
-        score.Add("B", 0);
-        score.Add("C", 0);
-        score.Add("D", 0);
-        score.Add("E", 0);
-        time.Add("A", 0);
-        time.Add("B", 0);
-        time.Add("C", 0);
-        time.Add("D", 0);
-        time.Add("E", 0);
-        missCounter.Add("A", 0);
-        missCounter.Add("B", 0);
-        missCounter.Add("C", 0);
-        missCounter.Add("D", 0);
-        missCounter.Add("E", 0);
-        bombCounter.Add("A", 0);
-        bombCounter.Add("B", 0);
-        bombCounter.Add("C", 0);
-        bombCounter.Add("D", 0);
-        bombCounter.Add("E", 0);
 
     }
 

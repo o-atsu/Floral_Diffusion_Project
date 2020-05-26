@@ -95,9 +95,7 @@ public class EndPhase : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        for(int i=1; i<=300; i++){
-            yield return new WaitForEndOfFrame();
-        }
+        yield return new WaitForSeconds(5f);
 
         gradeText.text = "";
         yield break;

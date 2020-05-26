@@ -84,7 +84,6 @@ public class Player_controll : MonoBehaviour
         {
             if (collision.gameObject.tag == "Enemy_Bullet")
             {
-                EndPhase.CountMiss(); // フェイズ毎の評価用にミス数をカウントする
 //              invincible_count = invincible_frame;
                 PlayerDamaged();
                 collision.gameObject.SetActive(false);
@@ -124,7 +123,7 @@ public class Player_controll : MonoBehaviour
 
     private void PlayerDamaged()
     {
-
+        EndPhase.CountMiss(); // フェイズ毎の評価用にミス数をカウントする
         hp--;
         bomb = init_bomb;
         damaging_count = damaging_time;

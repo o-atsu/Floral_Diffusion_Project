@@ -10,7 +10,7 @@ public class PlusTime : MonoBehaviour
     private Text plusTimeText;
 
     // プラスタイム
-    public static int plusTime;
+    public static int plusTime = 0;
     private int minute;
     private int second;
     private int csecond;
@@ -31,9 +31,8 @@ public class PlusTime : MonoBehaviour
         // プラスタイムを表示するText
         this.plusTimeText = this.GetComponent<Text>();
 
-        // 初期化
-        plusTime = 0;
-        showPlusTime = 0;
+        // シーン切り替え時の表示更新処理
+        PlusTimeRewrite(0);
 
     }
 
@@ -61,13 +60,13 @@ public class PlusTime : MonoBehaviour
             }
             show += minute.ToString() + ":";
 
-            second = showPlusTime / 60 - minute * 60;
+            second = (showPlusTime%3600) / 60;
             if(second<10){
                 show += "0";
             }
             show += second.ToString() + ":";
 
-            csecond = showPlusTime * 5 / 3 - minute * 3600 - second * 60;
+            csecond = (showPlusTime%60) * 5 / 3;
             if(csecond<10){
                 show += "0";
             }

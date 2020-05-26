@@ -91,7 +91,7 @@ public class EndZone : MonoBehaviour
         zbsr = GameObject.Find("ZoneBackground").GetComponent<SpriteRenderer>();
 
         // ゾーン背景の色を取得
-        zbsrc = zbsr.material.color;
+        zbsrc = zbsr.color;
         defaultColorRed = zbsrc.r;
         defaultColorGreen = zbsrc.g;
         defaultColorBlue = zbsrc.b;
@@ -119,12 +119,8 @@ public class EndZone : MonoBehaviour
 
         // 背景の暗転とウェイト
         for(int i=1; i<=50; i++){
-            zbsrc.r = defaultColorRed * (100f-i) / 100f;
-            zbsrc.g = defaultColorGreen * (100f-i) / 100f;
-            zbsrc.b = defaultColorBlue * (100f-i) / 100f;
-            for(int j=1; j<=6; j++){
-                yield return new WaitForEndOfFrame();
-            }
+            zbsr.color = new Color(defaultColorRed*(100f-i)/100f, defaultColorGreen*(100f-i)/100f, defaultColorBlue*(100f-i)/100f, 1f);
+            yield return new WaitForSeconds(0.1f);
         }
 
         // ゾーンクリア
@@ -132,18 +128,14 @@ public class EndZone : MonoBehaviour
         gradeText.text = show;
 
         // ウェイト
-        for(int i=1; i<=45; i++){
-            yield return new WaitForEndOfFrame();
-        }
+        yield return new WaitForSeconds(0.75f);
 
         // タイムボーナス
         show += "TIME BONUS\n<size=45>+ " + Score.AddScore(timeBonus).ToString() + "</size>\n\n";
         gradeText.text = show;
 
         // ウェイト
-        for(int i=1; i<=45; i++){
-            yield return new WaitForEndOfFrame();
-        }
+        yield return new WaitForSeconds(0.75f);
 
         // ミス数とボム数
         if(missCounter<=0&&bombCounter<=0){
