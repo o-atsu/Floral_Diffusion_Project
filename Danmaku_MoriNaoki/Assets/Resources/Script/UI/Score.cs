@@ -19,7 +19,7 @@ public class Score : MonoBehaviour
     private static int rawScore;
 
     // 素点にかかっているパーセント
-    private static int scoreRate;
+    private static int scoreRate = 100;
 
     // 実際に増加したスコア
     private static int realAdd;
@@ -58,7 +58,6 @@ public class Score : MonoBehaviour
         score = 0;
         showScore = 0;
         rawScore = 0;
-        scoreRate = 100;
         archiveNow = false;
 
     }
@@ -96,6 +95,7 @@ public class Score : MonoBehaviour
         r.CountScore(zoneText.text, score);
         ps.PlusScoreRewrite(score);
         score = 0;
+        rawScore = 0;
         addPerFrame = System.Math.Min(showScore*-1/showFrame+1, -1);
     }
 

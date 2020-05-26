@@ -57,8 +57,8 @@ public class Timer : MonoBehaviour
         archiveNow = false;
 
         // ＝＝＝＝＝制作段階のテストプレイ用：ゲーム開始と同時に計測開始＝＝＝＝＝
-        Debug.Log("ForTestPlay >> timeFlag = true");
-        timeFlag = true;
+        // Debug.Log("ForTestPlay >> timeFlag = true");
+        // timeFlag = true;
 
     }
 

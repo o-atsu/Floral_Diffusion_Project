@@ -43,7 +43,7 @@ public abstract class Enemy : MonoBehaviour
 		endZone = GameObject.Find("EndZone").GetComponent<EndZone>();
 
 		StartCoroutine("entry");
-		
+
     }
 
 	/**** 倒されるときの処理 ****/
@@ -116,6 +116,7 @@ public abstract class Enemy : MonoBehaviour
 			time += Time.deltaTime * ENTRY_SPEED;
 			yield return null;
 		}
+		Timer.timeFlag = true; // 計測開始
 		attack_each_phase[0].SetActive(true);
 		col.enabled = true;
 		StartCoroutine("move");

@@ -29,12 +29,16 @@ public class EndZone : MonoBehaviour
 
     // ゾーン背景のコンポーネント
     private SpriteRenderer zbsr;
+    private AudioSource zbas;
 
     // ゾーン背景の色
     private Color zbsrc;
     private float defaultColorRed;
     private float defaultColorGreen;
     private float defaultColorBlue;
+
+    // ゾーンのBGM音量
+    private float defaultVolume;
 
     // ゾーンのText
     private Text zoneText;
@@ -89,12 +93,16 @@ public class EndZone : MonoBehaviour
 
         // ゾーン背景のコンポーネントを取得
         zbsr = GameObject.Find("ZoneBackground").GetComponent<SpriteRenderer>();
+        zbas = GameObject.Find("ZoneBackground").GetComponent<AudioSource>();
 
         // ゾーン背景の色を取得
         zbsrc = zbsr.color;
         defaultColorRed = zbsrc.r;
         defaultColorGreen = zbsrc.g;
         defaultColorBlue = zbsrc.b;
+
+        // ゾーンのBGM音量を取得
+        defaultVolume = zbas.volume;
 
         // タイム計測の停止
         Timer.timeFlag = false;
@@ -117,9 +125,10 @@ public class EndZone : MonoBehaviour
         // 評価文の初期化
         show = "";
 
-        // 背景の暗転とウェイト
-        for(int i=1; i<=50; i++){
-            zbsr.color = new Color(defaultColorRed*(100f-i)/100f, defaultColorGreen*(100f-i)/100f, defaultColorBlue*(100f-i)/100f, 1f);
+        // 背景の暗転とBGMのフェイドアウトとウェイト
+        for(int i=1; i<=30; i++){
+            zbsr.color = new Color(defaultColorRed*(60f-i)/60f, defaultColorGreen*(60f-i)/60f, defaultColorBlue*(60f-i)/60f, 1f);
+            zbas.volume = defaultVolume * (30-i) / 30;
             yield return new WaitForSeconds(0.1f);
         }
 

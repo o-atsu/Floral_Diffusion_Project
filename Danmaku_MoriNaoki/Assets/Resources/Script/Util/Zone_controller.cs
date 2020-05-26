@@ -23,6 +23,9 @@ public class Zone_controller : MonoBehaviour
 	// next_zoneを表示するText
     private Text nzt;
 
+	// 評価を表示するText
+    private Text ezt;
+
 	void Awake(){
 		enemy = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
 	}
@@ -35,6 +38,9 @@ public class Zone_controller : MonoBehaviour
 
 		// Timerコンポーネントを取得
         t = GameObject.Find("Time").GetComponent<Timer>();
+
+		// 評価を表示するText
+        ezt = GameObject.Find("EndZone").GetComponent<Text>();
 
 	}
 
@@ -51,11 +57,12 @@ public class Zone_controller : MonoBehaviour
 				s.Archive(); // スコアをResultとPlusScoreに移す
 				t.Archive(); // タイムをResultとPlusTimeに移す
 				for(int i=1; i<=10; i++){
-					nzt.color = new Color(1f, 0.5f, 0f, 0f);
+					nzt.color = new Color(1f, 0.9812571f, 0.8018868f, 0f);
 					yield return new WaitForSeconds(0.05f);
-					nzt.color = new Color(1f, 0.5f, 0f, 1f);
+					nzt.color = new Color(1f, 0.9812571f, 0.8018868f, 1f);
 					yield return new WaitForSeconds(0.05f);
 				}
+				ezt.text = ""; // 評価を表示するテキストを消去する
 				next.SetActive(false);
 				asyncLoad.allowSceneActivation = true;
 				break;

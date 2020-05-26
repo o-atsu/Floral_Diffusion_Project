@@ -27,11 +27,6 @@ public class Result : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update(){
-
-    }
-
     // スコアのカウント
     public void CountScore(string zone, int add){
         score[zone] = add;
