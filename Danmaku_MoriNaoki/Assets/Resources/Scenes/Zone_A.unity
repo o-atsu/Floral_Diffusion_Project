@@ -672,17 +672,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1277930481394743207, guid: 16e061e8251caba41b64377da67cce41,
-        type: 3}
-      propertyPath: Mute
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1277930481394743207, guid: 16e061e8251caba41b64377da67cce41,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -660847105563706527, guid: 8f4bb5a5c12e1714a89aa67cad8c3071,
-        type: 2}
     - target: {fileID: 1652556811694786834, guid: 16e061e8251caba41b64377da67cce41,
         type: 3}
       propertyPath: Cut_in
@@ -748,18 +737,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fuka
       objectReference: {fileID: 0}
-    - target: {fileID: 6818863865297641441, guid: 16e061e8251caba41b64377da67cce41,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -660847105563706527, guid: 8f4bb5a5c12e1714a89aa67cad8c3071,
-        type: 2}
-    - target: {fileID: 8697167496296196460, guid: 16e061e8251caba41b64377da67cce41,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -660847105563706527, guid: 8f4bb5a5c12e1714a89aa67cad8c3071,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16e061e8251caba41b64377da67cce41, type: 3}
 --- !u!1001 &2716009072867028554

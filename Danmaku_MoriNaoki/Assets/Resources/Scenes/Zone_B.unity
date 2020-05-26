@@ -943,36 +943,10 @@ PrefabInstance:
       propertyPath: Cut_in
       value: 
       objectReference: {fileID: 873500051}
-    - target: {fileID: -738057038494201435, guid: d2918717e26b5d34fbe98b87b5e8ee4c,
-        type: 3}
-      propertyPath: on_defeated
-      value: 
-      objectReference: {fileID: 3439995885527165571, guid: a266f91e53224074eb2922901135cd2a,
-        type: 3}
-    - target: {fileID: 682282866, guid: d2918717e26b5d34fbe98b87b5e8ee4c, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -660847105563706527, guid: 8f4bb5a5c12e1714a89aa67cad8c3071,
-        type: 2}
-    - target: {fileID: 890203321, guid: d2918717e26b5d34fbe98b87b5e8ee4c, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -660847105563706527, guid: 8f4bb5a5c12e1714a89aa67cad8c3071,
-        type: 2}
     - target: {fileID: 956323754, guid: d2918717e26b5d34fbe98b87b5e8ee4c, type: 3}
       propertyPath: pool
       value: 
       objectReference: {fileID: 1648827786}
-    - target: {fileID: 956323757, guid: d2918717e26b5d34fbe98b87b5e8ee4c, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -660847105563706527, guid: 8f4bb5a5c12e1714a89aa67cad8c3071,
-        type: 2}
-    - target: {fileID: 1427974310, guid: d2918717e26b5d34fbe98b87b5e8ee4c, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -660847105563706527, guid: 8f4bb5a5c12e1714a89aa67cad8c3071,
-        type: 2}
     - target: {fileID: 29809755884189629, guid: d2918717e26b5d34fbe98b87b5e8ee4c,
         type: 3}
       propertyPath: pool
@@ -983,23 +957,11 @@ PrefabInstance:
       propertyPath: pool
       value: 
       objectReference: {fileID: 1653275465}
-    - target: {fileID: 1081439104872831043, guid: d2918717e26b5d34fbe98b87b5e8ee4c,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -660847105563706527, guid: 8f4bb5a5c12e1714a89aa67cad8c3071,
-        type: 2}
     - target: {fileID: 1824381400341230851, guid: d2918717e26b5d34fbe98b87b5e8ee4c,
         type: 3}
       propertyPath: m_Name
       value: Eno
       objectReference: {fileID: 0}
-    - target: {fileID: 4744422765865082983, guid: d2918717e26b5d34fbe98b87b5e8ee4c,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -660847105563706527, guid: 8f4bb5a5c12e1714a89aa67cad8c3071,
-        type: 2}
     - target: {fileID: 4829237318576664969, guid: d2918717e26b5d34fbe98b87b5e8ee4c,
         type: 3}
       propertyPath: pool
@@ -1015,12 +977,6 @@ PrefabInstance:
       propertyPath: pool
       value: 
       objectReference: {fileID: 202992411}
-    - target: {fileID: 7164087311243921589, guid: d2918717e26b5d34fbe98b87b5e8ee4c,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -660847105563706527, guid: 8f4bb5a5c12e1714a89aa67cad8c3071,
-        type: 2}
     - target: {fileID: 7694861299075906558, guid: d2918717e26b5d34fbe98b87b5e8ee4c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1076,11 +1032,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7739068216683530803, guid: d2918717e26b5d34fbe98b87b5e8ee4c,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -660847105563706527, guid: 8f4bb5a5c12e1714a89aa67cad8c3071,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2918717e26b5d34fbe98b87b5e8ee4c, type: 3}
