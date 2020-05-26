@@ -10,8 +10,8 @@ public class Title : SceneChange
     int main_step=0;
     int option_step=-1;
 
-    int BGM_volume = 5;
-    int SE_volume = 5;
+    int BGM_volume;
+    int SE_volume;
 
     public AudioMixer am;
 
@@ -23,6 +23,8 @@ public class Title : SceneChange
     public Text center_bgm_volume_text;
     public Text se_volume_text;
     public Text center_se_volume_text;
+    public Text high_score_value_text;
+    public Text center_high_score_value_text;
 
     public AudioSource check_volume_se_source;
     public AudioSource scene_change_se;
@@ -34,7 +36,24 @@ public class Title : SceneChange
 
     void Start(){
         OptionUI.SetActive(false);
+        int high_score = PlayerPrefs.GetInt("highScore");
+        high_score_value_text.text = high_score.ToString();
+        center_high_score_value_text.text = high_score.ToString();
+
+        BGM_volume = PlayerPrefs.GetInt("BGM_vol");
+        if (BGM_volume < 1 || 10 < BGM_volume) BGM_volume = 5;
+        BGM_Volume_Change();
+        SE_volume = PlayerPrefs.GetInt("SE_vol");
+        if (SE_volume < 1 || 10 < SE_volume) SE_volume = 5;
+        SE_Volume_Change();
+
 	}
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetInt("BGM_vol", BGM_volume);
+        PlayerPrefs.SetInt("SE_vol", SE_volume);
+    }
 
     private void Update()
     {
@@ -170,9 +189,14 @@ public class Title : SceneChange
 
         if (BGM_volume > 1 && Input.GetKeyDown(KeyCode.LeftArrow)) BGM_volume--;
         if (BGM_volume < 10 && Input.GetKeyDown(KeyCode.RightArrow)) BGM_volume++;
+        BGM_Volume_Change();
+    }
+
+     private void BGM_Volume_Change()
+    {
         float set_volume_bgm = (float)BGM_volume * 4f - 21f;
         am.SetFloat("BGM_Vol", set_volume_bgm);
-        string S="<< ";
+        string S = "<< ";
         S += BGM_volume.ToString();
         S += " >>";
         bgm_volume_text.text = S;
@@ -184,6 +208,11 @@ public class Title : SceneChange
 
         if (SE_volume > 1 && Input.GetKeyDown(KeyCode.LeftArrow)) SE_volume--;
         if (SE_volume < 10 && Input.GetKeyDown(KeyCode.RightArrow)) SE_volume++;
+        SE_Volume_Change();
+    }
+
+    private void SE_Volume_Change()
+    {
         float set_volume_se = (float)SE_volume * 4f - 21f;
         am.SetFloat("SE_Vol", set_volume_se);
         string S = "<< ";

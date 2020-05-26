@@ -26,6 +26,11 @@ public class Player_Straight_Bullet : Bullet
             enemy_script.Hit(power);
             this.gameObject.SetActive(false);
         }
+
+        if (collision.gameObject.tag == "Enemy_Bullet_Invincible")
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
 

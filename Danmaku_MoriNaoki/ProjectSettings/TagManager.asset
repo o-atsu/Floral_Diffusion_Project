@@ -9,6 +9,7 @@ TagManager:
   - Player_Bullet
   - Player_Bomb_Bullet
   - Enemy_Bullet_Not_Delete
+  - Enemy_Bullet_ Invincible
   layers:
   - Default
   - TransparentFX
