@@ -265,3 +265,4 @@ MonoBehaviour:
   on_defeated: {fileID: 5315529122028111390, guid: 64d763da706e1b74f9dd842bc7da1740,
     type: 3}
   Cut_in: {fileID: 0}
+  attack_each_phase: []
