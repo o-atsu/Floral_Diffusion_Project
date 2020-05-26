@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -9068758028993611474}
   m_Layer: 8
   m_Name: ice 1
-  m_TagString: Enemy_Bullet
+  m_TagString: Enemy_Bullet_ Invincible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

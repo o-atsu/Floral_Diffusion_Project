@@ -20,10 +20,10 @@ public class Player_controll : MonoBehaviour
     float min_y = -4.25f;
     float max_y = 4.65f;
 
-    private float invincible_time=11f;//定数
+    private const float invincible_time=11f;//定数
     private float  invincible_count=-2f;
 
-    private float damaging_time = 3.6f;//定数
+    private const float damaging_time = 3.6f;//定数
     private float damaging_count = -2f;
     private float damaging_move_count = 2f;
 
@@ -93,6 +93,10 @@ public class Player_controll : MonoBehaviour
             {
                 PlayerDamaged();
             }
+            else if (collision.gameObject.tag == "Enemy_Bullet_Invincible")
+            {
+                PlayerDamaged();
+            }
         }
 
     }
@@ -153,6 +157,7 @@ public class Player_controll : MonoBehaviour
     {
         EndPhase.CountBomb(); // フェイズ毎の評価用にボム数をカウントする
         bomb--;
+        invincible_count = invincible_time;
     }
 
     private IEnumerator ReturnField()

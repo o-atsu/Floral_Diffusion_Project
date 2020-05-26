@@ -10,6 +10,12 @@ public class Player_Chase_Bullet : Bullet
     public float max_angle_speed;
     private float speed;
     public int power;
+    
+
+    private int missing_count = 0;
+    private float pre_diret = 0; 
+    private float now_diret = 0; 
+
 
     private GameObject targetOb;
 
@@ -21,6 +27,16 @@ public class Player_Chase_Bullet : Bullet
     private void Start()
     {
         StartCoroutine("check_in_screen");
+    }
+
+    private void OnEnable()
+    {
+        missing_count = 0;
+    }
+
+    private void Update()
+    {
+        CheckMissing();
     }
 
     private void FixedUpdate()
@@ -35,6 +51,11 @@ public class Player_Chase_Bullet : Bullet
         {
             Enemy enemy_script = collision.gameObject.GetComponent<Enemy>();
             enemy_script.Hit(power);
+            this.gameObject.SetActive(false);
+        }
+
+        if (collision.gameObject.tag == "Enemy_Bullet_Invincible")
+        {
             this.gameObject.SetActive(false);
         }
     }
@@ -77,6 +98,22 @@ public class Player_Chase_Bullet : Bullet
     {
         transform.rotation = Quaternion.AngleAxis(dir * conv_dierect, Vector3.forward);
         rb.velocity = new Vector2(Mathf.Cos(dir), Mathf.Sin(dir)) * speed;
+        now_diret = dir*conv_dierect;
+    }
+
+    private void CheckMissing()
+    {
+
+        if (Mathf.Abs(now_diret - pre_diret)>150f) missing_count++;
+        else missing_count = 0;
+
+        if (missing_count > 3)
+        {
+            this.gameObject.SetActive(false);
+        }
+
+        pre_diret = now_diret;
+
     }
 
 }

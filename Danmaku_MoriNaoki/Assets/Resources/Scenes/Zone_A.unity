@@ -211,14 +211,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1254678205, guid: 26d0c0f098d1d5b49afd200e759f6bdc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 4099978828300441023, guid: 26d0c0f098d1d5b49afd200e759f6bdc,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.35
+    - target: {fileID: 1254678206, guid: 26d0c0f098d1d5b49afd200e759f6bdc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7182864847659741358, guid: 26d0c0f098d1d5b49afd200e759f6bdc,
         type: 3}
@@ -280,20 +275,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8130539565931657905, guid: 26d0c0f098d1d5b49afd200e759f6bdc,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 8676395196404465472, guid: 26d0c0f098d1d5b49afd200e759f6bdc,
         type: 3}
       propertyPath: m_Offset.x
-      value: -0.033373684
+      value: -0.020903945
       objectReference: {fileID: 0}
     - target: {fileID: 8676395196404465472, guid: 26d0c0f098d1d5b49afd200e759f6bdc,
         type: 3}
       propertyPath: m_Radius
-      value: 0.09012088
+      value: 0.07765114
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26d0c0f098d1d5b49afd200e759f6bdc, type: 3}
@@ -488,11 +478,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cut_in
       objectReference: {fileID: 0}
-    - target: {fileID: 3173940260309757183, guid: 7a43dcb644e490d43a4e401673f2d7d2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a43dcb644e490d43a4e401673f2d7d2, type: 3}
 --- !u!1 &1338345480 stripped
@@ -592,7 +577,8 @@ AudioSource:
   m_GameObject: {fileID: 1598635434}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2627101297038496004, guid: 8f4bb5a5c12e1714a89aa67cad8c3071,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 9d75c10f00eaf2646aee5df4eca8a4de, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.15
@@ -686,6 +672,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1277930481394743207, guid: 16e061e8251caba41b64377da67cce41,
+        type: 3}
+      propertyPath: Mute
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277930481394743207, guid: 16e061e8251caba41b64377da67cce41,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -660847105563706527, guid: 8f4bb5a5c12e1714a89aa67cad8c3071,
+        type: 2}
     - target: {fileID: 1652556811694786834, guid: 16e061e8251caba41b64377da67cce41,
         type: 3}
       propertyPath: Cut_in
@@ -751,6 +748,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fuka
       objectReference: {fileID: 0}
+    - target: {fileID: 6818863865297641441, guid: 16e061e8251caba41b64377da67cce41,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -660847105563706527, guid: 8f4bb5a5c12e1714a89aa67cad8c3071,
+        type: 2}
+    - target: {fileID: 8697167496296196460, guid: 16e061e8251caba41b64377da67cce41,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -660847105563706527, guid: 8f4bb5a5c12e1714a89aa67cad8c3071,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16e061e8251caba41b64377da67cce41, type: 3}
 --- !u!1001 &2716009072867028554
