@@ -108,4 +108,8 @@ public class Score : MonoBehaviour
         return realAdd;
     }
 
+    public static int GetScoreCount(){
+        return score;
+    }
+
 }

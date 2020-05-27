@@ -29,7 +29,10 @@ public class Show_phase : MonoBehaviour
 	}
 
 	void SceneChanged(Scene thisScene, Scene nextScene){
-		Init();
+		string sname = SceneManager.GetActiveScene().name;
+		if(sname!="Title"&&sname!="Result"){
+			Init();
+		}
 	}
 
 	void FixedUpdate(){

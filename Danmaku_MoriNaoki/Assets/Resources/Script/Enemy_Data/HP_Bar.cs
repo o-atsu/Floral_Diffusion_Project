@@ -16,7 +16,10 @@ public class HP_Bar : MonoBehaviour
 	}
 
 	void SceneChanged(Scene thisScene, Scene nextScene){
-		enemy = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
+		string sname = SceneManager.GetActiveScene().name;
+		if(sname!="Title"&&sname!="Result"){
+			enemy = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
+		}
 	}
 
 	void FixedUpdate(){

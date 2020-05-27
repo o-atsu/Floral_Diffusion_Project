@@ -35,11 +35,13 @@ public class EndPhase : MonoBehaviour
     // ミス数のカウント
     public static void CountMiss(){
         missCounter += 1;
+        EndZone.CountMiss(1);
     }
 
     // ボム数のカウント
     public static void CountBomb(){
         bombCounter += 1;
+        EndZone.CountBomb(1);
     }
 
     // 評価文を表示する
@@ -67,10 +69,6 @@ public class EndPhase : MonoBehaviour
 
         // スコアの増加と評価文の表示
         gradeText.text = show;
-
-        // ミス数とボム数の保存
-        EndZone.CountMiss(missCounter);
-        EndZone.CountBomb(bombCounter);
 
         // カウンターの初期化
         missCounter = 0;

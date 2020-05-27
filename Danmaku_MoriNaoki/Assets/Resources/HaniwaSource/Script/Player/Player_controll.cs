@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; // 追加
 
 public class Player_controll : MonoBehaviour
 {
@@ -29,6 +30,11 @@ public class Player_controll : MonoBehaviour
 
     private AudioSource audiosource;
 
+    // ゾーン背景のコンポーネント
+    private AudioSource zbas;
+
+    // 行動フラグ
+    private bool action;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +53,10 @@ public class Player_controll : MonoBehaviour
         {
             audiosource = GetComponent<AudioSource>();
         }
+
+        // ゾーン背景のコンポーネントを取得
+        zbas = GameObject.Find("ZoneBackground").GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -63,7 +73,11 @@ public class Player_controll : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         }
-
+        if(hp>=1){
+            action = true;
+        } else {
+            action = false;
+        }
     }
 
     private void FixedUpdate()
@@ -98,6 +112,15 @@ public class Player_controll : MonoBehaviour
 
     void PlayerMove()
     {
+
+        if(action==false){
+            rb.velocity = new Vector2(0.0f, 0.0f);
+            this.transform.position = new Vector3(-2f, -6f, 0f);
+            return;
+        } else if(this.transform.position.y<min_y-1f) {
+            this.transform.position = new Vector3(-2f, -3f, 0f);
+        }
+
         push_count = 0;
         if (Input.GetKey(KeyCode.LeftArrow)) push_count++;
         if (Input.GetKey(KeyCode.RightArrow)) push_count++;
@@ -123,12 +146,20 @@ public class Player_controll : MonoBehaviour
 
     private void PlayerDamaged()
     {
+        if(hp<=0){
+            return;
+        }
         EndPhase.CountMiss(); // フェイズ毎の評価用にミス数をカウントする
-        hp--;
-        bomb = init_bomb;
-        damaging_count = damaging_time;
         audiosource.Play();
-        StartCoroutine("ReturnField");
+        hp--;
+        if(hp<=0){
+            bomb = 0;
+            // FadeManager.Instance.LoadScene("Result", 1.0f);
+        } else {
+            bomb = init_bomb;
+            damaging_count = damaging_time;
+            StartCoroutine("ReturnField");
+        }
     }
 
     public void Init(float x,float y,float init_speed,float init_slow_speed)
@@ -174,5 +205,24 @@ public class Player_controll : MonoBehaviour
     {
         return damaging_move_count;
     }
+
+    public bool GetActionFlag(){
+        return action;
+    }
+
+    /*
+
+    public void SetActionFlag(bool flag){
+        action = flag;
+    }
+
+    */
+
+    void SceneChanged(Scene thisScene, Scene nextScene){
+		string sname = SceneManager.GetActiveScene().name;
+		if(sname!="Title"&&sname!="Result"){
+			action = true;
+		}
+	}
 
 }

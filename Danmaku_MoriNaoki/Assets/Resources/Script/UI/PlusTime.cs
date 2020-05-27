@@ -10,20 +10,20 @@ public class PlusTime : MonoBehaviour
     private Text plusTimeText;
 
     // プラスタイム
-    public static int plusTime = 0;
+    public static float plusTime = 0f;
     private int minute;
     private int second;
     private int csecond;
     private string show;
 
     // 表示プラスタイム
-    private static int showPlusTime;
+    private static float showPlusTime;
 
     // タイム増加演出のフレーム数
     private static int showFrame = 14;
 
     // 1F毎に増加させる表示タイム
-    private static int addPerFrame;
+    private static float addPerFrame;
 
     // Start is called before the first frame update
     void Start(){
@@ -32,16 +32,61 @@ public class PlusTime : MonoBehaviour
         this.plusTimeText = this.GetComponent<Text>();
 
         // シーン切り替え時の表示更新処理
-        PlusTimeRewrite(0);
+        PlusTimeRewrite(0f);
 
     }
 
     // 表示更新
-    public void PlusTimeRewrite(int add){
+    public void PlusTimeRewrite(float add){
         plusTime += add;
-        addPerFrame = System.Math.Max((plusTime-showPlusTime)/showFrame+1, 1);
+        addPerFrame = System.Math.Max((plusTime-showPlusTime)/showFrame+0.01f, 0.01f);
         StartCoroutine("ShowPlusTime");
     }
+
+    // 表示更新の演出
+    private IEnumerator ShowPlusTime(){
+
+        while(true){
+
+            // 表示プラスタイムを増加させる
+            showPlusTime += System.Math.Min(plusTime-showPlusTime, addPerFrame);
+
+            // 表示文字列を作成
+            show = "+ ";
+
+            minute = (int)(showPlusTime/60f);
+            if(minute<10){
+                show += "0";
+            }
+            show += minute.ToString() + ":";
+
+            second = (int)((showPlusTime%60f)/1f);
+            if(second<10){
+                show += "0";
+            }
+            show += second.ToString() + ":";
+
+            csecond = (int)((showPlusTime%1f)/0.01f);
+            if(csecond<10){
+                show += "0";
+            }
+            show += csecond.ToString();
+
+            // プラスタイムを表示する
+            plusTimeText.text = show;
+
+            // 更新完了判定
+            if(showPlusTime==plusTime){
+                yield break;
+            } else {
+                yield return new WaitForEndOfFrame();
+            }
+
+        }
+
+    }
+
+    /*
 
     // 表示更新の演出
     private IEnumerator ShowPlusTime(){
@@ -85,5 +130,7 @@ public class PlusTime : MonoBehaviour
         }
 
     }
+
+    */
 
 }

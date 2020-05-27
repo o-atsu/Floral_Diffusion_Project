@@ -22,10 +22,13 @@ public class EndZone : MonoBehaviour
     private static int timeBonus;
 
     // Timerコンポーネント
-    private Timer t;
+    // private Timer t;
 
     // Resultコンポーネント
     private Result r;
+
+    // プレイヤーコントロールのコンポーネント
+    private Player_controll pc;
 
     // ゾーン背景のコンポーネント
     private SpriteRenderer zbsr;
@@ -39,6 +42,17 @@ public class EndZone : MonoBehaviour
 
     // ゾーンのBGM音量
     private float defaultVolume;
+
+    // SE
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip showHead;
+    [SerializeField]
+    private AudioClip showExcellent;
+    [SerializeField]
+    private AudioClip showOther;
+    [SerializeField]
+    private AudioClip pushKey;
 
     // ゾーンのText
     private Text zoneText;
@@ -56,13 +70,16 @@ public class EndZone : MonoBehaviour
         this.gradeText = this.GetComponent<Text>();
 
         // Timerコンポーネントを取得
-        t = GameObject.Find("Time").GetComponent<Timer>();
+        // t = GameObject.Find("Time").GetComponent<Timer>();
 
         // Resultコンポーネントを取得
         r = GameObject.Find("Result").GetComponent<Result>();
 
         // Zone_controllerコンポーネントを取得
         zc = GameObject.Find("Zone_controller").GetComponent<Zone_controller>();
+
+        // AudioSourceコンポーネントを取得
+        this.audioSource = this.GetComponent<AudioSource>();
 
         // next_zoneのGameObjectを取得
         nz = zc.next;
@@ -78,11 +95,28 @@ public class EndZone : MonoBehaviour
     // ミス数のカウント
     public static void CountMiss(int add){
         missCounter += add;
+        // Debug.Log("miss"+missCounter.ToString());
     }
 
     // ボム数のカウント
     public static void CountBomb(int add){
         bombCounter += add;
+        // Debug.Log("bomb"+bombCounter.ToString());
+    }
+
+    // ミス数のカウントの取得
+    public static int GetMissCount(){
+        return missCounter;
+    }
+
+    // ボム数のカウントの取得
+    public static int GetBombCount(){
+        return bombCounter;
+    }
+
+    // キー入力時のSE
+    public void PlayPushKeySE(){
+        audioSource.PlayOneShot(pushKey);
     }
 
     // 評価文を表示する
@@ -90,6 +124,12 @@ public class EndZone : MonoBehaviour
 
         // ゾーンのText
         zoneText = GameObject.Find("Zone").GetComponent<Text>();
+
+        // ゾーンEならリザルト用にライフとボムを保存
+        if(zoneText.text=="E"){
+            pc = GameObject.FindWithTag("Player").GetComponent<Player_controll>();
+            r.CountLifeAndBomb(pc.GetLifeCount(), pc.GetBombCount());
+        }
 
         // ゾーン背景のコンポーネントを取得
         zbsr = GameObject.Find("ZoneBackground").GetComponent<SpriteRenderer>();
@@ -108,7 +148,7 @@ public class EndZone : MonoBehaviour
         Timer.timeFlag = false;
 
         // タイムボーナスの計算
-        timeBonus = add / t.GetTimeCount();
+        timeBonus = (int)((float)add/Timer.GetTimeCount());
         timeBonus = System.Math.Max(timeBonus, 1);
 
         // ミス数とボム数の保存
@@ -132,9 +172,13 @@ public class EndZone : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
 
+        // アクションフラグ切り替え
+        // pc.SetActionFlag(false);
+
         // ゾーンクリア
         show += "ZONE CLEAR\n\n";
         gradeText.text = show;
+        audioSource.PlayOneShot(showHead);
 
         // ウェイト
         yield return new WaitForSeconds(0.75f);
@@ -142,6 +186,7 @@ public class EndZone : MonoBehaviour
         // タイムボーナス
         show += "TIME BONUS\n<size=45>+ " + Score.AddScore(timeBonus).ToString() + "</size>\n\n";
         gradeText.text = show;
+        audioSource.PlayOneShot(showHead);
 
         // ウェイト
         yield return new WaitForSeconds(0.75f);
@@ -151,11 +196,13 @@ public class EndZone : MonoBehaviour
 
             // ノーミスノーボム
             show += "Excellent!";
+            audioSource.PlayOneShot(showExcellent);
 
         } else {
 
             // ミス数またはボム数が1以上
             show += missCounter.ToString() + "<size=45> MISS</size> " + bombCounter.ToString() + "<size=45> BOMB</size>";
+            audioSource.PlayOneShot(showOther);
 
         }
         gradeText.text = show;

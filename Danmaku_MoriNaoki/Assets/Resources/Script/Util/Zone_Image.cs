@@ -14,9 +14,17 @@ public class Zone_Image : MonoBehaviour
 
 	private Image img;
 
+	// ゾーンのText
+    private Text zoneText;
+
 	void Awake(){
+
 		SceneManager.activeSceneChanged += SceneChanged;
 		img = GetComponent<Image>();
+
+		// ゾーンのText
+        zoneText = GameObject.Find("Zone").GetComponent<Text>();
+
 	}
 
 	void SceneChanged(Scene thisScene, Scene nextScene){
@@ -24,18 +32,27 @@ public class Zone_Image : MonoBehaviour
 		switch(sname){
 			case "Zone_A":
 				img.sprite = Zone_A;
+				zoneText.text = "A";
 				break;
 			case "Zone_B":
 				img.sprite = Zone_B;
+				zoneText.text = "B";
 				break;
 			case "Zone_C":
 				img.sprite = Zone_C;
+				zoneText.text = "C";
 				break;
 			case "Zone_D":
 				img.sprite = Zone_D;
+				zoneText.text = "D";
 				break;
 			case "Zone_E":
 				img.sprite = Zone_E;
+				zoneText.text = "E";
+				break;
+			case "Result":
+				img.sprite = null;
+				zoneText.text = "RESULT";
 				break;
 		}
 	}

@@ -33,6 +33,9 @@ public abstract class Enemy : MonoBehaviour
 	// EndZoneコンポーネント
     private EndZone endZone;
 
+	// Player_controllコンポーネント
+    private Player_controll pc;
+
 	// Start is called before the first frame update
     void Start(){
 
@@ -41,6 +44,9 @@ public abstract class Enemy : MonoBehaviour
 
 		// EndZoneコンポーネントを取得
 		endZone = GameObject.Find("EndZone").GetComponent<EndZone>();
+
+		// Player_controllコンポーネントを取得
+		pc = GameObject.FindWithTag("Player").GetComponent<Player_controll>();
 
 		StartCoroutine("entry");
 
@@ -63,7 +69,7 @@ public abstract class Enemy : MonoBehaviour
 		hp = MAX_HP;
 	}
 	void OnDisable(){
-		if(on_defeated != null && !onquit){
+		if(on_defeated!=null&&!onquit&&pc.GetLifeCount()>=1){
 			Instantiate(on_defeated, transform.position, Quaternion.identity);
 		}
 	}
@@ -76,8 +82,12 @@ public abstract class Enemy : MonoBehaviour
 	}
 
 	public virtual void Hit(int damage){
+		if(pc.GetLifeCount()<=0){
+			return;
+		}
 		Score.AddScore(damage); // 与えたダメージ分スコアを増加させる
 		hp -= damage;
+		// Debug.Log(hp.ToString());
 		if(hp<=0&&phase>=1){
 			Score.AddScore(hp); // オーバーキルしたときの過剰なスコア増加分を削る
 			endPhase.WriteGrade(scorePerPhase); // フェイズ終了時の評価とスコアの増加

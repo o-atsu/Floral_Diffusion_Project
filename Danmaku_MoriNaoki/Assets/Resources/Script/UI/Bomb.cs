@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // 追加
+using UnityEngine.SceneManagement; // 追加
 
 public class Bomb : MonoBehaviour
 {
@@ -13,11 +14,13 @@ public class Bomb : MonoBehaviour
     private Player_controll pc;
 
     // ボム
-    private int bomb;
+    public static int bomb;
     private string show;
 
     // 表示ボム
-    private int showBomb;
+    public static int showBomb;
+
+    private string sname;
 
     // Start is called before the first frame update
     void Start(){
@@ -25,11 +28,12 @@ public class Bomb : MonoBehaviour
         // ボムを表示するText
         this.bombText = this.GetComponent<Text>();
 
-        // プレイヤーコントロールのコンポーネントを取得
-        pc = GameObject.FindWithTag("Player").GetComponent<Player_controll>();
-
-        // ボムを取得する
-        bomb = pc.GetBombCount();
+        // ゾーンならプレイヤーコントロールのコンポーネントを取得してボムを取得する
+        sname = SceneManager.GetActiveScene().name;
+		if(sname!="Title"&&sname!="Result"){
+			pc = GameObject.FindWithTag("Player").GetComponent<Player_controll>();
+            bomb = pc.GetBombCount();
+		}
 
         // 表示を更新する
         show = "";
@@ -45,6 +49,11 @@ public class Bomb : MonoBehaviour
 
     // Update is called once per frame
     void Update(){
+
+        // ゾーンでないなら処理中断
+        if(sname=="Title"||sname=="Result"){
+            return;
+        }
 
         // ボムを取得する
         bomb = pc.GetBombCount();
