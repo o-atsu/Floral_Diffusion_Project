@@ -26,7 +26,7 @@ public class Show_phase : MonoBehaviour
 
 	void Start(){
 		Init();
-		SceneManager.sceneLoaded += SceneChanged;
+		SceneManager.activeSceneChanged += SceneChanged;
 	}
 
 	void SceneChanged(Scene thisScene, Scene nextScene){

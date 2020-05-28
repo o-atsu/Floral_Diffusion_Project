@@ -57,7 +57,7 @@ public class Zone_Image : MonoBehaviour
 		}
 	}
 	
-	void SceneChanged(Scene nextScene, LoadSceneMode mode){
+	void SceneChanged(Scene thisScene, Scene nextScene){
 		Img_change();
 	}
 }
