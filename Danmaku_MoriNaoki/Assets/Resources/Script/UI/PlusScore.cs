@@ -61,4 +61,9 @@ public class PlusScore : MonoBehaviour
 
     }
 
+    // リセット
+    public static void ResetPlusScore(){
+        plusScore = 0;
+    }
+
 }

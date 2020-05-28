@@ -133,4 +133,9 @@ public class PlusTime : MonoBehaviour
 
     */
 
+    // リセット
+    public static void ResetPlusTime(){
+        plusTime = 0f;
+    }
+
 }

@@ -34,7 +34,9 @@ public class Title : SceneChange
 
     private bool changing_scene = false;
 
+    // Start is called before the first frame update
     void Start(){
+
         OptionUI.SetActive(false);
         //PlayerPrefs.SetInt("highScore", 0);
         int high_score = PlayerPrefs.GetInt("highScore");
@@ -48,7 +50,18 @@ public class Title : SceneChange
         if (SE_volume < 1 || 10 < SE_volume) SE_volume = 5;
         SE_Volume_Change();
 
+        // リセット
+        Reset();
+
 	}
+
+    private void Reset(){
+        PlusScore.ResetPlusScore();
+        PlusTime.ResetPlusTime();
+        Timer.timeFlag = false;
+        Fps.ResetFps();
+        Result.ResetResult();
+    }
 
     private void OnDestroy()
     {
@@ -117,7 +130,7 @@ public class Title : SceneChange
                     #else
                         Application.Quit();
                     #endif
-                    
+
                     cancel_change_se.Play();
                 }
                 break;

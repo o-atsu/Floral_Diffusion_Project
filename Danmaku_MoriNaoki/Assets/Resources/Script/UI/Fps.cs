@@ -70,4 +70,14 @@ public class Fps : MonoBehaviour
         return 100-(int)((float)((frame-minusFrame)*5)/((processingTime-minusProcessingTime)*3f));
     }
 
+    // リセット
+    public static void ResetFps(){
+        frame = 0;
+        minusFrame = 0;
+        pastFrame = 0;
+        processingTime = 0f;
+        minusProcessingTime = 0f;
+        nextShow = 1f;
+    }
+
 }
