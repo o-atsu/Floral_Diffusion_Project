@@ -13,15 +13,20 @@ public class Show_phase : MonoBehaviour
 
 	private Enemy enemy;
 	private GameObject[] objects;
+    public GameObject[] position_Ob = new GameObject[7];
 
 	private void Init(){
 		enemy = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
 		int phase = enemy.Get_phase();
 		objects = new GameObject[phase];
 		for(int i = 0;i < phase;i++){
-			Vector2 pos = new Vector2(210f, 690f - i * SPACE);
-			objects[i] = Instantiate(img_object, pos, Quaternion.identity, transform);
-		}
+            objects[i] = position_Ob[i];
+            objects[i].SetActive(true);
+        }
+        for(int i = phase; i < 7; i++)
+        {
+            position_Ob[i].gameObject.SetActive(false);
+        }
 	}
 
 	void Start(){
