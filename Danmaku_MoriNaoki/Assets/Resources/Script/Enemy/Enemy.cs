@@ -10,6 +10,8 @@ public abstract class Enemy : MonoBehaviour
 	[SerializeField]
 	protected int scorePerPhase;
 	[SerializeField]
+	protected int timeBonus;
+	[SerializeField]
 	protected int phase;
 	[SerializeField]
 	protected GameObject on_defeated = null;
@@ -28,13 +30,26 @@ public abstract class Enemy : MonoBehaviour
 	// EndPhaseコンポーネント
 	private EndPhase endPhase;
 
+	// EndZoneコンポーネント
+    private EndZone endZone;
+
+	// Player_controllコンポーネント
+    private Player_controll pc;
+
 	// Start is called before the first frame update
     void Start(){
 
         // EndPhaseコンポーネントを取得
 		endPhase = GameObject.Find("EndPhase").GetComponent<EndPhase>();
 
+		// EndZoneコンポーネントを取得
+		endZone = GameObject.Find("EndZone").GetComponent<EndZone>();
+
+		// Player_controllコンポーネントを取得
+		pc = GameObject.FindWithTag("Player").GetComponent<Player_controll>();
+
 		StartCoroutine("entry");
+
     }
 
 	/**** 倒されるときの処理 ****/
@@ -54,7 +69,7 @@ public abstract class Enemy : MonoBehaviour
 		hp = MAX_HP;
 	}
 	void OnDisable(){
-		if(on_defeated != null && !onquit){
+		if(on_defeated!=null&&!onquit&&pc.GetLifeCount()>=1){
 			Instantiate(on_defeated, transform.position, Quaternion.identity);
 		}
 	}
@@ -70,11 +85,18 @@ public abstract class Enemy : MonoBehaviour
 	}
 
 	public virtual void Hit(int damage){
+		if(pc.GetLifeCount()<=0){
+			return;
+		}
 		Score.AddScore(damage); // 与えたダメージ分スコアを増加させる
 		hp -= damage;
+		// Debug.Log(hp.ToString());
 		if(hp<=0&&phase>=1){
 			Score.AddScore(hp); // オーバーキルしたときの過剰なスコア増加分を削る
 			endPhase.WriteGrade(scorePerPhase); // フェイズ終了時の評価とスコアの増加
+			if(phase==1){
+				endZone.WriteGrade(timeBonus); // ゾーン終了時の評価とスコアの増加
+			}
 			Defeated();
 		}
 	}
@@ -107,8 +129,10 @@ public abstract class Enemy : MonoBehaviour
 			time += Time.deltaTime * ENTRY_SPEED;
 			yield return null;
 		}
+		Timer.timeFlag = true; // 計測開始
 		attack_each_phase[0].SetActive(true);
 		col.enabled = true;
 		StartCoroutine("move");
 	}
+
 }

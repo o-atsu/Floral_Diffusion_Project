@@ -12,7 +12,14 @@ public class HP_Bar : MonoBehaviour
 	void Start(){
 		hp_bar = GetComponent<Slider>();
 		enemy = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
-		SceneManager.sceneLoaded += SceneLoaded;
+		SceneManager.activeSceneChanged += SceneChanged;
+	}
+
+	void SceneChanged(Scene thisScene, Scene nextScene){
+		string sname = SceneManager.GetActiveScene().name;
+		if(sname!="Title"&&sname!="Result"){
+			enemy = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
+		}
 	}
 
 	void FixedUpdate(){
@@ -25,10 +32,6 @@ public class HP_Bar : MonoBehaviour
 		}else{
 			hp_bar.value = 0;
 		}
-	}
-
-	void SceneLoaded(Scene nextScene, LoadSceneMode mode){
-		enemy = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
 	}
 
 	/**** FPS固定、ゲーム開始時どっかから呼び出して ****/

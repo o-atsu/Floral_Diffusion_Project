@@ -26,11 +26,14 @@ public class Show_phase : MonoBehaviour
 
 	void Start(){
 		Init();
-		SceneManager.sceneLoaded += SceneLoaded;
+		SceneManager.sceneLoaded += SceneChanged;
 	}
 
-	void SceneLoaded(Scene nextScene, LoadSceneMode mode){
-		Init();
+	void SceneChanged(Scene thisScene, Scene nextScene){
+		string sname = SceneManager.GetActiveScene().name;
+		if(sname!="Title"&&sname!="Result"){
+			Init();
+		}
 	}
 
 	void FixedUpdate(){

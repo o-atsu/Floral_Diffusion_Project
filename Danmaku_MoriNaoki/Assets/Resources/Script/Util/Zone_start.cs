@@ -9,6 +9,9 @@ public class Zone_start : MonoBehaviour
 	private Text text_comp;
 	private Animator anim;
 
+	// プレイヤーコントロールのコンポーネント
+    // private Player_controll pc;
+
     private static Dictionary<string, string> enemys = new Dictionary<string, string>(){// 各ゾーンボスの名前
 		{"Zone_A", "Fuka"},
 		{"Zone_B", "Eno"},
@@ -19,8 +22,28 @@ public class Zone_start : MonoBehaviour
 	void Start(){
 		text_comp = GetComponent<Text>();
 		anim = GetComponent<Animator>();
-		StartCoroutine("pop");
-		SceneManager.sceneLoaded += SceneLoaded;
+		SceneManager.activeSceneChanged += SceneChanged;
+	}
+
+	/*
+
+	// Start is called before the first frame update
+	void Start(){
+
+		// プレイヤーコントロールのコンポーネントを取得
+        // pc = GameObject.FindWithTag("Player").GetComponent<Player_controll>();
+		// Debug.Log(pc);
+
+	}
+
+	*/
+
+	void SceneChanged(Scene thisScene, Scene nextScene){
+		string sname = SceneManager.GetActiveScene().name;
+		if(sname!="Title"&&sname!="Result"){
+			// pc.SetActionFlag(true);
+			StartCoroutine("pop");
+		}
 	}
 
 	private IEnumerator pop(){
@@ -34,8 +57,5 @@ public class Zone_start : MonoBehaviour
 		yield return new WaitForSeconds(0.6f);
 		text_comp.text = "";
 		anim.SetBool("started", false);
-	}
-	void SceneLoaded(Scene nextScene, LoadSceneMode mode){
-		StartCoroutine("pop");
 	}
 }

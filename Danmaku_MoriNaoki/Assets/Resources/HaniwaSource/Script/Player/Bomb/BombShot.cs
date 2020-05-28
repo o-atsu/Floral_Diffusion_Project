@@ -17,11 +17,14 @@ public class BombShot : Attack
     float sound1_time_count=0f;
 
     public BombBulletGenerator[] bomb_generators;
+
     // Start is called before the first frame update
     void Start()
     {
         shot_time_count = 0f;
         audioSource = this.gameObject.GetComponent<AudioSource>();
+        // GameObject player_ob = GameObject.FindGameObjectWithTag("Player");
+        // Player_controll player_controll = player_ob.GetComponent<Player_controll>();
     }
 
     // Update is called once per frame
@@ -39,7 +42,7 @@ public class BombShot : Attack
         }
         else audioSource.Stop();
 
-        if (Input.GetKeyDown(KeyCode.X) && shot_time_count <=0f && player_controll.GetBombCount()>0 && player_cont.Get_Damaging_Move_Count() >= 0.98f)
+        if (Input.GetKeyDown(KeyCode.X)&&shot_time_count<=0f&&player_controll.GetBombCount()>0&&player_cont.Get_Damaging_Move_Count()>=0.98f&&player_cont.GetActionFlag()==true)
         {
             player_controll.DecreaseBomb();
             shot_time_count = shot_time;

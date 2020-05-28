@@ -27,10 +27,10 @@ public class Player_Chase_Shot : Attack
     {
         while (Input.GetKey(KeyCode.Z))
         {
-            if (player_cont.Get_Damaging_Move_Count() >= 0.98f)
+            if (player_cont.Get_Damaging_Move_Count()>=0.98f&&player_cont.GetActionFlag()==true)
             {
                 player_generators[0].Generate();
-                
+
             }
             yield return new WaitForSeconds(interval);
         }
