@@ -12,20 +12,23 @@ public class Fuka : Enemy
 		anim = GetComponent<Animator>();
 	}
 
-	protected override void Defeated(){
-		if(phase == 0) return;
+	protected override IEnumerator Defeated(){
+		if(phase == 0) yield break;
 
 		attack_each_phase[attack_each_phase.Length - phase].SetActive(false);
 		phase--;
 		if(phase == 0){
+			on_defeated.transform.parent = null;
+			on_defeated.SetActive(true);
+			yield return new WaitForSeconds(0.2f);
 			gameObject.SetActive(false);
 			Debug.Log("Fuka:Defeated!");
-			return;
+			yield break;
 		}
 		hp = MAX_HP;
 		StopCoroutine("move");
-		StartCoroutine("phase_change");
-		StartCoroutine("cut_in");
+		yield return StartCoroutine("phase_change");
+		yield return StartCoroutine("cut_in");
 	}
 
 	protected override IEnumerator move(){

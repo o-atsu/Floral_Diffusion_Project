@@ -11,6 +11,14 @@ public class UI_color : MonoBehaviour
     [SerializeField]
 	private Color night;
 
+	private Image img;
+	private Text txt;
+
+	void Awake(){
+		img = GetComponent<Image>();
+		txt = GetComponent<Text>();
+	}
+
 	static string[] A_B_C = new string[]{"Zone_A", "Zone_B", "Zone_C"};
 	static string[] D_E = new string[]{"Zone_D", "Zone_E"};
 
@@ -19,15 +27,15 @@ public class UI_color : MonoBehaviour
 
 		foreach(string i in A_B_C){
 			if(sname.Equals(i)){
-				if(GetComponent<Image>()) GetComponent<Image>().color = day;
-				else if(GetComponent<Text>()) GetComponent<Text>().color = day;
+				if(img != null) img.color = day;
+				else if(txt != null) txt.color = day;
 			}
 		}
 
 		foreach(string i in D_E){
 			if(sname.Equals(i)){
-				if(GetComponent<Image>()) GetComponent<Image>().color = night;
-				else if(GetComponent<Text>()) GetComponent<Text>().color = night;
+				if(img != null) img.color = night;
+				else if(txt != null) txt.color = night;
 			}
 		}
 	}

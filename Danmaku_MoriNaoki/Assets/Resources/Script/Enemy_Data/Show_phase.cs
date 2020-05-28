@@ -25,11 +25,14 @@ public class Show_phase : MonoBehaviour
 	}
 
 	void Start(){
-		Init();
-		SceneManager.activeSceneChanged += SceneChanged;
+		string sname = SceneManager.GetActiveScene().name;
+		if(sname!="Title"&&sname!="Result"){
+			Init();
+		}
+		SceneManager.sceneLoaded += SceneLoaded;
 	}
 
-	void SceneChanged(Scene thisScene, Scene nextScene){
+	void SceneLoaded(Scene nextScene, LoadSceneMode mode){
 		string sname = SceneManager.GetActiveScene().name;
 		if(sname!="Title"&&sname!="Result"){
 			Init();
@@ -40,5 +43,9 @@ public class Show_phase : MonoBehaviour
 		int phase = enemy.Get_phase();
 		if(phase == objects.Length) return;
 		if(objects[phase].activeSelf) objects[phase].SetActive(false);
+	}
+
+	void OnDestroy(){
+		objects = new GameObject[0];
 	}
 }

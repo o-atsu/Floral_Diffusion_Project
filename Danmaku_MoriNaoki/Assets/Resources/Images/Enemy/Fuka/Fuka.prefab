@@ -351,9 +351,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MAX_HP: 4000
   scorePerPhase: 10000
+  timeBonus: 580000
   phase: 2
-  on_defeated: {fileID: 3439995885527165571, guid: a266f91e53224074eb2922901135cd2a,
-    type: 3}
+  on_defeated: {fileID: 0}
   Cut_in: {fileID: 0}
   attack_each_phase:
   - {fileID: 8133016714852522130}

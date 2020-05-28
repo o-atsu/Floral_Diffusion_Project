@@ -19,9 +19,13 @@ public class Zone_start : MonoBehaviour
 		{"Zone_E", "Liche"}
 	};
 
-	void Start(){
+	void Awake(){
 		text_comp = GetComponent<Text>();
 		anim = GetComponent<Animator>();
+	}
+
+	void Start(){
+		StartCoroutine("pop");
 		SceneManager.activeSceneChanged += SceneChanged;
 	}
 
