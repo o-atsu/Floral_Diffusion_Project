@@ -61,7 +61,10 @@ public class EndZone : MonoBehaviour
     private Zone_controller zc;
 
     // next_zoneのGameObject
-    private GameObject nz;
+    private Text nzt;
+
+    public static bool showing_phase_result = false;
+    public static bool show_phase_result = false;
 
     // Start is called before the first frame update
     void Start(){
@@ -81,8 +84,8 @@ public class EndZone : MonoBehaviour
         // AudioSourceコンポーネントを取得
         this.audioSource = this.GetComponent<AudioSource>();
 
-        // next_zoneのGameObjectを取得
-        nz = zc.next;
+        // next_zoneのTextを取得
+        nzt = zc.next.GetComponent<Text>();
 
         // 初期化
         gradeText.text = "";
@@ -121,7 +124,6 @@ public class EndZone : MonoBehaviour
 
     // 評価文を表示する
     public void WriteGrade(int add){
-
         // ゾーンのText
         zoneText = GameObject.Find("Zone").GetComponent<Text>();
 
@@ -162,6 +164,8 @@ public class EndZone : MonoBehaviour
     // 評価文を表示する演出
     private IEnumerator ShowGrade(){
 
+        showing_phase_result = true;
+        show_phase_result = true;
         // 評価文の初期化
         show = "";
 
@@ -208,13 +212,14 @@ public class EndZone : MonoBehaviour
         gradeText.text = show;
 
         // next_zoneのGameObjectをアクティベイト
-        nz.SetActive(true);
+        nzt.text = "Press Z to the Next Zone";
 
         // カウンターの初期化
         missCounter = 0;
         bombCounter = 0;
 
         // 表示処理完了
+        showing_phase_result = false;
         yield break;
 
     }

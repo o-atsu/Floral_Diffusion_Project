@@ -21,8 +21,8 @@ public class Player_controll : MonoBehaviour
     float min_y = -4.25f;
     float max_y = 4.65f;
 
-    private const float invincible_time=11f;//定数
-    private float  invincible_count=-2f;
+    private const float invincible_time=10f;//定数
+    public static float  invincible_count=-2f;
 
     private const float damaging_time = 3.6f;//定数
     private float damaging_count = -2f;

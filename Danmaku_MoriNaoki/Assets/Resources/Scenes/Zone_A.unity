@@ -291,14 +291,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 369210668, guid: 26d0c0f098d1d5b49afd200e759f6bdc, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1254678205, guid: 26d0c0f098d1d5b49afd200e759f6bdc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254678206, guid: 26d0c0f098d1d5b49afd200e759f6bdc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4099978828300441023, guid: 26d0c0f098d1d5b49afd200e759f6bdc,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5585691420792114937, guid: 26d0c0f098d1d5b49afd200e759f6bdc,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7182864847659741358, guid: 26d0c0f098d1d5b49afd200e759f6bdc,
         type: 3}
@@ -723,7 +736,8 @@ AudioSource:
   m_GameObject: {fileID: 1598635434}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2627101297038496004, guid: 8f4bb5a5c12e1714a89aa67cad8c3071,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 9d75c10f00eaf2646aee5df4eca8a4de, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.15
@@ -817,6 +831,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 470856590123309389, guid: 16e061e8251caba41b64377da67cce41,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1652556811694786834, guid: 16e061e8251caba41b64377da67cce41,
         type: 3}
       propertyPath: on_defeated
@@ -827,6 +846,11 @@ PrefabInstance:
       propertyPath: Cut_in
       value: 
       objectReference: {fileID: 697859575}
+    - target: {fileID: 1652556811694786834, guid: 16e061e8251caba41b64377da67cce41,
+        type: 3}
+      propertyPath: MAX_HP
+      value: 4000
+      objectReference: {fileID: 0}
     - target: {fileID: 4452594761187486515, guid: 16e061e8251caba41b64377da67cce41,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -902,31 +926,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 824424062, guid: 84878ab799cfb9c42baf59f1eca42567, type: 3}
-      propertyPath: showExcellent
-      value: 
-      objectReference: {fileID: 8300000, guid: 0df698a50bb01204382f6d412a2bee79, type: 3}
-    - target: {fileID: 824424062, guid: 84878ab799cfb9c42baf59f1eca42567, type: 3}
-      propertyPath: showOther
-      value: 
-      objectReference: {fileID: 8300000, guid: bc06d74a818dec8418e0868eaef1978a, type: 3}
-    - target: {fileID: 824424062, guid: 84878ab799cfb9c42baf59f1eca42567, type: 3}
-      propertyPath: pushKey
-      value: 
-      objectReference: {fileID: 8300000, guid: b94ec1105f1570f4584de6c467d1788a, type: 3}
-    - target: {fileID: 1979512873, guid: 84878ab799cfb9c42baf59f1eca42567, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -130
+    - target: {fileID: 387844878606350873, guid: 84878ab799cfb9c42baf59f1eca42567,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1979512874, guid: 84878ab799cfb9c42baf59f1eca42567, type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 1979512874, guid: 84878ab799cfb9c42baf59f1eca42567, type: 3}
-      propertyPath: m_Text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 355702307908571939, guid: 84878ab799cfb9c42baf59f1eca42567,
+    - target: {fileID: 2395662381688023312, guid: 84878ab799cfb9c42baf59f1eca42567,
         type: 3}
       propertyPath: m_Text
       value: 

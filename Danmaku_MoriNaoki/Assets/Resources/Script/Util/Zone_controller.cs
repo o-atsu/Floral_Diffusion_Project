@@ -118,14 +118,14 @@ public class Zone_controller : MonoBehaviour
 
 		} else {
 
-			// next_zoneを表示するText
+			// next_zoneを表示するオブジェクト
 	        nzt = GameObject.Find("Next_Zone").GetComponent<Text>();
 
 			AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(next_scene);
 
 			asyncLoad.allowSceneActivation = false;
 			while(true){
-				if(Input.GetKeyDown(KeyCode.Z)){
+				if(Input.GetKeyDown(KeyCode.Z) && EndZone.showing_phase_result==false){
 					ez.PlayPushKeySE(); // キー入力時のSE
 					s.Archive(); // スコアをResultとPlusScoreに移す
 					t.Archive(); // タイムをResultとPlusTimeに移す
@@ -136,13 +136,17 @@ public class Zone_controller : MonoBehaviour
 						yield return new WaitForSeconds(0.05f);
 					}
 					ezt.text = ""; // 評価を表示するテキストを消去する
+					nzt.text = "";
 					asyncLoad.allowSceneActivation = true;
+                    EndZone.show_phase_result = false;
 					break;
 				}
 				yield return null;
 			}
 
 		}
+
+        yield break;
 
 	}
 
@@ -171,7 +175,7 @@ public class Zone_controller : MonoBehaviour
 			return;
 		}
 
-		if(Input.GetKeyDown(KeyCode.Q)) StartCoroutine("to_quit");
+		if(Input.GetKeyDown(KeyCode.Q) && defeated==false) StartCoroutine("to_quit");
 	}
 
 	private IEnumerator to_quit(){

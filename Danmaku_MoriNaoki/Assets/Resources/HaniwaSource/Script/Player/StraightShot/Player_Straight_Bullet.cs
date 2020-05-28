@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Straight_Bullet : Bullet
 {
@@ -18,11 +19,20 @@ public class Player_Straight_Bullet : Bullet
         StartCoroutine("check_in_screen");
     }
 
+    private void OnDisable()
+    {
+       
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
             Enemy enemy_script = collision.gameObject.GetComponent<Enemy>();
+            if (Player_controll.invincible_count >= 0.1f && enemy_script.Get_phase() == 1 && SceneManager.GetActiveScene().name == "Zone_E")
+            {
+                return;
+            }
             enemy_script.Hit(power);
             this.gameObject.SetActive(false);
         }
