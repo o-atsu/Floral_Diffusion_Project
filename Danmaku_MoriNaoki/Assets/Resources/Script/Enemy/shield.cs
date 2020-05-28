@@ -20,15 +20,15 @@ public class Shield : Enemy
 	}
 
 	void OnEnable(){
-		StartCoroutine("check_in_screen");
 		on_defeated.transform.parent = gameObject.transform;
+		StartCoroutine("check_in_screen");
 	}
 
 	protected override IEnumerator Defeated(){
 		on_defeated.transform.parent = null;
 		on_defeated.SetActive(true);
-		yield return null;
 		gameObject.SetActive(false);
+		yield return null;
 	}
 
 	protected override IEnumerator entry(){
@@ -36,6 +36,7 @@ public class Shield : Enemy
 	}
 
 	protected IEnumerator check_in_screen(){
+	yield return new WaitForSeconds(0.1f);
 		while(true){
 			Vector2 pos = new Vector2(transform.position.x, transform.position.y);
 			if(pos.x < LEFT || RIGHT < pos.x || pos.y < BOTTOM || TOP < pos.y){
