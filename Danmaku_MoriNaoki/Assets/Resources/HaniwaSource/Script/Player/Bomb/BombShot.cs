@@ -42,7 +42,7 @@ public class BombShot : Attack
         }
         else audioSource.Stop();
 
-        if (Input.GetKeyDown(KeyCode.X)&&shot_time_count<=0f&&player_controll.GetBombCount()>0&&player_cont.Get_Damaging_Move_Count()>=0.98f&&player_cont.GetActionFlag()==true)
+        if (Input.GetKeyDown(KeyCode.X)&&shot_time_count<=0f&&player_controll.GetBombCount()>0&&player_cont.Get_Damaging_Move_Count()>=0.98f&&player_cont.GetActionFlag()==true && EndZone.show_phase_result == false)
         {
             player_controll.DecreaseBomb();
             shot_time_count = shot_time;
