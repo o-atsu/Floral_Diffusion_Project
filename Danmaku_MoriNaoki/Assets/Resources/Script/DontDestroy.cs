@@ -5,15 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class DontDestroy : MonoBehaviour
 {
+	private static string[] destroys = new string[]{"Title", "Result"};
+
 	void Awake(){
 		Conf_destroy();
 		DontDestroyOnLoad(gameObject);
+	}
+	void Start(){
 		SceneManager.sceneLoaded += SceneLoaded;
 	}
 
 	void Conf_destroy(){
-		string[] destroys = new string[]{"Title", "Result"};
-
 		string sname = SceneManager.GetActiveScene().name;
 		Debug.Log(sname);
 		foreach(string i in destroys){

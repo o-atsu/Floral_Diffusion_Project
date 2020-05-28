@@ -17,14 +17,13 @@ public class Zone_Image : MonoBehaviour
 	// ゾーンのText
     private Text zoneText;
 
-	void Awake(){
-
-		SceneManager.activeSceneChanged += SceneChanged;
-		img = GetComponent<Image>();
-
+	void Start(){
 		// ゾーンのText
         zoneText = GameObject.Find("Zone").GetComponent<Text>();
 
+		img = GetComponent<Image>();
+		Img_change();
+		SceneManager.activeSceneChanged += SceneChanged;
 	}
 
 	void Img_change(){

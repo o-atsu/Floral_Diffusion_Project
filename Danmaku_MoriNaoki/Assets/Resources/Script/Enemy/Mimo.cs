@@ -12,19 +12,22 @@ public class Mimo : Enemy
 		anim = GetComponent<Animator>();
 	}
 
-	protected override void Defeated(){
-		if(phase == 0) return;
+	protected override IEnumerator Defeated(){
+		if(phase == 0) yield break;
 
 		attack_each_phase[attack_each_phase.Length - phase].SetActive(false);
 		phase--;
 		if(phase == 0){
+			on_defeated.transform.parent = null;
+			on_defeated.SetActive(true);
+			yield return new WaitForSeconds(0.2f);
 			gameObject.SetActive(false);
 			Debug.Log("Mimo:Defeated!");
-			return;
+			yield break;
 		}
 		hp = MAX_HP;
 		attack_each_phase[attack_each_phase.Length - phase].SetActive(true);
-		if(phase == 2 || phase == 1) StartCoroutine("stay");
+		if(phase == 2 || phase == 1) yield return StartCoroutine("stay");
 		else attack_each_phase[attack_each_phase.Length - phase].SetActive(true);
 	}
 

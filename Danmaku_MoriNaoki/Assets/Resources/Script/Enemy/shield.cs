@@ -17,4 +17,5 @@ public class Shield : Enemy
 	protected override IEnumerator entry(){
 		yield return null;
 	}
+
 }

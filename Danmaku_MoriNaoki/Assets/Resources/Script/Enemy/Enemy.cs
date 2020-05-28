@@ -27,6 +27,7 @@ public abstract class Enemy : MonoBehaviour
 	private static bool onquit = false;
 	private Collider2D col;
 
+
 	// EndPhaseコンポーネント
 	private EndPhase endPhase;
 
@@ -53,11 +54,11 @@ public abstract class Enemy : MonoBehaviour
     }
 
 	/**** 倒されるときの処理 ****/
-	protected virtual void Defeated(){
+	protected virtual IEnumerator Defeated(){
 		phase--;
 		if(phase == 0){
 			gameObject.SetActive(false);
-			return;
+			yield break;
 		}
 		hp = MAX_HP;
 	}
@@ -68,15 +69,15 @@ public abstract class Enemy : MonoBehaviour
 	void OnEnable(){
 		hp = MAX_HP;
 	}
+	/*
 	void OnDisable(){
 		if(on_defeated!=null&&!onquit&&pc.GetLifeCount()>=1){
-			Instantiate(on_defeated, transform.position, Quaternion.identity);
+			on_defeated.transform.parent = null;
+			on_defeated.SetActive(true);
 		}
 	}
+	*/
 	void OnApplicationQuit(){
-		onquit = true;
-	}
-	void OnDestroy(){
 		onquit = true;
 	}
 
@@ -97,7 +98,7 @@ public abstract class Enemy : MonoBehaviour
 			if(phase==1){
 				endZone.WriteGrade(timeBonus); // ゾーン終了時の評価とスコアの増加
 			}
-			Defeated();
+			StartCoroutine("Defeated");
 		}
 	}
 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI; // 追加
 
 public class Zone_controller : MonoBehaviour
 {
@@ -11,9 +10,9 @@ public class Zone_controller : MonoBehaviour
 	public GameObject next = null;
 	public GameObject quit = null;
 
+	private GameObject Enemyobj;
 	private Enemy enemy;
 	private bool defeated = false;
-	private Text nextt;
 	private Text quitt;
 
 	// Scoreコンポーネント
@@ -53,12 +52,6 @@ public class Zone_controller : MonoBehaviour
 	// Enemy_DataのGameObject
     private GameObject edgo;
 
-	void Awake(){
-		enemy = GameObject.FindWithTag("Enemy").GetComponent<Enemy>();
-		nextt = GameObject.Find("Next_Zone").GetComponent<Text>();
-		quitt = GameObject.Find("Quit").GetComponent<Text>();
-	}
-
 	// Start is called before the first frame update
 	void Start(){
 
@@ -83,9 +76,16 @@ public class Zone_controller : MonoBehaviour
 		// Enemy_DataのGameObjectを取得
 		edgo = GameObject.Find("Enemy_Data");
 
+		// Enemyクラスのオブジェクト取得
+		Enemyobj = GameObject.FindWithTag("Enemy");
+		enemy = Enemyobj.GetComponent<Enemy>();
+
+		//Quitテキストを取得
+		quitt = GameObject.Find("Quit").GetComponent<Text>();
+
 	}
 
-	public IEnumerator LoadScene(){
+	public IEnumerator loadScene(){
 
 		if(pc.GetLifeCount()<=0){
 
@@ -119,7 +119,7 @@ public class Zone_controller : MonoBehaviour
 		} else {
 
 			// next_zoneを表示するText
-	        nzt = next.GetComponent<Text>();
+	        nzt = GameObject.Find("Next_Zone").GetComponent<Text>();
 
 			AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(next_scene);
 
@@ -136,7 +136,6 @@ public class Zone_controller : MonoBehaviour
 						yield return new WaitForSeconds(0.05f);
 					}
 					ezt.text = ""; // 評価を表示するテキストを消去する
-					next.SetActive(false);
 					asyncLoad.allowSceneActivation = true;
 					break;
 				}
@@ -161,13 +160,13 @@ public class Zone_controller : MonoBehaviour
 	        defaultColorBlue = zbsrc.b;
 			Timer.timeFlag = false;
 			r.CountMissAndBomb(zoneText.text, EndZone.GetMissCount(), EndZone.GetBombCount());
-			StartCoroutine("LoadScene");
+			StartCoroutine("loadScene");
 			defeated = true;
 			return;
 		}
 
 		if(enemy.Get_phase()==0&&next.activeSelf==true){
-			StartCoroutine("LoadScene");
+			StartCoroutine("loadScene");
 			defeated = true;
 			return;
 		}
