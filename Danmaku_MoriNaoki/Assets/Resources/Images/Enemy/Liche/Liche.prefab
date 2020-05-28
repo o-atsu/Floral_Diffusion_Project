@@ -1793,7 +1793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97349e4740604bb42b9cced079c1ef43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  POOL_SIZE: 5
+  POOL_SIZE: 10
   bullet: {fileID: 6411185958315665185, guid: 2d540bb06f9885241936b7601937e36b, type: 3}
 --- !u!114 &820500986
 MonoBehaviour:
@@ -2588,11 +2588,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b62f53ef04c474faf1e1b7c5a90347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HP: 3000
+  MAX_HP: 0
   scorePerPhase: 0
   timeBonus: 0
-  phase: 1
-  on_defeated: {fileID: 5307835079389319096}
+  phase: 0
+  on_defeated: {fileID: 0}
   Cut_in: {fileID: 0}
   attack_each_phase: []
 --- !u!1 &8905176998141520761
@@ -2794,17 +2794,17 @@ PrefabInstance:
     - target: {fileID: 3439995885527165599, guid: a266f91e53224074eb2922901135cd2a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.02078855
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3439995885527165599, guid: a266f91e53224074eb2922901135cd2a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.62818456
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3439995885527165599, guid: a266f91e53224074eb2922901135cd2a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.4294544
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3439995885527165599, guid: a266f91e53224074eb2922901135cd2a,
         type: 3}
@@ -2944,12 +2944,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64d763da706e1b74f9dd842bc7da1740, type: 3}
---- !u!1 &5307835079389319096 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5315529122028111390, guid: 64d763da706e1b74f9dd842bc7da1740,
-    type: 3}
-  m_PrefabInstance: {fileID: 30885776197765542}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &30885776341794491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3225,7 +3219,7 @@ PrefabInstance:
     - target: {fileID: 5895017392628953284, guid: d1d6340f3d2b2ce43b0de002557ff69f,
         type: 3}
       propertyPath: m_TagString
-      value: Enemy_Bullet_ Invincible
+      value: Enemy_Bullet_Invincible
       objectReference: {fileID: 0}
     - target: {fileID: 5895017392628953284, guid: d1d6340f3d2b2ce43b0de002557ff69f,
         type: 3}
@@ -3246,15 +3240,15 @@ PrefabInstance:
     - {fileID: 3490315352568778275, guid: d1d6340f3d2b2ce43b0de002557ff69f, type: 3}
     - {fileID: 3490315352568778284, guid: d1d6340f3d2b2ce43b0de002557ff69f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d1d6340f3d2b2ce43b0de002557ff69f, type: 3}
---- !u!1 &7048945082826685940 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5895017392628953284, guid: d1d6340f3d2b2ce43b0de002557ff69f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3467117646858358064}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &245217378681403605 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3709421044142290405, guid: d1d6340f3d2b2ce43b0de002557ff69f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3467117646858358064}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7048945082826685940 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5895017392628953284, guid: d1d6340f3d2b2ce43b0de002557ff69f,
     type: 3}
   m_PrefabInstance: {fileID: 3467117646858358064}
   m_PrefabAsset: {fileID: 0}

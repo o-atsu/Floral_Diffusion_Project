@@ -664,6 +664,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97349e4740604bb42b9cced079c1ef43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &689111172 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5307835079389319096, guid: 619b4df7dcdff4545bf844288a4f4081,
+    type: 3}
+  m_PrefabInstance: {fileID: 30885776649970662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &834869285
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,7 +742,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2716009072867028554}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1693701368 stripped
+--- !u!1 &1877902922 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1340939281, guid: 619b4df7dcdff4545bf844288a4f4081,
     type: 3}
@@ -795,10 +801,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 820500985, guid: 619b4df7dcdff4545bf844288a4f4081, type: 3}
-      propertyPath: POOL_SIZE
-      value: 10
+    - target: {fileID: 1187080163, guid: 619b4df7dcdff4545bf844288a4f4081, type: 3}
+      propertyPath: MAX_HP
+      value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 1187080163, guid: 619b4df7dcdff4545bf844288a4f4081, type: 3}
+      propertyPath: phase
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187080163, guid: 619b4df7dcdff4545bf844288a4f4081, type: 3}
+      propertyPath: on_defeated
+      value: 
+      objectReference: {fileID: 689111172}
     - target: {fileID: 3176950165303336218, guid: 619b4df7dcdff4545bf844288a4f4081,
         type: 3}
       propertyPath: Cut_in
@@ -808,12 +822,7 @@ PrefabInstance:
         type: 3}
       propertyPath: attack_each_phase.Array.data[0]
       value: 
-      objectReference: {fileID: 1693701368}
-    - target: {fileID: 3176950165303336218, guid: 619b4df7dcdff4545bf844288a4f4081,
-        type: 3}
-      propertyPath: phase
-      value: 7
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1877902922}
     - target: {fileID: 3205279961817775871, guid: 619b4df7dcdff4545bf844288a4f4081,
         type: 3}
       propertyPath: m_Name
@@ -873,11 +882,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7048945082826685940, guid: 619b4df7dcdff4545bf844288a4f4081,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy_Bullet_Invincible
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 619b4df7dcdff4545bf844288a4f4081, type: 3}
@@ -1017,6 +1021,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915016045613786892, guid: 84878ab799cfb9c42baf59f1eca42567,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84878ab799cfb9c42baf59f1eca42567, type: 3}
