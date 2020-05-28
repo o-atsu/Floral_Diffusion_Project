@@ -18,10 +18,10 @@ public class Result : MonoBehaviour
     private int totalScore;
 
     // PlusScoreのGameObject
-    private GameObject psgo;
+    // private GameObject psgo;
 
     // PlusTimeのGameObject
-    private GameObject ptgo;
+    // private GameObject ptgo;
 
     // FluffGenerateObのGameObjectを取得
     private GameObject fgogo;
@@ -79,10 +79,10 @@ public class Result : MonoBehaviour
             this.resultText = this.GetComponent<Text>();
 
             // PlusScoreのGameObjectを取得
-            psgo = GameObject.Find("PlusScore");
+            // psgo = GameObject.Find("PlusScore");
 
             // PlusTimeのGameObjectを取得
-            ptgo = GameObject.Find("PlusTime");
+            // ptgo = GameObject.Find("PlusTime");
 
             // FluffGenerateObのGameObjectを取得
             fgogo = GameObject.Find("FluffGenerateOb");
@@ -142,8 +142,9 @@ public class Result : MonoBehaviour
     private void WriteResult(){
 
         // プラススコアとプラスタイムを非表示にする
-        psgo.SetActive(false);
-        ptgo.SetActive(false);
+        // psgo.SetActive(false);
+        // ptgo.SetActive(false);
+        // Debug.Log("false!");
 
         // リザルトを表示する演出の開始
         StartCoroutine("ShowResult");
@@ -460,6 +461,16 @@ public class Result : MonoBehaviour
         // 表示処理完了
         yield break;
 
+    }
+
+    // リセット
+    public static void ResetResult(){
+        score.Clear();
+        time.Clear();
+        missCounter.Clear();
+        bombCounter.Clear();
+        resultLife = 0;
+        resultBomb = 0;
     }
 
 }
