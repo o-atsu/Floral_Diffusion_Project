@@ -118,7 +118,7 @@ public class Zone_controller : MonoBehaviour
 
 		} else {
 
-			// next_zoneを表示するText
+			// next_zoneを表示するオブジェクト
 	        nzt = GameObject.Find("Next_Zone").GetComponent<Text>();
 
 			AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(next_scene);
@@ -136,6 +136,7 @@ public class Zone_controller : MonoBehaviour
 						yield return new WaitForSeconds(0.05f);
 					}
 					ezt.text = ""; // 評価を表示するテキストを消去する
+					nzt.text = "";
 					asyncLoad.allowSceneActivation = true;
                     EndZone.show_phase_result = false;
 					break;

@@ -846,6 +846,11 @@ PrefabInstance:
       propertyPath: Cut_in
       value: 
       objectReference: {fileID: 697859575}
+    - target: {fileID: 1652556811694786834, guid: 16e061e8251caba41b64377da67cce41,
+        type: 3}
+      propertyPath: MAX_HP
+      value: 4000
+      objectReference: {fileID: 0}
     - target: {fileID: 4452594761187486515, guid: 16e061e8251caba41b64377da67cce41,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -921,31 +926,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 824424062, guid: 84878ab799cfb9c42baf59f1eca42567, type: 3}
-      propertyPath: showExcellent
-      value: 
-      objectReference: {fileID: 8300000, guid: 0df698a50bb01204382f6d412a2bee79, type: 3}
-    - target: {fileID: 824424062, guid: 84878ab799cfb9c42baf59f1eca42567, type: 3}
-      propertyPath: showOther
-      value: 
-      objectReference: {fileID: 8300000, guid: bc06d74a818dec8418e0868eaef1978a, type: 3}
-    - target: {fileID: 824424062, guid: 84878ab799cfb9c42baf59f1eca42567, type: 3}
-      propertyPath: pushKey
-      value: 
-      objectReference: {fileID: 8300000, guid: b94ec1105f1570f4584de6c467d1788a, type: 3}
-    - target: {fileID: 1979512873, guid: 84878ab799cfb9c42baf59f1eca42567, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -130
+    - target: {fileID: 387844878606350873, guid: 84878ab799cfb9c42baf59f1eca42567,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1979512874, guid: 84878ab799cfb9c42baf59f1eca42567, type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 1979512874, guid: 84878ab799cfb9c42baf59f1eca42567, type: 3}
-      propertyPath: m_Text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 355702307908571939, guid: 84878ab799cfb9c42baf59f1eca42567,
+    - target: {fileID: 2395662381688023312, guid: 84878ab799cfb9c42baf59f1eca42567,
         type: 3}
       propertyPath: m_Text
       value: 

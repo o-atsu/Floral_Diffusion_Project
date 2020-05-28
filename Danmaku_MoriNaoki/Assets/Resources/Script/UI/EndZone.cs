@@ -61,7 +61,7 @@ public class EndZone : MonoBehaviour
     private Zone_controller zc;
 
     // next_zoneのGameObject
-    private GameObject nz;
+    private Text nzt;
 
     public static bool showing_phase_result = false;
     public static bool show_phase_result = false;
@@ -84,8 +84,8 @@ public class EndZone : MonoBehaviour
         // AudioSourceコンポーネントを取得
         this.audioSource = this.GetComponent<AudioSource>();
 
-        // next_zoneのGameObjectを取得
-        nz = zc.next;
+        // next_zoneのTextを取得
+        nzt = zc.next.GetComponent<Text>();
 
         // 初期化
         gradeText.text = "";
@@ -212,7 +212,7 @@ public class EndZone : MonoBehaviour
         gradeText.text = show;
 
         // next_zoneのGameObjectをアクティベイト
-        nz.SetActive(true);
+        nzt.text = "Press Z to the Next Zone";
 
         // カウンターの初期化
         missCounter = 0;

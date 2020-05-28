@@ -57,7 +57,11 @@ public abstract class Enemy : MonoBehaviour
 	protected virtual IEnumerator Defeated(){
 		phase--;
 		if(phase == 0){
+			on_defeated.transform.parent = null;
+			on_defeated.SetActive(true);
+			yield return new WaitForSeconds(0.2f);
 			gameObject.SetActive(false);
+			Debug.Log("Enemy:Defeated!");
 			yield break;
 		}
 		hp = MAX_HP;
