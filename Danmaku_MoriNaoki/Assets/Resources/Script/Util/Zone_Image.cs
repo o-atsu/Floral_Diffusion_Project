@@ -26,7 +26,12 @@ public class Zone_Image : MonoBehaviour
 		SceneManager.activeSceneChanged += SceneChanged;
 	}
 
-	void Img_change(){
+    private void OnDestroy()
+    {
+        SceneManager.activeSceneChanged -= SceneChanged;
+    }
+
+    void Img_change(){
 		string sname = SceneManager.GetActiveScene().name;
 		switch(sname){
 			case "Zone_A":

@@ -27,7 +27,7 @@ public class Player_Chase_Shot : Attack
     {
         while (Input.GetKey(KeyCode.Z))
         {
-            if (player_cont.Get_Damaging_Move_Count()>=0.98f&&player_cont.GetActionFlag()==true)
+            if (player_cont.Get_Damaging_Move_Count()>=0.98f&&player_cont.GetActionFlag()== true && EndZone.show_phase_result == false)
             {
                 player_generators[0].Generate();
 

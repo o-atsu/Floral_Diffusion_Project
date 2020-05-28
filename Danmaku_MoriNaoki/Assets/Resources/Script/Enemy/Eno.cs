@@ -7,6 +7,8 @@ public class Eno : Enemy
 	private Rigidbody2D rb;
 	private Animator anim;
 
+    public GameObject[] object_pools = new GameObject[3];
+
     void Awake(){
 		rb = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
@@ -25,6 +27,12 @@ public class Eno : Enemy
         attack_each_phase[attack_each_phase.Length - phase].SetActive(false);
         StopMove();
         phase--;
+
+        foreach (GameObject i in object_pools)
+        {
+            i.gameObject.GetComponent<Object_pool>().AllBulletSetActiveFalse();
+        }
+
         if (phase == 0){
 			on_defeated.transform.parent = null;
 			on_defeated.SetActive(true);

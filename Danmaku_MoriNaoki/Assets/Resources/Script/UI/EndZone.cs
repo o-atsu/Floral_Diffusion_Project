@@ -63,6 +63,9 @@ public class EndZone : MonoBehaviour
     // next_zoneのGameObject
     private GameObject nz;
 
+    public static bool showing_phase_result = false;
+    public static bool show_phase_result = false;
+
     // Start is called before the first frame update
     void Start(){
 
@@ -121,7 +124,6 @@ public class EndZone : MonoBehaviour
 
     // 評価文を表示する
     public void WriteGrade(int add){
-
         // ゾーンのText
         zoneText = GameObject.Find("Zone").GetComponent<Text>();
 
@@ -162,6 +164,8 @@ public class EndZone : MonoBehaviour
     // 評価文を表示する演出
     private IEnumerator ShowGrade(){
 
+        showing_phase_result = true;
+        show_phase_result = true;
         // 評価文の初期化
         show = "";
 
@@ -215,6 +219,7 @@ public class EndZone : MonoBehaviour
         bombCounter = 0;
 
         // 表示処理完了
+        showing_phase_result = false;
         yield break;
 
     }

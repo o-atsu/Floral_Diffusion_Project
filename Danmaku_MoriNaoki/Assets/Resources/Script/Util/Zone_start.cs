@@ -29,7 +29,12 @@ public class Zone_start : MonoBehaviour
 		SceneManager.activeSceneChanged += SceneChanged;
 	}
 
-	/*
+    private void OnDestroy()
+    {
+        SceneManager.activeSceneChanged -= SceneChanged;
+    }
+
+    /*
 
 	// Start is called before the first frame update
 	void Start(){
@@ -42,7 +47,7 @@ public class Zone_start : MonoBehaviour
 
 	*/
 
-	void SceneChanged(Scene thisScene, Scene nextScene){
+    void SceneChanged(Scene thisScene, Scene nextScene){
 		string sname = SceneManager.GetActiveScene().name;
 		if(sname!="Title"&&sname!="Result"){
 			// pc.SetActionFlag(true);

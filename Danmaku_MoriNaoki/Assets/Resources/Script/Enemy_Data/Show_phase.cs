@@ -47,5 +47,6 @@ public class Show_phase : MonoBehaviour
 
 	void OnDestroy(){
 		objects = new GameObject[0];
-	}
+        SceneManager.sceneLoaded -= SceneLoaded;
+    }
 }

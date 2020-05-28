@@ -36,6 +36,7 @@ public class Title : SceneChange
 
     void Start(){
         OptionUI.SetActive(false);
+        //PlayerPrefs.SetInt("highScore", 0);
         int high_score = PlayerPrefs.GetInt("highScore");
         high_score_value_text.text = high_score.ToString();
         center_high_score_value_text.text = high_score.ToString();

@@ -41,4 +41,14 @@ public class Object_pool : MonoBehaviour
 	public void Ret_pool(GameObject obj){
 		pool.Enqueue(obj);
 	}
+
+
+    public void AllBulletSetActiveFalse()
+    {
+        foreach (Transform child in transform)
+        {
+            if(child.gameObject.activeInHierarchy==true) child.gameObject.SetActive(false);
+        }
+    }
+
 }
