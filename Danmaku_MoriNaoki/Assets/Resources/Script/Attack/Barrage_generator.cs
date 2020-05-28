@@ -53,4 +53,6 @@ public abstract class Barrage_generator : MonoBehaviour
         position = v2;
     }
 
+    
+
 }

@@ -57,7 +57,7 @@ public class BombShot : Attack
 
     protected override IEnumerator shot()
     {
-        while (shot_time_count>=0f && player_cont.Get_Damaging_Move_Count() >= 0.98f)
+        while (shot_time_count>=0f && player_cont.Get_Damaging_Move_Count() >= 0.98f && EndZone.show_phase_result == false)
         {
             bomb_generators[0].Generate();
             bomb_generators[1].Generate();

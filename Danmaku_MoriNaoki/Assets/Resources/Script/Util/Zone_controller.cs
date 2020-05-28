@@ -125,7 +125,7 @@ public class Zone_controller : MonoBehaviour
 
 			asyncLoad.allowSceneActivation = false;
 			while(true){
-				if(Input.GetKeyDown(KeyCode.Z)){
+				if(Input.GetKeyDown(KeyCode.Z) && EndZone.showing_phase_result==false){
 					ez.PlayPushKeySE(); // キー入力時のSE
 					s.Archive(); // スコアをResultとPlusScoreに移す
 					t.Archive(); // タイムをResultとPlusTimeに移す
@@ -137,12 +137,15 @@ public class Zone_controller : MonoBehaviour
 					}
 					ezt.text = ""; // 評価を表示するテキストを消去する
 					asyncLoad.allowSceneActivation = true;
+                    EndZone.show_phase_result = false;
 					break;
 				}
 				yield return null;
 			}
 
 		}
+
+        yield break;
 
 	}
 
@@ -171,7 +174,7 @@ public class Zone_controller : MonoBehaviour
 			return;
 		}
 
-		if(Input.GetKeyDown(KeyCode.Q)) StartCoroutine("to_quit");
+		if(Input.GetKeyDown(KeyCode.Q) && defeated==false) StartCoroutine("to_quit");
 	}
 
 	private IEnumerator to_quit(){

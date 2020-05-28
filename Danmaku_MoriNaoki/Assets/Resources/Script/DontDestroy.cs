@@ -15,12 +15,17 @@ public class DontDestroy : MonoBehaviour
 		SceneManager.sceneLoaded += SceneLoaded;
 	}
 
-	void Conf_destroy(){
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= SceneLoaded;
+    }
+
+    void Conf_destroy(){
 		string sname = SceneManager.GetActiveScene().name;
 		Debug.Log(sname);
 		foreach(string i in destroys){
 			if(sname.Equals(i)){
-				DestroyImmediate(gameObject);
+				Destroy(this.gameObject);
 			}
 		}
 	}
