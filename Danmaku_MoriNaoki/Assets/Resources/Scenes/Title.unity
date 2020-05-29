@@ -1340,7 +1340,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "SE:\n\t\u9B54\u738B\u9B42 \u69D8\u30FB\u30E6\u30FC\u30D5\u30EB\u30AB \u69D8(Wingless
     Seraph\u3088\u308A)\n\t\u52B9\u679C\u97F3\u30E9\u30DC \u69D8\u30FBDOVA-SYNDROME
-    \u69D8\u30FBOn-Jin \uFF5E\u97F3\u4EBA\uFF5E \u69D8"
+    \u69D8\u30FBOn-Jin \uFF5E\u97F3\u4EBA\uFF5E \u69D8\n\t\u7121\u6599\u52B9\u679C\u97F3\u3067\u904A\u307C\u3046\uFF01
+    \u69D8"
 --- !u!222 &250643949
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3598,7 +3599,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "SE:\n\t\u9B54\u738B\u9B42 \u69D8\u30FB\u30E6\u30FC\u30D5\u30EB\u30AB \u69D8(Wingless
     Seraph\u3088\u308A)\n\t\u52B9\u679C\u97F3\u30E9\u30DC \u69D8\u30FBDOVA-SYNDROME
-    \u69D8\u30FBOn-Jin \uFF5E\u97F3\u4EBA\uFF5E \u69D8"
+    \u69D8\u30FBOn-Jin \uFF5E\u97F3\u4EBA\uFF5E \u69D8\n\t\u7121\u6599\u52B9\u679C\u97F3\u3067\u904A\u307C\u3046\uFF01
+    \u69D8"
 --- !u!222 &1585599258
 CanvasRenderer:
   m_ObjectHideFlags: 0
