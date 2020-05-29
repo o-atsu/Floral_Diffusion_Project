@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // 追加
+using UnityEngine.SceneManagement;
 
 public class EndZone : MonoBehaviour
 {
@@ -212,7 +213,11 @@ public class EndZone : MonoBehaviour
         gradeText.text = show;
 
         // next_zoneのGameObjectをアクティベイト
-        nzt.text = "Press Z to the Next Zone";
+		if(SceneManager.GetActiveScene().name == "Zone_E"){
+			nzt.text = "Congratulation!\n\nPress Z to Result";
+		}else{
+        	nzt.text = "Press Z to the Next Zone";
+		}
 
         // カウンターの初期化
         missCounter = 0;

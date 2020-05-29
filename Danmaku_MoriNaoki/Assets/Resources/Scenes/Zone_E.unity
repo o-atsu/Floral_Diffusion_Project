@@ -809,6 +809,11 @@ PrefabInstance:
       propertyPath: attack_each_phase.Array.data[0]
       value: 
       objectReference: {fileID: 1693701368}
+    - target: {fileID: 3176950165303336218, guid: 619b4df7dcdff4545bf844288a4f4081,
+        type: 3}
+      propertyPath: phase
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3205279961817775871, guid: 619b4df7dcdff4545bf844288a4f4081,
         type: 3}
       propertyPath: m_Name
