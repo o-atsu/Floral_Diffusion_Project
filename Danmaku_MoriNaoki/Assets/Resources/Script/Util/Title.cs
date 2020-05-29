@@ -9,6 +9,7 @@ public class Title : SceneChange
 {
     int main_step=0;
     int option_step=-1;
+	bool credit_show = false;
 
     int BGM_volume;
     int SE_volume;
@@ -18,6 +19,7 @@ public class Title : SceneChange
     public RectTransform arrow_rect;
     public RectTransform option_arrow_rect;
     public GameObject OptionUI;
+    public GameObject CreditUI;
 
     public Text bgm_volume_text;
     public Text center_bgm_volume_text;
@@ -38,6 +40,7 @@ public class Title : SceneChange
     void Start(){
 
         OptionUI.SetActive(false);
+        CreditUI.SetActive(false);
         //PlayerPrefs.SetInt("highScore", 0);
         int high_score = PlayerPrefs.GetInt("highScore");
         high_score_value_text.text = high_score.ToString();
@@ -78,6 +81,10 @@ public class Title : SceneChange
             {
                 OptionSetting();
             }
+			else if(credit_show)
+			{
+				CreditSetting();
+			}
             else
             {
                 MainProcessing();
@@ -89,7 +96,7 @@ public class Title : SceneChange
 
     private void MainProcessing()
     {
-        if (main_step < 2 && Input.GetKeyDown(KeyCode.DownArrow))
+        if (main_step < 3 && Input.GetKeyDown(KeyCode.DownArrow))
         {
             main_step++;
             move_arrow_se.Play();
@@ -123,6 +130,15 @@ public class Title : SceneChange
                 break;
 
             case 2:
+                if (Input.GetKeyDown(KeyCode.Z))
+                {
+					credit_show = true;
+                    CreditUI.SetActive(true);
+                    dicide_se_source.Play();
+                }
+                break;
+
+            case 3:
                 if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.X))
                 {
                     #if UNITY_EDITOR
@@ -138,7 +154,7 @@ public class Title : SceneChange
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-            main_step = 2;
+            main_step = 3;
             cancel_change_se.Play();
         }
 
@@ -235,5 +251,14 @@ public class Title : SceneChange
         se_volume_text.text = S;
         center_se_volume_text.text = S;
     }
+
+	private void CreditSetting()
+	{
+		if(Input.GetKeyDown(KeyCode.X)){
+			credit_show = false;
+			CreditUI.SetActive(false);
+            cancel_change_se.Play();
+		}
+	}
 
 }
