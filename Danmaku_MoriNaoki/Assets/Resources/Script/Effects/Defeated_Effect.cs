@@ -8,7 +8,7 @@ public class Defeated_Effect : MonoBehaviour
 	private float mag = 0.3f;
 	private float duration = 0.6f;
 
-	void Start(){
+	void OnEnable(){
 		camera = GameObject.Find("Main Camera");
 		StartCoroutine("Cam_quake");
 	}
