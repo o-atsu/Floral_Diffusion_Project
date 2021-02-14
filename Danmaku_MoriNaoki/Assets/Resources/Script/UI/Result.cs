@@ -404,7 +404,7 @@ public class Result : MonoBehaviour
         } else if(totalScore>=12500){
             rank = "G";
         } else {
-            rank += "H";
+            rank = "H";
         }
         show += "<size=45>" + rank + "</size>\n\n";
         resultText.text = show;
