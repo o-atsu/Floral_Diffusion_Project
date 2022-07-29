@@ -1,2 +1,2 @@
-# Danmaku_MoriNaoki
+# Floral Diffusion
  Random_marathon弾幕シューティングチーム
